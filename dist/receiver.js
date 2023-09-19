@@ -27,6 +27,7 @@ const express = require('express');
 const edifact_1 = require("edifact");
 const mapping = __importStar(require("./m1"));
 const { X12Parser } = require('node-x12');
+const segmentGrouping_1 = require("./segmentGrouping");
 const port = 4000;
 const app = express();
 app.use(express.text());
@@ -58,14 +59,10 @@ function parseX12(ediMessage) {
 function parseEdifact(edifactMessage) {
     const reader = new edifact_1.Reader({ autoDetectEncoding: true });
     const result = reader.parse(edifactMessage);
-    for (let obj of result) {
-        console.log('----------------------');
-        console.log(' ');
-        console.log(obj);
-    }
-    console.log('&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&');
     const arr = [];
     for (const obj of result) {
+        console.log(obj);
+        console.log('##########################################################');
         const segmentObj = edifactMapping(obj);
         arr.push(segmentObj);
     }
@@ -73,6 +70,7 @@ function parseEdifact(edifactMessage) {
         console.log('=================================================================');
         console.log(obj);
     }
+    const obj = (0, segmentGrouping_1.group)(arr);
 }
 function edifactMapping(object) {
     let segment;
@@ -135,7 +133,7 @@ function edifactMapping(object) {
         UNZ: mapping.UNZ
     };
     if (segmentMappingObj.hasOwnProperty(segmentCode)) {
-        segment = segmentMappingObj[segmentCode](elements);
+        segment = segmentMappingObj[segmentCode](segmentCode, elements);
     }
     else {
         segment = {

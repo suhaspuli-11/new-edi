@@ -2,6 +2,7 @@ const express = require('express');
 import { Reader } from 'edifact';
 import * as mapping from './m1';
 const { X12Parser } = require('node-x12');
+import { group } from './segmentGrouping';
 
 const port: any = 4000;
 const app: any = express();
@@ -42,6 +43,8 @@ function parseEdifact(edifactMessage: any) {
     const result: any = reader.parse(edifactMessage);
     const arr: any = [];
     for (const obj of result) {
+        console.log(obj);
+        console.log('##########################################################');
         const segmentObj: any = edifactMapping(obj);
         arr.push(segmentObj);
     }
@@ -49,6 +52,7 @@ function parseEdifact(edifactMessage: any) {
         console.log('=================================================================');
         console.log(obj);
     }
+    const obj: any = group(arr);
 }
 
 function edifactMapping(object: any) {
@@ -113,7 +117,7 @@ function edifactMapping(object: any) {
     }
     
     if (segmentMappingObj.hasOwnProperty(segmentCode)) {
-        segment = segmentMappingObj[segmentCode](elements);
+        segment = segmentMappingObj[segmentCode](segmentCode, elements);
     }
     else {
         segment = {

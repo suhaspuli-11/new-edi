@@ -1,8 +1,8 @@
 import { addProperties } from './mappingService';
 
-export function UNB(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        InterchangeHeader: {},
+export function UNB(name: string, elements: any[][]): Record<any, any> {
+    const InterchangeHeader = {
+        code: name
     };
 
     const mappings = [
@@ -14,12 +14,12 @@ export function UNB(elements: any[][]): Record<any, any> {
         {
             target: "InterchangeSender",
             source: elements[1],
-            subkeys: ["SenderId","PartnerIdentificationCodeQualifier","AddressForReverseRouting"],
+            subkeys: ["SenderId", "PartnerIdentificationCodeQualifier", "AddressForReverseRouting"],
         },
         {
             target: "InterchangeRecipient",
             source: elements[2],
-            subkeys: ["RecipientId","PartnerIdentificationCodeQualifier","RoutingAddress"],
+            subkeys: ["RecipientId", "PartnerIdentificationCodeQualifier", "RoutingAddress"],
         },
         {
             target: "DateTimePreparation",
@@ -38,13 +38,13 @@ export function UNB(elements: any[][]): Record<any, any> {
         { target: "CommunicationsAgreementID", source: elements[9] },
         { target: "TestIndicator", source: elements[10] },
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(InterchangeHeader, mappings);
+    return InterchangeHeader;
 }
 
-export function UNH(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        MessageHeader: {},
+export function UNH(name: string, elements: any[][]): Record<any, any> {
+    const MessageHeader = {
+        code: name
     };
 
     const mappings = [
@@ -52,7 +52,7 @@ export function UNH(elements: any[][]): Record<any, any> {
         {
             target: "messageIdentifier",
             source: elements[1],
-            subkeys: ["messageType","messageVersionNumber","MessageReleaseNumber","controllingAgency"],
+            subkeys: ["messageType", "messageVersionNumber", "MessageReleaseNumber", "controllingAgency"],
         },
         { target: "CommonAccessReference", source: elements[2] },
         {
@@ -61,13 +61,13 @@ export function UNH(elements: any[][]): Record<any, any> {
             subkeys: ["SequenceOfTransfers", "FirstAndLastTransfers"],
         },
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(MessageHeader, mappings);
+    return MessageHeader;
 }
 
-export function BGM(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        BeginningOfMessage: {},
+export function BGM(name: string, elements: any[][]): Record<any, any> {
+    const BeginningOfMessage = {
+        code: name
     };
 
     const mappings = [
@@ -86,13 +86,13 @@ export function BGM(elements: any[][]): Record<any, any> {
         { target: "DocumentStatusCode", source: elements[4] },
         { target: "LanguageNameCode", source: elements[5] },
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(BeginningOfMessage, mappings);
+    return BeginningOfMessage;
 }
 
-export function DTM(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        DateTimePeriod: {},
+export function DTM(name: string, elements: any[][]): Record<any, any> {
+    const DateTimePeriod = {
+        code: name
     };
 
     const mappings = [
@@ -102,132 +102,133 @@ export function DTM(elements: any[][]): Record<any, any> {
             subkeys: ["Qualifier", "Date", "FormatQualifier"],
         },
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(DateTimePeriod, mappings);
+    return DateTimePeriod;
 }
 
-export function PAI(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        PaymentInstructionDetails: {},
+export function PAI(name: string, elements: any[][]): Record<any, any> {
+    const PaymentInstructionDetails = {
+        code: name
     };
 
     const mappings = [
         {
             target: "PaymentInstructionDetails",
             source: elements[0],
-            subkeys: ["PaymentConditionsCode","PaymentGuaranteemeansCode","PaymentMeansCode"],
+            subkeys: ["PaymentConditionsCode", "PaymentGuaranteemeansCode", "PaymentMeansCode"],
         },
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(PaymentInstructionDetails, mappings);
+    return PaymentInstructionDetails;
 }
 
-export function FTX(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        FreeText: {},
-    };
+export function FTX(name: string, elements: any[][]): Record<any, any> {
+    const FreeText = {
+        code: name
+    }
+
     const mappings = [
         { target: "TextSubjectCodeQualifier", source: elements[0] },
         { target: "FreeTextFunctionCode", source: elements[1] },
         {
             target: "TextReference",
             source: elements[2],
-            subkeys: ["FreeTextCode","CodeListIdentificationCode","CodeListResponsibleAgencyCode"],
+            subkeys: ["FreeTextCode", "CodeListIdentificationCode", "CodeListResponsibleAgencyCode"],
         },
         {
             target: "TextLiteral",
             source: elements[3],
-            subkeys: ["FreeText0","FreeText1","FreeText2","FreeText3","FreeText4"],
+            subkeys: ["FreeText0", "FreeText1", "FreeText2", "FreeText3", "FreeText4"],
         },
         { target: "LanguageNameCode", source: elements[4] },
         { target: "FreeTextFormatCode", source: elements[5] },
     ];
-    addProperties(object, mappings);
+    addProperties(FreeText, mappings);
 
-    return object;
+    return FreeText;
 }
 
-export function GIR(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        RelatedIdentificationNumbers: {},
-    };
+export function GIR(name: string, elements: any[][]): Record<any, any> {
+    const RelatedIdentificationNumbers = {
+        code: name
+    }
 
     const mappings = [
         { target: "SetTypeCodeQualifier", source: elements[0] },
         {
             target: "IdentificationNumber1",
             source: elements[1],
-            subkeys: ["Identifier","IdentificationCodeQualifier","StatusDescriptionCode"],
+            subkeys: ["Identifier", "IdentificationCodeQualifier", "StatusDescriptionCode"],
         },
         {
             target: "IdentificationNumber2",
             source: elements[2],
-            subkeys: ["Identifier","IdentificationCodeQualifier","StatusDescriptionCode"],
+            subkeys: ["Identifier", "IdentificationCodeQualifier", "StatusDescriptionCode"],
         },
         {
             target: "IdentificationNumber3",
             source: elements[3],
-            subkeys: ["Identifier","IdentificationCodeQualifier","StatusDescriptionCode"],
+            subkeys: ["Identifier", "IdentificationCodeQualifier", "StatusDescriptionCode"],
         },
         {
             target: "IdentificationNumber4",
             source: elements[4],
-            subkeys: ["Identifier","IdentificationCodeQualifier","StatusDescriptionCode"],
+            subkeys: ["Identifier", "IdentificationCodeQualifier", "StatusDescriptionCode"],
         },
         {
             target: "IdentificationNumber5",
             source: elements[5],
-            subkeys: ["Identifier","IdentificationCodeQualifier","StatusDescriptionCode"],
+            subkeys: ["Identifier", "IdentificationCodeQualifier", "StatusDescriptionCode"],
         },
     ];
 
-    addProperties(object, mappings);
-    return object;
+    addProperties(RelatedIdentificationNumbers, mappings);
+    return RelatedIdentificationNumbers;
 }
 
-export function IMD(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        ItemDescription: {},
-    };
+export function IMD(name: string, elements: any[][]): Record<any, any> {
+    const ItemDescription = {
+        code: name
+    }
 
     const mappings = [
         { target: "DescriptionFormatCode", source: elements[0] },
         {
             target: "ItemCharacteristic",
             source: elements[1],
-            subKeys: ["ItemCharacteristicCode","CodeListIdentificationCode","CodeListResponsibleAgency"],
+            subKeys: ["ItemCharacteristicCode", "CodeListIdentificationCode", "CodeListResponsibleAgency"],
         },
         {
             target: "ItemDescription",
             source: elements[2],
-            subKeys: ["ItemDescriptionCode","CodeListIdentificationCode","CodeListResponsibleAgency","ItemDescription1","ItemDescription2","LanguageNameCode"],
+            subKeys: ["ItemDescriptionCode", "CodeListIdentificationCode", "CodeListResponsibleAgency", "ItemDescription1", "ItemDescription2", "LanguageNameCode"],
         },
         { target: "SurfaceOrLayerCode", source: elements[3] },
     ];
 
-    addProperties(object, mappings);
-    return object;
+    addProperties(ItemDescription, mappings);
+    return ItemDescription;
 }
 
-export function RFF(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        Reference: {},
-    };
+export function RFF(name: string, elements: any[][]): Record<any, any> {
+    const Reference = {
+        code: name
+    }
     const mappings = [
         {
             target: "Reference",
             source: elements[0],
-            subkeys: ["ReferenceCodeQualifier","ReferenceIdentifier","DocumentLineIdentifier","VersionIdentifier","RevisionIdentifier"],
+            subkeys: ["ReferenceCodeQualifier", "ReferenceIdentifier", "DocumentLineIdentifier", "VersionIdentifier", "RevisionIdentifier"],
         },
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(Reference, mappings);
+    return Reference;
 }
 
-export function NAD(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        NameAndAddress: {},
-    };
+export function NAD(name: string, elements: any[][]): Record<any, any> {
+    const NameAndAddress = {
+        code: name
+    }
     const mappings = [
         {
             target: "PartyFunctionCodeQualifier",
@@ -236,22 +237,22 @@ export function NAD(elements: any[][]): Record<any, any> {
         {
             target: "PartyIdentificationDetails",
             source: elements[1],
-            subkeys: ["PartyIdentifier","CodeListIdentificationCode","CodeListResponsibleAgency"],
+            subkeys: ["PartyIdentifier", "CodeListIdentificationCode", "CodeListResponsibleAgency"],
         },
         {
             target: "NameAndAddress",
             source: elements[2],
-            subkeys: ["NameAndAddressDescription1","NameAndAddressDescription2","NameAndAddressDescription3","NameAndAddressDescription4","NameAndAddressDescription5"],
+            subkeys: ["NameAndAddressDescription1", "NameAndAddressDescription2", "NameAndAddressDescription3", "NameAndAddressDescription4", "NameAndAddressDescription5"],
         },
         {
             target: "PartyName",
             source: elements[3],
-            subkeys: ["PartyName1","PartyName2","PartyName3","PartyName4","PartyName","PartyNameFormatCode"],
+            subkeys: ["PartyName1", "PartyName2", "PartyName3", "PartyName4", "PartyName", "PartyNameFormatCode"],
         },
         {
             target: "Street",
             source: elements[4],
-            subkeys: ["StreetAndNumberOrPostOfficeBoxIdentifier1","StreetAndNumberOrPostOfficeBoxIdentifier2","StreetAndNumberOrPostOfficeBoxIdentifier3","StreetAndNumberOrPostOfficeBoxIdentifier4"],
+            subkeys: ["StreetAndNumberOrPostOfficeBoxIdentifier1", "StreetAndNumberOrPostOfficeBoxIdentifier2", "StreetAndNumberOrPostOfficeBoxIdentifier3", "StreetAndNumberOrPostOfficeBoxIdentifier4"],
         },
         {
             target: "CityName",
@@ -260,7 +261,7 @@ export function NAD(elements: any[][]): Record<any, any> {
         {
             target: "CountrySubdivisionDetails",
             source: elements[6],
-            subkeys: ["CountrySubdivisionIdentifier","Code list identification code","CodeListResponsibleAgencyCode","CountrySubdivisionName"],
+            subkeys: ["CountrySubdivisionIdentifier", "Code list identification code", "CodeListResponsibleAgencyCode", "CountrySubdivisionName"],
         },
         {
             target: "PostalIdentificationCode",
@@ -271,24 +272,24 @@ export function NAD(elements: any[][]): Record<any, any> {
             source: elements[8],
         },
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(NameAndAddress, mappings);
+    return NameAndAddress;
 }
 
-export function CUX(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        Currencies: {},
-    };
+export function CUX(name: string, elements: any[][]): Record<any, any> {
+    const Currencies = {
+        code: name
+    }
     const mappings = [
         {
             target: "CurrencyDetails1",
             source: elements[0],
-            subkeys: ["CurrencyUsageCodeQualifier","CurrencyIdentificationCode","CurrencyTypeCodeQualifier","CurrencyRate"],
+            subkeys: ["CurrencyUsageCodeQualifier", "CurrencyIdentificationCode", "CurrencyTypeCodeQualifier", "CurrencyRate"],
         },
         {
             target: "CurrencyDetails2",
             source: elements[1],
-            subkeys: ["CurrencyUsageCodeQualifier","CurrencyIdentificationCode","CurrencyTypeCodeQualifier","CurrencyRate"],
+            subkeys: ["CurrencyUsageCodeQualifier", "CurrencyIdentificationCode", "CurrencyTypeCodeQualifier", "CurrencyRate"],
         },
         {
             target: "CurrencyExchangeRate",
@@ -299,14 +300,14 @@ export function CUX(elements: any[][]): Record<any, any> {
             source: elements[3],
         },
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(Currencies, mappings);
+    return Currencies;
 }
 
-export function TOD(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        TermsOfDeliveryOrTransport: {},
-    };
+export function TOD(name: string, elements: any[][]): Record<any, any> {
+    const TermsOfDeliveryOrTransport = {
+        code: name
+    }
     const mappings = [
         {
             target: "DeliveryOrTransportTermsFunctionCode",
@@ -319,17 +320,17 @@ export function TOD(elements: any[][]): Record<any, any> {
         {
             target: "TermsOfDeliveryOrTransport",
             source: elements[2],
-            subkeys: ["DeliveryOrTransportTermsDescriptionCode","CodeListIdentificationCode","CodeListResponsibleAgencyCode","DeliveryOrTransportTermsDescription1","DeliveryOrTransportTermsDescription2"],
+            subkeys: ["DeliveryOrTransportTermsDescriptionCode", "CodeListIdentificationCode", "CodeListResponsibleAgencyCode", "DeliveryOrTransportTermsDescription1", "DeliveryOrTransportTermsDescription2"],
         },
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(TermsOfDeliveryOrTransport, mappings);
+    return TermsOfDeliveryOrTransport;
 }
 
-export function LIN(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        LineItem: {},
-    };
+export function LIN(name: string, elements: any[][]): Record<any, any> {
+    const LineItem = {
+        code: name
+    }
     const mappings = [
         {
             target: "LineItemIdentifier",
@@ -358,14 +359,14 @@ export function LIN(elements: any[][]): Record<any, any> {
             source: elements[5],
         },
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(LineItem, mappings);
+    return LineItem;
 }
 
-export function QTY(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        Quantity: {},
-    };
+export function QTY(name: string, elements: any[][]): Record<any, any> {
+    const Quantity = {
+        code: name
+    }
     const mappings = [
         {
             target: "QuantityDetails",
@@ -373,14 +374,14 @@ export function QTY(elements: any[][]): Record<any, any> {
             subkeys: ["QuantityTypeCodeQualifier", "Quantity", "MeasurementUnitCode"],
         },
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(Quantity, mappings);
+    return Quantity;
 }
 
-export function EQD(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        EquipmentDetails: {},
-    };
+export function EQD(name: string, elements: any[][]): Record<any, any> {
+    const EquipmentDetails = {
+        code: name
+    }
     const mappings = [
         {
             target: "EquipmentTypeCodeQualifier",
@@ -413,14 +414,14 @@ export function EQD(elements: any[][]): Record<any, any> {
             source: elements[6],
         },
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(EquipmentDetails, mappings);
+    return EquipmentDetails;
 }
 
-export function PRI(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        PriceDetails: {},
-    };
+export function PRI(name: string, elements: any[][]): Record<any, any> {
+    const PriceDetails = {
+        code: name
+    }
     const mappings = [
         {
             target: "PriceInformation",
@@ -432,14 +433,14 @@ export function PRI(elements: any[][]): Record<any, any> {
             source: elements[1],
         },
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(PriceDetails, mappings);
+    return PriceDetails;
 }
 
-export function PCI(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        PackageIdentification: {},
-    };
+export function PCI(name: string, elements: any[][]): Record<any, any> {
+    const PackageIdentification = {
+        code: name
+    }
     const mappings = [
         {
             target: "MarkingInstructionsCode",
@@ -448,7 +449,7 @@ export function PCI(elements: any[][]): Record<any, any> {
         {
             target: "MarksAndLabels",
             source: elements[1],
-            subkeys: ["ShippingMarksDescription1","ShippingMarksDescription2","ShippingMarksDescription3","ShippingMarksDescription4","ShippingMarksDescription5","ShippingMarksDescription6","ShippingMarksDescription7","ShippingMarksDescription8","ShippingMarksDescription9","ShippingMarksDescription10"],
+            subkeys: ["ShippingMarksDescription1", "ShippingMarksDescription2", "ShippingMarksDescription3", "ShippingMarksDescription4", "ShippingMarksDescription5", "ShippingMarksDescription6", "ShippingMarksDescription7", "ShippingMarksDescription8", "ShippingMarksDescription9", "ShippingMarksDescription10"],
         },
         {
             target: "FullOrEmptyIndicatorCode",
@@ -457,17 +458,17 @@ export function PCI(elements: any[][]): Record<any, any> {
         {
             target: "TypeOfMarking",
             source: elements[3],
-            subkeys: ["MarkingTypeCode","CodeListIdentificationCode","CodeListResponsibleAgencyCode"],
+            subkeys: ["MarkingTypeCode", "CodeListIdentificationCode", "CodeListResponsibleAgencyCode"],
         },
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(PackageIdentification, mappings);
+    return PackageIdentification;
 }
 
-export function TAX(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        DutyTaxFeeDetails: {},
-    };
+export function TAX(name: string, elements: any[][]): Record<any, any> {
+    const DutyTaxFeeDetails = {
+        code: name
+    }
     const mappings = [
         {
             target: "DutyOrTaxOrFeeFunctionCodeQualifier",
@@ -476,12 +477,12 @@ export function TAX(elements: any[][]): Record<any, any> {
         {
             target: "DutyTaxFeeType",
             source: elements[1],
-            subkeys: ["DutyTaxFeeTypeNameCode","CodeListIdentificationCode","CodeListResponsibleAgency","DutyTaxFeeTypeName"],
+            subkeys: ["DutyTaxFeeTypeNameCode", "CodeListIdentificationCode", "CodeListResponsibleAgency", "DutyTaxFeeTypeName"],
         },
         {
             target: "DutyTaxFeeAccountDetails",
             source: elements[2],
-            subkeys: ["DutyTaxFeeAccountCode","CodeListIdentificationCode","CodeListResponsibleAgency"],
+            subkeys: ["DutyTaxFeeAccountCode", "CodeListIdentificationCode", "CodeListResponsibleAgency"],
         },
         {
             target: "DutyOrTaxOrFeeAssessmentBasisQuantity",
@@ -490,7 +491,7 @@ export function TAX(elements: any[][]): Record<any, any> {
         {
             target: "DutyTaxFeeDetail",
             source: elements[4],
-            subkeys: ["DutyOrTaxOrFeeRateCode","CodeListIdentificationCode1","CodeListResponsibleAgency1","DutyOrTaxOrFeeRate","DutyOrTaxOrFeeRateBasisCode","CodeListIdentificationCode2","CodeListResponsibleAgency2"],
+            subkeys: ["DutyOrTaxOrFeeRateCode", "CodeListIdentificationCode1", "CodeListResponsibleAgency1", "DutyOrTaxOrFeeRate", "DutyOrTaxOrFeeRateBasisCode", "CodeListIdentificationCode2", "CodeListResponsibleAgency2"],
         },
         {
             target: "DutyOrTaxOrFeeCategoryCode",
@@ -509,14 +510,14 @@ export function TAX(elements: any[][]): Record<any, any> {
             source: elements[8],
         },
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(DutyTaxFeeDetails, mappings);
+    return DutyTaxFeeDetails;
 }
 
-export function CTA(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        ContactInformation: {},
-    };
+export function CTA(name: string, elements: any[][]): Record<any, any> {
+    const ContactInformation = {
+        code: name
+    }
     const mappings = [
         {
             target: "ContactFunctionCode",
@@ -529,14 +530,14 @@ export function CTA(elements: any[][]): Record<any, any> {
         },
     ];
 
-    addProperties(object, mappings);
-    return object;
+    addProperties(ContactInformation, mappings);
+    return ContactInformation;
 }
 
-export function COM(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        CommunicationContact: {},
-    };
+export function COM(name: string, elements: any[][]): Record<any, any> {
+    const CommunicationContact = {
+        code: name
+    }
     const mappings = [
         {
             target: "CommunicationContact",
@@ -544,14 +545,14 @@ export function COM(elements: any[][]): Record<any, any> {
             subkeys: ["CommunicationAddressIdentifier", "CommunicationMeansTypeCode"],
         },
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(CommunicationContact, mappings);
+    return CommunicationContact;
 }
 
-export function TDT(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        TransportInformation: {},
-    };
+export function TDT(name: string, elements: any[][]): Record<any, any> {
+    const TransportInformation = {
+        code: name
+    }
     const mappings = [
         {
             target: "TransportStageCodeQualifier",
@@ -569,12 +570,12 @@ export function TDT(elements: any[][]): Record<any, any> {
         {
             target: "TransportMeans",
             source: elements[3],
-            subkeys: ["TransportMeansDescriptionCode","CodeListIdentificationCode","CodeListResponsibleAgencyCode","TransportMeansDescription"],
+            subkeys: ["TransportMeansDescriptionCode", "CodeListIdentificationCode", "CodeListResponsibleAgencyCode", "TransportMeansDescription"],
         },
         {
             target: "Carrier",
             source: elements[4],
-            subkeys: ["CarrierIdentifier","CodeListIdentificationCode","CodeListResponsibleAgencyCode","CarrierName"],
+            subkeys: ["CarrierIdentifier", "CodeListIdentificationCode", "CodeListResponsibleAgencyCode", "CarrierName"],
         },
         {
             target: "TransitDirectionIndicatorCode",
@@ -583,12 +584,12 @@ export function TDT(elements: any[][]): Record<any, any> {
         {
             target: "ExcessTransportationInformation",
             source: elements[6],
-            subkeys: ["ExcessTransportationReasonCode","ExcessTransportationResponsibilityCode","CustomerShipmentAuthorisationIdentifier"],
+            subkeys: ["ExcessTransportationReasonCode", "ExcessTransportationResponsibilityCode", "CustomerShipmentAuthorisationIdentifier"],
         },
         {
             target: "TransportIdentification",
             source: elements[7],
-            subkeys: ["TransportMeansIdentificationNameIdentifier","CodeListIdentificationCode","CodeListResponsibleAgencyCode","TransportMeansIdentificationName","TransportMeansNationalityCode"],
+            subkeys: ["TransportMeansIdentificationNameIdentifier", "CodeListIdentificationCode", "CodeListResponsibleAgencyCode", "TransportMeansIdentificationName", "TransportMeansNationalityCode"],
         },
         {
             target: "TransportMeansOwnershipIndicatorCode",
@@ -597,22 +598,22 @@ export function TDT(elements: any[][]): Record<any, any> {
         {
             target: "PowerType",
             source: elements[9],
-            subkeys: ["PowerTypeCode","CodeListIdentificationCode","CodeListResponsibleAgencyCode","PowerTypeDescription"],
+            subkeys: ["PowerTypeCode", "CodeListIdentificationCode", "CodeListResponsibleAgencyCode", "PowerTypeDescription"],
         },
         {
             target: "TransportService",
             source: elements[10],
-            subkeys: ["TransportServiceIdentificationCode","CodeListIdentificationCode","CodeListResponsibleAgencyCode","TransportServiceName","TransportServiceDescription"],
+            subkeys: ["TransportServiceIdentificationCode", "CodeListIdentificationCode", "CodeListResponsibleAgencyCode", "TransportServiceName", "TransportServiceDescription"],
         },
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(TransportInformation, mappings);
+    return TransportInformation;
 }
 
-export function LOC(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        PlaceLocationIdentification: {},
-    };
+export function LOC(name: string, elements: any[][]): Record<any, any> {
+    const PlaceLocationIdentification = {
+        code: name
+    }
     const mappings = [
         {
             target: "LocationFunctionCodeQualifier",
@@ -621,31 +622,31 @@ export function LOC(elements: any[][]): Record<any, any> {
         {
             target: "LocationIdentification",
             source: elements[1],
-            subkeys: ["LocationIdentifier","CodeListIdentificationCode","CodeListResponsibleAgencyCode","LocationName"],
+            subkeys: ["LocationIdentifier", "CodeListIdentificationCode", "CodeListResponsibleAgencyCode", "LocationName"],
         },
         {
             target: "RelatedLocationOneIdentification",
             source: elements[2],
-            subkeys: ["FirstRelatedLocationIdentifier","CodeListIdentificationCode","CodeListResponsibleAgencyCode","FirstRelatedLocationName"],
+            subkeys: ["FirstRelatedLocationIdentifier", "CodeListIdentificationCode", "CodeListResponsibleAgencyCode", "FirstRelatedLocationName"],
         },
         {
             target: "RelatedLocationTwoIdentification",
             source: elements[3],
-            subkeys: ["SecondRelatedLocationIdentifier","CodeListIdentificationCode","CodeListResponsibleAgencyCode","SecondRelatedLocationName"],
+            subkeys: ["SecondRelatedLocationIdentifier", "CodeListIdentificationCode", "CodeListResponsibleAgencyCode", "SecondRelatedLocationName"],
         },
         {
             target: "RelationCode",
             source: elements[4],
         },
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(PlaceLocationIdentification, mappings);
+    return PlaceLocationIdentification;
 }
 
-export function PIA(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        AdditionalProductId: {},
-    };
+export function PIA(name: string, elements: any[][]): Record<any, any> {
+    const AdditionalProductId = {
+        code: name
+    }
     const mappings = [
         {
             target: "ProductIdentifierCodeQualifier",
@@ -654,39 +655,39 @@ export function PIA(elements: any[][]): Record<any, any> {
         {
             target: "ItemNumberIdentification1",
             source: elements[1],
-            subkeys: ["ItemIdentifier","ItemTypeIdentificationCode","CodeListIdentificationCode","CodeListResponsibleAgencyCode"],
+            subkeys: ["ItemIdentifier", "ItemTypeIdentificationCode", "CodeListIdentificationCode", "CodeListResponsibleAgencyCode"],
         },
         {
             target: "ItemNumberIdentification2",
             source: elements[2],
-            subkeys: ["ItemIdentifier","ItemTypeIdentificationCode","CodeListIdentificationCode","CodeListResponsibleAgencyCode"],
+            subkeys: ["ItemIdentifier", "ItemTypeIdentificationCode", "CodeListIdentificationCode", "CodeListResponsibleAgencyCode"],
         },
         {
             target: "ItemNumberIdentification3",
             source: elements[3],
-            subkeys: ["ItemIdentifier","ItemTypeIdentificationCode","CodeListIdentificationCode","CodeListResponsibleAgencyCode"],
+            subkeys: ["ItemIdentifier", "ItemTypeIdentificationCode", "CodeListIdentificationCode", "CodeListResponsibleAgencyCode"],
         },
         {
             target: "ItemNumberIdentification4",
             source: elements[4],
-            subkeys: ["ItemIdentifier","ItemTypeIdentificationCode","CodeListIdentificationCode","CodeListResponsibleAgencyCode"],
+            subkeys: ["ItemIdentifier", "ItemTypeIdentificationCode", "CodeListIdentificationCode", "CodeListResponsibleAgencyCode"],
         },
         {
             target: "ItemNumberIdentification5",
             source: elements[5],
-            subkeys: ["ItemIdentifier","ItemTypeIdentificationCode","CodeListIdentificationCode","CodeListResponsibleAgencyCode"],
+            subkeys: ["ItemIdentifier", "ItemTypeIdentificationCode", "CodeListIdentificationCode", "CodeListResponsibleAgencyCode"],
         },
     ];
 
-    addProperties(object, mappings);
+    addProperties(AdditionalProductId, mappings);
 
-    return object;
+    return AdditionalProductId;
 }
 
-export function PYT(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        PaymentTerms: {},
-    };
+export function PYT(name: string, elements: any[][]): Record<any, any> {
+    const PaymentTerms = {
+        code: name
+    }
     const mappings = [
         {
             target: "PaymentTermsTypeCodeQualifier",
@@ -695,7 +696,7 @@ export function PYT(elements: any[][]): Record<any, any> {
         {
             target: "PaymentTerms",
             source: elements[1],
-            subkeys: ["PaymentermsDescriptionIdentifier","CodeListIdentificationCode","CodeListResponsibleAgencyCode","PaymentTermsDescription"],
+            subkeys: ["PaymentermsDescriptionIdentifier", "CodeListIdentificationCode", "CodeListResponsibleAgencyCode", "PaymentTermsDescription"],
         },
         {
             target: "EventTimeReferenceCode",
@@ -714,14 +715,14 @@ export function PYT(elements: any[][]): Record<any, any> {
             source: elements[5],
         },
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(PaymentTerms, mappings);
+    return PaymentTerms;
 }
 
-export function SCC(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        SchedulingConditions: {},
-    };
+export function SCC(name: string, elements: any[][]): Record<any, any> {
+    const SchedulingConditions = {
+        code: name
+    }
     const mappings = [
         {
             target: "DeliveryPlanCommitmentLevelCode",
@@ -734,51 +735,51 @@ export function SCC(elements: any[][]): Record<any, any> {
         {
             target: "PatternDescription",
             source: elements[2],
-            subkeys: ["FrequencyCode","DespatchPatternCode","DespatchPatternTimingCode"],
+            subkeys: ["FrequencyCode", "DespatchPatternCode", "DespatchPatternTimingCode"],
         },
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(SchedulingConditions, mappings);
+    return SchedulingConditions;
 }
 
-export function MOA(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        MonetaryAmount: {},
-    };
+export function MOA(name: string, elements: any[][]): Record<any, any> {
+    const MonetaryAmount = {
+        code: name
+    }
     const mappings = [
         {
             target: "MonetaryAmount",
             source: elements[0],
-            subkeys: ["MonetaryAmountTypeCodeQualifier","MonetaryAmount","CurrencyIdentificationCode","CurrencyTypeCodeQualifier","StatusDescriptionCode"],
+            subkeys: ["MonetaryAmountTypeCodeQualifier", "MonetaryAmount", "CurrencyIdentificationCode", "CurrencyTypeCodeQualifier", "StatusDescriptionCode"],
         },
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(MonetaryAmount, mappings);
+    return MonetaryAmount;
 }
 
-export function RTE(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        RateDetails: {},
-    };
+export function RTE(name: string, elements: any[][]): Record<any, any> {
+    const RateDetails = {
+        code: name
+    }
     const mappings = [
         {
             target: "RateDetails",
             source: elements[0],
-            subkeys: ["RateTypeCodeQualifier","UnitPriceBasisRate","UnitPriceBasisQuantity","MeasurementUnitCode"],
+            subkeys: ["RateTypeCodeQualifier", "UnitPriceBasisRate", "UnitPriceBasisQuantity", "MeasurementUnitCode"],
         },
         {
             target: "StatusDescriptionCode",
             source: elements[1],
         },
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(RateDetails, mappings);
+    return RateDetails;
 }
 
-export function PAC(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        Package: {},
-    };
+export function PAC(name: string, elements: any[][]): Record<any, any> {
+    const Package = {
+        code: name
+    }
     const mappings = [
         {
             target: "PackageQuantity",
@@ -787,7 +788,7 @@ export function PAC(elements: any[][]): Record<any, any> {
         {
             target: "PackagingDetails",
             source: elements[1],
-            subkeys: ["PackagingLevelCode","PackagingRelatedDescriptionCode","PackagingTermsAndConditionsCode"],
+            subkeys: ["PackagingLevelCode", "PackagingRelatedDescriptionCode", "PackagingTermsAndConditionsCode"],
         },
         {
             target: "PackageType",
@@ -805,14 +806,14 @@ export function PAC(elements: any[][]): Record<any, any> {
             subkeys: ["ReturnablePackageFreightPaymentResponsibilityCode", "ReturnablePackageLoadContentsCode"],
         },
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(Package, mappings);
+    return Package;
 }
 
-export function DOC(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        DocumentMessageDetails: {}
-    };
+export function DOC(name: string, elements: any[][]): Record<any, any> {
+    const DocumentMessageDetails = {
+        code: name
+    }
     const mappings = [
         {
             target: "DocumentMessageName",
@@ -837,14 +838,14 @@ export function DOC(elements: any[][]): Record<any, any> {
             source: elements[4],
         }
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(DocumentMessageDetails, mappings);
+    return DocumentMessageDetails;
 }
 
-export function PCD(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        PercentageDetails: {}
-    };
+export function PCD(name: string, elements: any[][]): Record<any, any> {
+    const PercentageDetails = {
+        code: name
+    }
     const mappings = [
         {
             target: "PercentageDetails",
@@ -856,14 +857,14 @@ export function PCD(elements: any[][]): Record<any, any> {
             source: elements[1],
         }
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(PercentageDetails, mappings);
+    return PercentageDetails;
 }
 
-export function MEA(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        Measurements: {}
-    };
+export function MEA(name: string, elements: any[][]): Record<any, any> {
+    const Measurements = {
+        code: name
+    }
     const mappings = [
         {
             target: "MeasurementPurposeCodeQualifier",
@@ -884,14 +885,14 @@ export function MEA(elements: any[][]): Record<any, any> {
             source: elements[3],
         }
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(Measurements, mappings);
+    return Measurements;
 }
 
-export function APR(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        AdditionalPriceInformation: {}
-    };
+export function APR(name: string, elements: any[][]): Record<any, any> {
+    const AdditionalPriceInformation = {
+        code: name
+    }
     const mappings = [
         {
             target: 'TradeClassCode',
@@ -908,14 +909,14 @@ export function APR(elements: any[][]): Record<any, any> {
             subkeys: ['ChangeReasonDescriptionCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode', 'ChangeReasonDescription']
         }
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(AdditionalPriceInformation, mappings);
+    return AdditionalPriceInformation;
 }
 
-export function RCS(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        RequirementsAndConditions: {}
-    };
+export function RCS(name: string, elements: any[][]): Record<any, any> {
+    const RequirementsAndConditions = {
+        code: name
+    }
     const mappings = [
         {
             target: "SectorAreaIdentificationCodeQualifier",
@@ -935,14 +936,14 @@ export function RCS(elements: any[][]): Record<any, any> {
             source: elements[3]
         }
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(RequirementsAndConditions, mappings);
+    return RequirementsAndConditions;
 }
 
-export function EFI(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        ExternalFileLinkIdentification: {}
-    };
+export function EFI(name: string, elements: any[][]): Record<any, any> {
+    const ExternalFileLinkIdentification = {
+        code: name
+    }
     const mappings = [
         {
             target: "FileIdentification",
@@ -963,14 +964,14 @@ export function EFI(elements: any[][]): Record<any, any> {
             source: elements[3],
         }
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(ExternalFileLinkIdentification, mappings);
+    return ExternalFileLinkIdentification;
 }
 
-export function CED(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        ComputerEnvironmentDetails: {}
-    };
+export function CED(name: string, elements: any[][]): Record<any, any> {
+    const ComputerEnvironmentDetails = {
+        code: name
+    }
     const mappings = [
         {
             target: "ComputerEnvironmentDetailsCodeQualifier",
@@ -986,14 +987,14 @@ export function CED(elements: any[][]): Record<any, any> {
             source: elements[2]
         }
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(ComputerEnvironmentDetails, mappings);
+    return ComputerEnvironmentDetails;
 }
 
-export function QVR(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        QuantityVariances: {}
-    };
+export function QVR(name: string, elements: any[][]): Record<any, any> {
+    const QuantityVariances = {
+        code: name
+    }
     const mappings = [
         {
             target: "QuantityDifferenceInformation",
@@ -1010,14 +1011,14 @@ export function QVR(elements: any[][]): Record<any, any> {
             subkeys: ['ChangeReasonDescriptionCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode', 'ChangeReasonDescription']
         }
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(QuantityVariances, mappings);
+    return QuantityVariances;
 }
 
-export function CCI(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        CharacteristicOrClassId: {}
-    };
+export function CCI(name: string, elements: any[][]): Record<any, any> {
+    const CharacteristicOrClassId = {
+        code: name
+    }
     const mappings = [
         {
             target: "ClassTypeCode",
@@ -1038,14 +1039,14 @@ export function CCI(elements: any[][]): Record<any, any> {
             source: elements[3],
         }
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(CharacteristicOrClassId, mappings);
+    return CharacteristicOrClassId;
 }
 
-export function STG(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        Reference: {}
-    };
+export function STG(name: string, elements: any[][]): Record<any, any> {
+    const Reference = {
+        code: name
+    }
     const mappings = [
         {
             target: "ProcessStageCodeQualifier",
@@ -1060,14 +1061,14 @@ export function STG(elements: any[][]): Record<any, any> {
             source: elements[2],
         }
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(Reference, mappings);
+    return Reference;
 }
 
-export function ALI(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        AdditionalInformation: {}
-    };
+export function ALI(name: string, elements: any[][]): Record<any, any> {
+    const AdditionalInformation = {
+        code: name
+    }
     const mappings = [
         {
             target: "CountryOfOriginIdentifier",
@@ -1098,14 +1099,14 @@ export function ALI(elements: any[][]): Record<any, any> {
             source: elements[6]
         }
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(AdditionalInformation, mappings);
+    return AdditionalInformation;
 }
 
-export function FII(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        FinancialInstitutionInformation: {}
-    };
+export function FII(name: string, elements: any[][]): Record<any, any> {
+    const FinancialInstitutionInformation = {
+        code: name
+    }
     const mappings = [
         {
             target: "PartyFunctionCodeQualifier",
@@ -1126,14 +1127,14 @@ export function FII(elements: any[][]): Record<any, any> {
             source: elements[3]
         }
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(FinancialInstitutionInformation, mappings);
+    return FinancialInstitutionInformation;
 }
 
-export function RJL(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        AccountingJournalIdentification: {}
-    };
+export function RJL(name: string, elements: any[][]): Record<any, any> {
+    const AccountingJournalIdentification = {
+        code: name
+    }
     const mappings = [
         {
             target: "AccountingJournalIdentification",
@@ -1146,14 +1147,14 @@ export function RJL(elements: any[][]): Record<any, any> {
             subkeys: ['AccountingEntryTypeNameCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode', 'AccountingEntryTypeName']
         }
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(AccountingJournalIdentification, mappings);
+    return AccountingJournalIdentification;
 }
 
-export function GIN(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        GoodsIdentityNumber: {}
-    };
+export function GIN(name: string, elements: any[][]): Record<any, any> {
+    const GoodsIdentityNumber = {
+        code: name
+    }
     const mappings = [
         {
             target: "ObjectIdentificationCodeQualifier",
@@ -1185,14 +1186,14 @@ export function GIN(elements: any[][]): Record<any, any> {
             subkeys: ['ObjectIdentifier1', 'ObjectIdentifier2']
         }
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(GoodsIdentityNumber, mappings);
+    return GoodsIdentityNumber;
 }
 
-export function HAN(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        HandlingInstructions: {}
-    };
+export function HAN(name: string, elements: any[][]): Record<any, any> {
+    const HandlingInstructions = {
+        code: name
+    }
     const mappings = [
         {
             target: "HandlingInstructions",
@@ -1205,14 +1206,14 @@ export function HAN(elements: any[][]): Record<any, any> {
             subkeys: ['HazardousMaterialCategoryNameCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode', 'HazardousMaterialCategoryName']
         }
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(HandlingInstructions, mappings);
+    return HandlingInstructions;
 }
 
-export function RNG(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        RangeDetails: {}
-    };
+export function RNG(name: string, elements: any[][]): Record<any, any> {
+    const RangeDetails = {
+        code: name
+    }
     const mappings = [
         {
             target: "RangeTypeCodeQualifier",
@@ -1224,14 +1225,14 @@ export function RNG(elements: any[][]): Record<any, any> {
             subkeys: ['MeasurementUnitCode', 'RangeMinimumQuantity', 'RangeMaximumQuantity']
         }
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(RangeDetails, mappings);
+    return RangeDetails;
 }
 
-export function ALC(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        AllowanceOrCharge: {}
-    };
+export function ALC(name: string, elements: any[][]): Record<any, any> {
+    const AllowanceOrCharge = {
+        code: name
+    }
     const mappings = [
         {
             target: "AllowanceOrChargeCodeQualifier",
@@ -1256,14 +1257,14 @@ export function ALC(elements: any[][]): Record<any, any> {
             subkeys: ['SpecialServiceDescriptionCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode', 'SpecialServiceDescription1', 'SpecialServiceDescription2']
         }
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(AllowanceOrCharge, mappings);
+    return AllowanceOrCharge;
 }
 
-export function DGS(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        DangerousGoods: {}
-    };
+export function DGS(name: string, elements: any[][]): Record<any, any> {
+    const DangerousGoods = {
+        code: name
+    }
     const mappings = [
         {
             target: "DangerousGoodsRegulationsCode",
@@ -1328,14 +1329,14 @@ export function DGS(elements: any[][]): Record<any, any> {
             subkeys: ['TunnelRestrictionCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode']
         }
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(DangerousGoods, mappings);
+    return DangerousGoods;
 }
 
-export function GEI(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        ProcessingInformation: {}
-    };
+export function GEI(name: string, elements: any[][]): Record<any, any> {
+    const ProcessingInformation = {
+        code: name
+    }
     const mappings = [
         {
             target: "ProcessingInformationCodeQualifier",
@@ -1351,14 +1352,14 @@ export function GEI(elements: any[][]): Record<any, any> {
             source: elements[2]
         }
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(ProcessingInformation, mappings);
+    return ProcessingInformation;
 }
 
-export function MTD(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        MaintenanceOperationDetails: {}
-    };
+export function MTD(name: string, elements: any[][]): Record<any, any> {
+    const MaintenanceOperationDetails = {
+        code: name
+    }
     const mappings = [
         {
             target: "ObjectTypeCodeQualifier",
@@ -1377,14 +1378,14 @@ export function MTD(elements: any[][]): Record<any, any> {
             source: elements[3]
         }
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(MaintenanceOperationDetails, mappings);
+    return MaintenanceOperationDetails;
 }
 
-export function CAV(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        CharacteristicValue: {}
-    };
+export function CAV(name: string, elements: any[][]): Record<any, any> {
+    const CharacteristicValue = {
+        code: name
+    }
     const mappings = [
         {
             target: "CharacteristicValue",
@@ -1392,14 +1393,14 @@ export function CAV(elements: any[][]): Record<any, any> {
             subkeys: ['CharacteristicValueDescriptionCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode', 'CharacteristicValueDescription1', 'CharacteristicValueDescription2']
         }
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(CharacteristicValue, mappings);
+    return CharacteristicValue;
 }
 
-export function STS(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        Status: {}
-    };
+export function STS(name: string, elements: any[][]): Record<any, any> {
+    const Status = {
+        code: name
+    }
     const mappings = [
         {
             target: "StatusCategory",
@@ -1437,28 +1438,28 @@ export function STS(elements: any[][]): Record<any, any> {
             subkeys: ['StatusReasonDescriptionCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode', 'StatusReasonDescription']
         }
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(Status, mappings);
+    return Status;
 }
 
-export function UNS(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        SectionControl: {},
-    };
+export function UNS(name: string, elements: any[][]): Record<any, any> {
+    const SectionControl = {
+        code: name
+    }
     const mappings = [
         {
             target: "SectionIdentification",
             source: elements[0],
         },
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(SectionControl, mappings);
+    return SectionControl;
 }
 
-export function CNT(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        ControlTotal: {},
-    };
+export function CNT(name: string, elements: any[][]): Record<any, any> {
+    const ControlTotal = {
+        code: name
+    }
     const mappings = [
         {
             target: "Control",
@@ -1466,14 +1467,14 @@ export function CNT(elements: any[][]): Record<any, any> {
             subkeys: ["ControlTotalTypeCodeQualifier", "ControlTotalQuantity", "MeasurementUnitCode"],
         },
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(ControlTotal, mappings);
+    return ControlTotal;
 }
 
-export function UNT(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        MessageTrailer: {},
-    };
+export function UNT(name: string, elements: any[][]): Record<any, any> {
+    const MessageTrailer = {
+        code: name
+    }
     const mappings = [
         {
             target: "NumberOfSegmentsInTheMessage",
@@ -1484,14 +1485,14 @@ export function UNT(elements: any[][]): Record<any, any> {
             source: elements[1],
         },
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(MessageTrailer, mappings);
+    return MessageTrailer;
 }
 
-export function UNZ(elements: any[][]): Record<any, any> {
-    const object: Record<any, any> = {
-        InterchangeTrailer: {},
-    };
+export function UNZ(name: string, elements: any[][]): Record<any, any> {
+    const InterchangeTrailer = {
+        code: name
+    }
     const mappings = [
         {
             target: "InterchangeControlCount",
@@ -1502,6 +1503,6 @@ export function UNZ(elements: any[][]): Record<any, any> {
             source: elements[1],
         },
     ];
-    addProperties(object, mappings);
-    return object;
+    addProperties(InterchangeTrailer, mappings);
+    return InterchangeTrailer;
 }   

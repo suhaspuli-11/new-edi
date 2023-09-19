@@ -1,4 +1,7 @@
-const mandatoryFields: Record<any, any> = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.group = void 0;
+const mandatoryFields = {
     UNH: ['HEAD'],
     RFF: ['SG1', 'SG3', 'SG34', 'SG36', 'SG42'],
     NAD: ['SG2', 'SG41'],
@@ -29,10 +32,9 @@ const mandatoryFields: Record<any, any> = {
     STG: ['SG58'],
     UNS: ['SUM'],
     UNT: ['LAST']
-}
-
-const mapping: Record<any, any> = {
-    HEAD: ['UNH','BGM','DTM','PAI','ALI','IMD','FTX','GIR'],
+};
+const mapping = {
+    HEAD: ['UNH', 'BGM', 'DTM', 'PAI', 'ALI', 'IMD', 'FTX', 'GIR'],
     SG1: ['RFF', 'DTM'],
     SG2: ["NAD", "LOC", "FII"],
     SG3: ["RFF", "DTM"],
@@ -98,17 +100,16 @@ const mapping: Record<any, any> = {
     SG63: ['ALC', 'ALI', 'MOA'],
     SUM: ['UNS', 'MOA', 'CNT'],
     LAST: ['UNT']
-}
-
-let temp: any = -1;
-
-export function group(arr: any) {
+};
+let temp = -1;
+function group(arr) {
     const res = {};
     for (let obj of arr) {
-        const code: string = obj.code;
-        const mandatoryFieldsArray: any = mandatoryFields[code];
+        const code = obj.code;
+        const mandatoryFieldsArray = mandatoryFields[code];
         if (mandatoryFieldsArray && mandatoryFieldsArray.length > 1) {
             console.log('hi');
         }
     }
 }
+exports.group = group;

@@ -83,7 +83,7 @@ IEA*1*000003438~`;
 
 async function main() {
     try {
-        await axios.post(receiverUrl, x12, {
+        await axios.post(receiverUrl, edifact, {
             headers: {
                 'Content-Type':'text/plain'
             }

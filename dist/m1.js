@@ -3,9 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.STS = exports.CAV = exports.MTD = exports.GEI = exports.DGS = exports.ALC = exports.RNG = exports.HAN = exports.GIN = exports.RJL = exports.FII = exports.ALI = exports.STG = exports.CCI = exports.QVR = exports.CED = exports.EFI = exports.RCS = exports.APR = exports.MEA = exports.PCD = exports.DOC = exports.PAC = exports.RTE = exports.MOA = exports.SCC = exports.PYT = exports.PIA = exports.LOC = exports.TDT = exports.COM = exports.CTA = exports.TAX = exports.PCI = exports.PRI = exports.EQD = exports.QTY = exports.LIN = exports.TOD = exports.CUX = exports.NAD = exports.RFF = exports.IMD = exports.GIR = exports.FTX = exports.PAI = exports.DTM = exports.BGM = exports.UNH = exports.UNB = void 0;
 exports.UNZ = exports.UNT = exports.CNT = exports.UNS = void 0;
 const mappingService_1 = require("./mappingService");
-function UNB(elements) {
-    const object = {
-        InterchangeHeader: {},
+function UNB(name, elements) {
+    const InterchangeHeader = {
+        code: name
     };
     const mappings = [
         {
@@ -40,13 +40,13 @@ function UNB(elements) {
         { target: "CommunicationsAgreementID", source: elements[9] },
         { target: "TestIndicator", source: elements[10] },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(InterchangeHeader, mappings);
+    return InterchangeHeader;
 }
 exports.UNB = UNB;
-function UNH(elements) {
-    const object = {
-        MessageHeader: {},
+function UNH(name, elements) {
+    const MessageHeader = {
+        code: name
     };
     const mappings = [
         { target: "MessageReferenceNumber", source: elements[0] },
@@ -62,13 +62,13 @@ function UNH(elements) {
             subkeys: ["SequenceOfTransfers", "FirstAndLastTransfers"],
         },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(MessageHeader, mappings);
+    return MessageHeader;
 }
 exports.UNH = UNH;
-function BGM(elements) {
-    const object = {
-        BeginningOfMessage: {},
+function BGM(name, elements) {
+    const BeginningOfMessage = {
+        code: name
     };
     const mappings = [
         {
@@ -86,13 +86,13 @@ function BGM(elements) {
         { target: "DocumentStatusCode", source: elements[4] },
         { target: "LanguageNameCode", source: elements[5] },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(BeginningOfMessage, mappings);
+    return BeginningOfMessage;
 }
 exports.BGM = BGM;
-function DTM(elements) {
-    const object = {
-        DateTimePeriod: {},
+function DTM(name, elements) {
+    const DateTimePeriod = {
+        code: name
     };
     const mappings = [
         {
@@ -101,13 +101,13 @@ function DTM(elements) {
             subkeys: ["Qualifier", "Date", "FormatQualifier"],
         },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(DateTimePeriod, mappings);
+    return DateTimePeriod;
 }
 exports.DTM = DTM;
-function PAI(elements) {
-    const object = {
-        PaymentInstructionDetails: {},
+function PAI(name, elements) {
+    const PaymentInstructionDetails = {
+        code: name
     };
     const mappings = [
         {
@@ -116,13 +116,13 @@ function PAI(elements) {
             subkeys: ["PaymentConditionsCode", "PaymentGuaranteemeansCode", "PaymentMeansCode"],
         },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(PaymentInstructionDetails, mappings);
+    return PaymentInstructionDetails;
 }
 exports.PAI = PAI;
-function FTX(elements) {
-    const object = {
-        FreeText: {},
+function FTX(name, elements) {
+    const FreeText = {
+        code: name
     };
     const mappings = [
         { target: "TextSubjectCodeQualifier", source: elements[0] },
@@ -140,13 +140,13 @@ function FTX(elements) {
         { target: "LanguageNameCode", source: elements[4] },
         { target: "FreeTextFormatCode", source: elements[5] },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(FreeText, mappings);
+    return FreeText;
 }
 exports.FTX = FTX;
-function GIR(elements) {
-    const object = {
-        RelatedIdentificationNumbers: {},
+function GIR(name, elements) {
+    const RelatedIdentificationNumbers = {
+        code: name
     };
     const mappings = [
         { target: "SetTypeCodeQualifier", source: elements[0] },
@@ -176,13 +176,13 @@ function GIR(elements) {
             subkeys: ["Identifier", "IdentificationCodeQualifier", "StatusDescriptionCode"],
         },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(RelatedIdentificationNumbers, mappings);
+    return RelatedIdentificationNumbers;
 }
 exports.GIR = GIR;
-function IMD(elements) {
-    const object = {
-        ItemDescription: {},
+function IMD(name, elements) {
+    const ItemDescription = {
+        code: name
     };
     const mappings = [
         { target: "DescriptionFormatCode", source: elements[0] },
@@ -198,13 +198,13 @@ function IMD(elements) {
         },
         { target: "SurfaceOrLayerCode", source: elements[3] },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(ItemDescription, mappings);
+    return ItemDescription;
 }
 exports.IMD = IMD;
-function RFF(elements) {
-    const object = {
-        Reference: {},
+function RFF(name, elements) {
+    const Reference = {
+        code: name
     };
     const mappings = [
         {
@@ -213,13 +213,13 @@ function RFF(elements) {
             subkeys: ["ReferenceCodeQualifier", "ReferenceIdentifier", "DocumentLineIdentifier", "VersionIdentifier", "RevisionIdentifier"],
         },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(Reference, mappings);
+    return Reference;
 }
 exports.RFF = RFF;
-function NAD(elements) {
-    const object = {
-        NameAndAddress: {},
+function NAD(name, elements) {
+    const NameAndAddress = {
+        code: name
     };
     const mappings = [
         {
@@ -264,13 +264,13 @@ function NAD(elements) {
             source: elements[8],
         },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(NameAndAddress, mappings);
+    return NameAndAddress;
 }
 exports.NAD = NAD;
-function CUX(elements) {
-    const object = {
-        Currencies: {},
+function CUX(name, elements) {
+    const Currencies = {
+        code: name
     };
     const mappings = [
         {
@@ -292,13 +292,13 @@ function CUX(elements) {
             source: elements[3],
         },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(Currencies, mappings);
+    return Currencies;
 }
 exports.CUX = CUX;
-function TOD(elements) {
-    const object = {
-        TermsOfDeliveryOrTransport: {},
+function TOD(name, elements) {
+    const TermsOfDeliveryOrTransport = {
+        code: name
     };
     const mappings = [
         {
@@ -315,13 +315,13 @@ function TOD(elements) {
             subkeys: ["DeliveryOrTransportTermsDescriptionCode", "CodeListIdentificationCode", "CodeListResponsibleAgencyCode", "DeliveryOrTransportTermsDescription1", "DeliveryOrTransportTermsDescription2"],
         },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(TermsOfDeliveryOrTransport, mappings);
+    return TermsOfDeliveryOrTransport;
 }
 exports.TOD = TOD;
-function LIN(elements) {
-    const object = {
-        LineItem: {},
+function LIN(name, elements) {
+    const LineItem = {
+        code: name
     };
     const mappings = [
         {
@@ -351,13 +351,13 @@ function LIN(elements) {
             source: elements[5],
         },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(LineItem, mappings);
+    return LineItem;
 }
 exports.LIN = LIN;
-function QTY(elements) {
-    const object = {
-        Quantity: {},
+function QTY(name, elements) {
+    const Quantity = {
+        code: name
     };
     const mappings = [
         {
@@ -366,13 +366,13 @@ function QTY(elements) {
             subkeys: ["QuantityTypeCodeQualifier", "Quantity", "MeasurementUnitCode"],
         },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(Quantity, mappings);
+    return Quantity;
 }
 exports.QTY = QTY;
-function EQD(elements) {
-    const object = {
-        EquipmentDetails: {},
+function EQD(name, elements) {
+    const EquipmentDetails = {
+        code: name
     };
     const mappings = [
         {
@@ -406,13 +406,13 @@ function EQD(elements) {
             source: elements[6],
         },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(EquipmentDetails, mappings);
+    return EquipmentDetails;
 }
 exports.EQD = EQD;
-function PRI(elements) {
-    const object = {
-        PriceDetails: {},
+function PRI(name, elements) {
+    const PriceDetails = {
+        code: name
     };
     const mappings = [
         {
@@ -425,13 +425,13 @@ function PRI(elements) {
             source: elements[1],
         },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(PriceDetails, mappings);
+    return PriceDetails;
 }
 exports.PRI = PRI;
-function PCI(elements) {
-    const object = {
-        PackageIdentification: {},
+function PCI(name, elements) {
+    const PackageIdentification = {
+        code: name
     };
     const mappings = [
         {
@@ -453,13 +453,13 @@ function PCI(elements) {
             subkeys: ["MarkingTypeCode", "CodeListIdentificationCode", "CodeListResponsibleAgencyCode"],
         },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(PackageIdentification, mappings);
+    return PackageIdentification;
 }
 exports.PCI = PCI;
-function TAX(elements) {
-    const object = {
-        DutyTaxFeeDetails: {},
+function TAX(name, elements) {
+    const DutyTaxFeeDetails = {
+        code: name
     };
     const mappings = [
         {
@@ -502,13 +502,13 @@ function TAX(elements) {
             source: elements[8],
         },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(DutyTaxFeeDetails, mappings);
+    return DutyTaxFeeDetails;
 }
 exports.TAX = TAX;
-function CTA(elements) {
-    const object = {
-        ContactInformation: {},
+function CTA(name, elements) {
+    const ContactInformation = {
+        code: name
     };
     const mappings = [
         {
@@ -521,13 +521,13 @@ function CTA(elements) {
             subkeys: ["ContactIdentifier", "ContactName"],
         },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(ContactInformation, mappings);
+    return ContactInformation;
 }
 exports.CTA = CTA;
-function COM(elements) {
-    const object = {
-        CommunicationContact: {},
+function COM(name, elements) {
+    const CommunicationContact = {
+        code: name
     };
     const mappings = [
         {
@@ -536,13 +536,13 @@ function COM(elements) {
             subkeys: ["CommunicationAddressIdentifier", "CommunicationMeansTypeCode"],
         },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(CommunicationContact, mappings);
+    return CommunicationContact;
 }
 exports.COM = COM;
-function TDT(elements) {
-    const object = {
-        TransportInformation: {},
+function TDT(name, elements) {
+    const TransportInformation = {
+        code: name
     };
     const mappings = [
         {
@@ -597,13 +597,13 @@ function TDT(elements) {
             subkeys: ["TransportServiceIdentificationCode", "CodeListIdentificationCode", "CodeListResponsibleAgencyCode", "TransportServiceName", "TransportServiceDescription"],
         },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(TransportInformation, mappings);
+    return TransportInformation;
 }
 exports.TDT = TDT;
-function LOC(elements) {
-    const object = {
-        PlaceLocationIdentification: {},
+function LOC(name, elements) {
+    const PlaceLocationIdentification = {
+        code: name
     };
     const mappings = [
         {
@@ -630,13 +630,13 @@ function LOC(elements) {
             source: elements[4],
         },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(PlaceLocationIdentification, mappings);
+    return PlaceLocationIdentification;
 }
 exports.LOC = LOC;
-function PIA(elements) {
-    const object = {
-        AdditionalProductId: {},
+function PIA(name, elements) {
+    const AdditionalProductId = {
+        code: name
     };
     const mappings = [
         {
@@ -669,13 +669,13 @@ function PIA(elements) {
             subkeys: ["ItemIdentifier", "ItemTypeIdentificationCode", "CodeListIdentificationCode", "CodeListResponsibleAgencyCode"],
         },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(AdditionalProductId, mappings);
+    return AdditionalProductId;
 }
 exports.PIA = PIA;
-function PYT(elements) {
-    const object = {
-        PaymentTerms: {},
+function PYT(name, elements) {
+    const PaymentTerms = {
+        code: name
     };
     const mappings = [
         {
@@ -704,13 +704,13 @@ function PYT(elements) {
             source: elements[5],
         },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(PaymentTerms, mappings);
+    return PaymentTerms;
 }
 exports.PYT = PYT;
-function SCC(elements) {
-    const object = {
-        SchedulingConditions: {},
+function SCC(name, elements) {
+    const SchedulingConditions = {
+        code: name
     };
     const mappings = [
         {
@@ -727,13 +727,13 @@ function SCC(elements) {
             subkeys: ["FrequencyCode", "DespatchPatternCode", "DespatchPatternTimingCode"],
         },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(SchedulingConditions, mappings);
+    return SchedulingConditions;
 }
 exports.SCC = SCC;
-function MOA(elements) {
-    const object = {
-        MonetaryAmount: {},
+function MOA(name, elements) {
+    const MonetaryAmount = {
+        code: name
     };
     const mappings = [
         {
@@ -742,13 +742,13 @@ function MOA(elements) {
             subkeys: ["MonetaryAmountTypeCodeQualifier", "MonetaryAmount", "CurrencyIdentificationCode", "CurrencyTypeCodeQualifier", "StatusDescriptionCode"],
         },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(MonetaryAmount, mappings);
+    return MonetaryAmount;
 }
 exports.MOA = MOA;
-function RTE(elements) {
-    const object = {
-        RateDetails: {},
+function RTE(name, elements) {
+    const RateDetails = {
+        code: name
     };
     const mappings = [
         {
@@ -761,13 +761,13 @@ function RTE(elements) {
             source: elements[1],
         },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(RateDetails, mappings);
+    return RateDetails;
 }
 exports.RTE = RTE;
-function PAC(elements) {
-    const object = {
-        Package: {},
+function PAC(name, elements) {
+    const Package = {
+        code: name
     };
     const mappings = [
         {
@@ -795,13 +795,13 @@ function PAC(elements) {
             subkeys: ["ReturnablePackageFreightPaymentResponsibilityCode", "ReturnablePackageLoadContentsCode"],
         },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(Package, mappings);
+    return Package;
 }
 exports.PAC = PAC;
-function DOC(elements) {
-    const object = {
-        DocumentMessageDetails: {}
+function DOC(name, elements) {
+    const DocumentMessageDetails = {
+        code: name
     };
     const mappings = [
         {
@@ -827,13 +827,13 @@ function DOC(elements) {
             source: elements[4],
         }
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(DocumentMessageDetails, mappings);
+    return DocumentMessageDetails;
 }
 exports.DOC = DOC;
-function PCD(elements) {
-    const object = {
-        PercentageDetails: {}
+function PCD(name, elements) {
+    const PercentageDetails = {
+        code: name
     };
     const mappings = [
         {
@@ -846,13 +846,13 @@ function PCD(elements) {
             source: elements[1],
         }
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(PercentageDetails, mappings);
+    return PercentageDetails;
 }
 exports.PCD = PCD;
-function MEA(elements) {
-    const object = {
-        Measurements: {}
+function MEA(name, elements) {
+    const Measurements = {
+        code: name
     };
     const mappings = [
         {
@@ -874,13 +874,13 @@ function MEA(elements) {
             source: elements[3],
         }
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(Measurements, mappings);
+    return Measurements;
 }
 exports.MEA = MEA;
-function APR(elements) {
-    const object = {
-        AdditionalPriceInformation: {}
+function APR(name, elements) {
+    const AdditionalPriceInformation = {
+        code: name
     };
     const mappings = [
         {
@@ -898,13 +898,13 @@ function APR(elements) {
             subkeys: ['ChangeReasonDescriptionCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode', 'ChangeReasonDescription']
         }
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(AdditionalPriceInformation, mappings);
+    return AdditionalPriceInformation;
 }
 exports.APR = APR;
-function RCS(elements) {
-    const object = {
-        RequirementsAndConditions: {}
+function RCS(name, elements) {
+    const RequirementsAndConditions = {
+        code: name
     };
     const mappings = [
         {
@@ -925,13 +925,13 @@ function RCS(elements) {
             source: elements[3]
         }
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(RequirementsAndConditions, mappings);
+    return RequirementsAndConditions;
 }
 exports.RCS = RCS;
-function EFI(elements) {
-    const object = {
-        ExternalFileLinkIdentification: {}
+function EFI(name, elements) {
+    const ExternalFileLinkIdentification = {
+        code: name
     };
     const mappings = [
         {
@@ -953,13 +953,13 @@ function EFI(elements) {
             source: elements[3],
         }
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(ExternalFileLinkIdentification, mappings);
+    return ExternalFileLinkIdentification;
 }
 exports.EFI = EFI;
-function CED(elements) {
-    const object = {
-        ComputerEnvironmentDetails: {}
+function CED(name, elements) {
+    const ComputerEnvironmentDetails = {
+        code: name
     };
     const mappings = [
         {
@@ -976,13 +976,13 @@ function CED(elements) {
             source: elements[2]
         }
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(ComputerEnvironmentDetails, mappings);
+    return ComputerEnvironmentDetails;
 }
 exports.CED = CED;
-function QVR(elements) {
-    const object = {
-        QuantityVariances: {}
+function QVR(name, elements) {
+    const QuantityVariances = {
+        code: name
     };
     const mappings = [
         {
@@ -1000,13 +1000,13 @@ function QVR(elements) {
             subkeys: ['ChangeReasonDescriptionCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode', 'ChangeReasonDescription']
         }
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(QuantityVariances, mappings);
+    return QuantityVariances;
 }
 exports.QVR = QVR;
-function CCI(elements) {
-    const object = {
-        CharacteristicOrClassId: {}
+function CCI(name, elements) {
+    const CharacteristicOrClassId = {
+        code: name
     };
     const mappings = [
         {
@@ -1028,13 +1028,13 @@ function CCI(elements) {
             source: elements[3],
         }
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(CharacteristicOrClassId, mappings);
+    return CharacteristicOrClassId;
 }
 exports.CCI = CCI;
-function STG(elements) {
-    const object = {
-        Reference: {}
+function STG(name, elements) {
+    const Reference = {
+        code: name
     };
     const mappings = [
         {
@@ -1050,13 +1050,13 @@ function STG(elements) {
             source: elements[2],
         }
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(Reference, mappings);
+    return Reference;
 }
 exports.STG = STG;
-function ALI(elements) {
-    const object = {
-        AdditionalInformation: {}
+function ALI(name, elements) {
+    const AdditionalInformation = {
+        code: name
     };
     const mappings = [
         {
@@ -1088,13 +1088,13 @@ function ALI(elements) {
             source: elements[6]
         }
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(AdditionalInformation, mappings);
+    return AdditionalInformation;
 }
 exports.ALI = ALI;
-function FII(elements) {
-    const object = {
-        FinancialInstitutionInformation: {}
+function FII(name, elements) {
+    const FinancialInstitutionInformation = {
+        code: name
     };
     const mappings = [
         {
@@ -1116,13 +1116,13 @@ function FII(elements) {
             source: elements[3]
         }
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(FinancialInstitutionInformation, mappings);
+    return FinancialInstitutionInformation;
 }
 exports.FII = FII;
-function RJL(elements) {
-    const object = {
-        AccountingJournalIdentification: {}
+function RJL(name, elements) {
+    const AccountingJournalIdentification = {
+        code: name
     };
     const mappings = [
         {
@@ -1136,13 +1136,13 @@ function RJL(elements) {
             subkeys: ['AccountingEntryTypeNameCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode', 'AccountingEntryTypeName']
         }
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(AccountingJournalIdentification, mappings);
+    return AccountingJournalIdentification;
 }
 exports.RJL = RJL;
-function GIN(elements) {
-    const object = {
-        GoodsIdentityNumber: {}
+function GIN(name, elements) {
+    const GoodsIdentityNumber = {
+        code: name
     };
     const mappings = [
         {
@@ -1175,13 +1175,13 @@ function GIN(elements) {
             subkeys: ['ObjectIdentifier1', 'ObjectIdentifier2']
         }
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(GoodsIdentityNumber, mappings);
+    return GoodsIdentityNumber;
 }
 exports.GIN = GIN;
-function HAN(elements) {
-    const object = {
-        HandlingInstructions: {}
+function HAN(name, elements) {
+    const HandlingInstructions = {
+        code: name
     };
     const mappings = [
         {
@@ -1195,13 +1195,13 @@ function HAN(elements) {
             subkeys: ['HazardousMaterialCategoryNameCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode', 'HazardousMaterialCategoryName']
         }
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(HandlingInstructions, mappings);
+    return HandlingInstructions;
 }
 exports.HAN = HAN;
-function RNG(elements) {
-    const object = {
-        RangeDetails: {}
+function RNG(name, elements) {
+    const RangeDetails = {
+        code: name
     };
     const mappings = [
         {
@@ -1214,13 +1214,13 @@ function RNG(elements) {
             subkeys: ['MeasurementUnitCode', 'RangeMinimumQuantity', 'RangeMaximumQuantity']
         }
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(RangeDetails, mappings);
+    return RangeDetails;
 }
 exports.RNG = RNG;
-function ALC(elements) {
-    const object = {
-        AllowanceOrCharge: {}
+function ALC(name, elements) {
+    const AllowanceOrCharge = {
+        code: name
     };
     const mappings = [
         {
@@ -1246,13 +1246,13 @@ function ALC(elements) {
             subkeys: ['SpecialServiceDescriptionCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode', 'SpecialServiceDescription1', 'SpecialServiceDescription2']
         }
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(AllowanceOrCharge, mappings);
+    return AllowanceOrCharge;
 }
 exports.ALC = ALC;
-function DGS(elements) {
-    const object = {
-        DangerousGoods: {}
+function DGS(name, elements) {
+    const DangerousGoods = {
+        code: name
     };
     const mappings = [
         {
@@ -1318,13 +1318,13 @@ function DGS(elements) {
             subkeys: ['TunnelRestrictionCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode']
         }
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(DangerousGoods, mappings);
+    return DangerousGoods;
 }
 exports.DGS = DGS;
-function GEI(elements) {
-    const object = {
-        ProcessingInformation: {}
+function GEI(name, elements) {
+    const ProcessingInformation = {
+        code: name
     };
     const mappings = [
         {
@@ -1341,13 +1341,13 @@ function GEI(elements) {
             source: elements[2]
         }
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(ProcessingInformation, mappings);
+    return ProcessingInformation;
 }
 exports.GEI = GEI;
-function MTD(elements) {
-    const object = {
-        MaintenanceOperationDetails: {}
+function MTD(name, elements) {
+    const MaintenanceOperationDetails = {
+        code: name
     };
     const mappings = [
         {
@@ -1367,13 +1367,13 @@ function MTD(elements) {
             source: elements[3]
         }
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(MaintenanceOperationDetails, mappings);
+    return MaintenanceOperationDetails;
 }
 exports.MTD = MTD;
-function CAV(elements) {
-    const object = {
-        CharacteristicValue: {}
+function CAV(name, elements) {
+    const CharacteristicValue = {
+        code: name
     };
     const mappings = [
         {
@@ -1382,13 +1382,13 @@ function CAV(elements) {
             subkeys: ['CharacteristicValueDescriptionCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode', 'CharacteristicValueDescription1', 'CharacteristicValueDescription2']
         }
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(CharacteristicValue, mappings);
+    return CharacteristicValue;
 }
 exports.CAV = CAV;
-function STS(elements) {
-    const object = {
-        Status: {}
+function STS(name, elements) {
+    const Status = {
+        code: name
     };
     const mappings = [
         {
@@ -1427,13 +1427,13 @@ function STS(elements) {
             subkeys: ['StatusReasonDescriptionCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode', 'StatusReasonDescription']
         }
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(Status, mappings);
+    return Status;
 }
 exports.STS = STS;
-function UNS(elements) {
-    const object = {
-        SectionControl: {},
+function UNS(name, elements) {
+    const SectionControl = {
+        code: name
     };
     const mappings = [
         {
@@ -1441,13 +1441,13 @@ function UNS(elements) {
             source: elements[0],
         },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(SectionControl, mappings);
+    return SectionControl;
 }
 exports.UNS = UNS;
-function CNT(elements) {
-    const object = {
-        ControlTotal: {},
+function CNT(name, elements) {
+    const ControlTotal = {
+        code: name
     };
     const mappings = [
         {
@@ -1456,13 +1456,13 @@ function CNT(elements) {
             subkeys: ["ControlTotalTypeCodeQualifier", "ControlTotalQuantity", "MeasurementUnitCode"],
         },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(ControlTotal, mappings);
+    return ControlTotal;
 }
 exports.CNT = CNT;
-function UNT(elements) {
-    const object = {
-        MessageTrailer: {},
+function UNT(name, elements) {
+    const MessageTrailer = {
+        code: name
     };
     const mappings = [
         {
@@ -1474,13 +1474,13 @@ function UNT(elements) {
             source: elements[1],
         },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(MessageTrailer, mappings);
+    return MessageTrailer;
 }
 exports.UNT = UNT;
-function UNZ(elements) {
-    const object = {
-        InterchangeTrailer: {},
+function UNZ(name, elements) {
+    const InterchangeTrailer = {
+        code: name
     };
     const mappings = [
         {
@@ -1492,7 +1492,7 @@ function UNZ(elements) {
             source: elements[1],
         },
     ];
-    (0, mappingService_1.addProperties)(object, mappings);
-    return object;
+    (0, mappingService_1.addProperties)(InterchangeTrailer, mappings);
+    return InterchangeTrailer;
 }
 exports.UNZ = UNZ;

@@ -94,7 +94,7 @@ IEA*1*000003438~`;
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            yield axios_1.default.post(receiverUrl, x12, {
+            yield axios_1.default.post(receiverUrl, edifact, {
                 headers: {
                     'Content-Type': 'text/plain'
                 }
