@@ -43,8 +43,6 @@ function parseEdifact(edifactMessage: any) {
     const result: any = reader.parse(edifactMessage);
     const arr: any = [];
     for (const obj of result) {
-        console.log(obj);
-        console.log('##########################################################');
         const segmentObj: any = edifactMapping(obj);
         arr.push(segmentObj);
     }

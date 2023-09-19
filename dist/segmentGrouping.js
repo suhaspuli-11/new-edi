@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.group = void 0;
 const mandatoryFields = {
-    UNH: ['HEAD'],
+    UNB: ['HEAD'],
     RFF: ['SG1', 'SG3', 'SG34', 'SG36', 'SG42'],
     NAD: ['SG2', 'SG41'],
     DOC: ['SG4', 'SG43'],
@@ -34,7 +34,7 @@ const mandatoryFields = {
     UNT: ['LAST']
 };
 const mapping = {
-    HEAD: ['UNH', 'BGM', 'DTM', 'PAI', 'ALI', 'IMD', 'FTX', 'GIR'],
+    HEAD: ['UNB', 'UNH', 'BGM', 'DTM', 'PAI', 'ALI', 'IMD', 'FTX', 'GIR'],
     SG1: ['RFF', 'DTM'],
     SG2: ["NAD", "LOC", "FII"],
     SG3: ["RFF", "DTM"],
@@ -103,13 +103,24 @@ const mapping = {
 };
 let temp = -1;
 function group(arr) {
-    const res = {};
+    const newObj = {};
     for (let obj of arr) {
         const code = obj.code;
         const mandatoryFieldsArray = mandatoryFields[code];
-        if (mandatoryFieldsArray && mandatoryFieldsArray.length > 1) {
-            console.log('hi');
+        if (mandatoryFieldsArray && mandatoryFieldsArray.length === 1) {
+            eval(`const ${mandatoryFieldsArray[0]}Group = []`);
+            console.log(HEADGroup);
         }
     }
 }
 exports.group = group;
+const obj = {
+    head: {
+        UNB: {},
+        UNH: {}
+    },
+    SG1: {
+        RFF: {},
+        DTM: {}
+    }
+};

@@ -1,5 +1,5 @@
 const mandatoryFields: Record<any, any> = {
-    UNH: ['HEAD'],
+    UNB: ['HEAD'],
     RFF: ['SG1', 'SG3', 'SG34', 'SG36', 'SG42'],
     NAD: ['SG2', 'SG41'],
     DOC: ['SG4', 'SG43'],
@@ -32,7 +32,7 @@ const mandatoryFields: Record<any, any> = {
 }
 
 const mapping: Record<any, any> = {
-    HEAD: ['UNH','BGM','DTM','PAI','ALI','IMD','FTX','GIR'],
+    HEAD: ['UNB', 'UNH', 'BGM', 'DTM', 'PAI', 'ALI', 'IMD', 'FTX', 'GIR'],
     SG1: ['RFF', 'DTM'],
     SG2: ["NAD", "LOC", "FII"],
     SG3: ["RFF", "DTM"],
@@ -103,12 +103,56 @@ const mapping: Record<any, any> = {
 let temp: any = -1;
 
 export function group(arr: any) {
-    const res = {};
+    const res: any = {};
+    let newObj: any = {};
     for (let obj of arr) {
         const code: string = obj.code;
         const mandatoryFieldsArray: any = mandatoryFields[code];
-        if (mandatoryFieldsArray && mandatoryFieldsArray.length > 1) {
-            console.log('hi');
+        if (mandatoryFieldsArray && mandatoryFieldsArray.length === 1) {
+            if (Object.keys(newObj).length === 0) {
+                newObj[mandatoryFieldsArray[0]] = [obj];
+            }
+            else {
+                const new_key = Object.keys(newObj);
+                res[new_key[0]] = newObj[new_key[0]];
+                newObj = {};
+                newObj[mandatoryFieldsArray[0]] = [obj];
+                temp = mandatoryFieldsArray[0];
+            }
+            
         }
+        else if (mandatoryFieldsArray === undefined) {
+            const keys = Object.keys(newObj);
+            newObj[keys[0]].push(obj);
+        }
+        else {
+            if (temp === 'HEAD') {
+                if (Object.keys(newObj).length === 0) {
+                    newObj[mandatoryFieldsArray[0]] = [obj];
+                }
+                else {
+                    const new_key = Object.keys(newObj);
+                    res[new_key[0]] = newObj[new_key[0]];
+                    newObj = {};
+                    newObj[mandatoryFieldsArray[0]] = [obj];
+                    temp = mandatoryFieldsArray[0];
+                }
+            }
+            else {
+                
+            }
+
+        }
+    }
+}
+
+const obj = {
+    head: {
+        UNB: {},
+        UNH: {}
+    },
+    SG1: {
+        RFF: {},
+        DTM: {}
     }
 }
