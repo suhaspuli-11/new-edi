@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-receiver": "tsc && node ./dist/receiver.js",
-    "start-sender": "tsc && node ./dist/sender.js",
-    "start": "npm run start-receiver && npm run start-sender"
+    "start-sender": "node ./dist/sender.js"
   },
   "keywords": [],
   "author": "",
