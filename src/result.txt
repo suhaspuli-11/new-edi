@@ -1,0 +1,77 @@
+{
+  name: 'UNB',
+  elements: [
+    [ 'UNOB', '1' ],
+    [ 'SENDER1', '14', 'ZZUK' ],
+    [ 'RECEIVER1', '1', 'ZZUK' ],
+    [ '071101', '1701' ],
+    [ '131' ],
+    [ '' ],
+    [ 'ORDERS' ],
+    [ '' ],
+    [ '1' ],
+    [ '' ],
+    [ '1' ]
+  ]
+}
+{
+  name: 'UNH',
+  elements: [ [ '000000101' ], [ 'ORDERS', 'D', '96A', 'UN' ] ]
+}
+{ name: 'BGM', elements: [ [ '220' ], [ '128576' ], [ '9' ] ] }
+{ name: 'DTM', elements: [ [ '137', '20020830', '102' ] ] }
+{ name: 'PAI', elements: [ [ '', '', '42' ] ] }
+{ name: 'FTX', elements: [ [ 'ZZZ' ], [ '1' ], [ '001', '', '91' ] ] }
+{ name: 'RFF', elements: [ [ 'CT', '652744' ] ] }
+{ name: 'DTM', elements: [ [ '171', '20020825', '102' ] ] }
+{ name: 'NAD', elements: [ [ 'BY' ], [ '5412345000013', '', '9' ] ] }
+{ name: 'RFF', elements: [ [ 'VA', '87765432' ] ] }
+{ name: 'CTA', elements: [ [ 'OC' ], [ '', 'P FORGET' ] ] }
+{ name: 'COM', elements: [ [ '0044715632478', 'TE' ] ] }
+{ name: 'NAD', elements: [ [ 'SU' ], [ '4012345500004', '', '9' ] ] }
+{ name: 'RFF', elements: [ [ 'VA', '56225432' ] ] }
+{
+  name: 'CUX',
+  elements: [ [ '2', 'GBP', '9' ], [ '3', 'EUR', '4' ], [ '1.67' ] ]
+}
+{ name: 'DTM', elements: [ [ '134', '2002080120020831', '718' ] ] }
+{ name: 'TDT', elements: [ [ '20' ], [ '' ], [ '30' ], [ '31' ] ] }
+{ name: 'TOD', elements: [ [ '3' ], [ '' ], [ 'CIF', '23', '9' ] ] }
+{ name: 'LOC', elements: [ [ '1' ], [ 'BE-BRU' ] ] }
+{
+  name: 'LIN',
+  elements: [ [ '1' ], [ '' ], [ '4000862141404', 'SRS' ] ]
+}
+{ name: 'PIA', elements: [ [ '1' ], [ 'ABC1234', 'IN' ] ] }
+{ name: 'IMD', elements: [ [ 'C' ], [ '' ], [ 'TU', '', '9' ] ] }
+{ name: 'QTY', elements: [ [ '21', '48' ] ] }
+{ name: 'MOA', elements: [ [ '203', '699.84' ] ] }
+{
+  name: 'PRI',
+  elements: [ [ 'AAA', '14.58', 'CT', 'AAE', '1', 'KGM' ] ]
+}
+{ name: 'RFF', elements: [ [ 'PL', 'AUG93RNG04' ] ] }
+{ name: 'DTM', elements: [ [ '171', '20020801', '102' ] ] }
+{ name: 'PAC', elements: [ [ '2' ], [ '', '51' ], [ 'CS' ] ] }
+{ name: 'PCI', elements: [ [ '14' ] ] }
+{ name: 'LOC', elements: [ [ '7' ], [ '3312345502000', '', '9' ] ] }
+{ name: 'QTY', elements: [ [ '11', '24' ] ] }
+{ name: 'DTM', elements: [ [ '2', '20020915', '102' ] ] }
+{ name: 'LOC', elements: [ [ '7' ], [ '3312345501003', '', '9' ] ] }
+{ name: 'QTY', elements: [ [ '11', '24' ] ] }
+{ name: 'DTM', elements: [ [ '2', '20020913', '102' ] ] }
+{
+  name: 'TAX',
+  elements: [
+    [ '7' ],
+    [ 'VAT' ],
+    [ '' ],
+    [ '' ],
+    [ '', '', '', '17.5' ],
+    [ 'S' ]
+  ]
+}
+{ name: 'UNS', elements: [ [ 'S' ] ] }
+{ name: 'CNT', elements: [ [ '2', '1' ] ] }
+{ name: 'UNT', elements: [ [ '38' ], [ '000000101' ] ] }
+{ name: 'UNZ', elements: [ [ '1' ], [ '131' ] ] }

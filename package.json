@@ -1,0 +1,25 @@
+{
+  "name": "edi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-receiver": "tsc && node ./dist/receiver.js",
+    "start-sender": "tsc && node ./dist/sender.js",
+    "start": "npm run start-receiver && npm run start-sender"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "edifact": "^1.2.12",
+    "express": "^4.18.2",
+    "node-x12": "^1.7.1",
+    "x12-parser": "^1.1.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17"
+  }
+}

@@ -1,0 +1,102 @@
+import axios from 'axios';
+
+const receiverUrl = 'http://localhost:4000'; 
+
+const edifactMessage =  `UNB+UNOB:1+SENDER1:14:ZZUK+RECEIVER1:1:ZZUK+071101:1701+131++ORDERS++1++1'
+UNH+000000101+ORDERS:D:96A:UN'
+BGM+220+128576+9'
+DTM+137:20020830:102'
+PAI+::42'
+FTX+ZZZ+1+001::91'
+RFF+CT:652744'
+DTM+171:20020825:102'
+NAD+BY+5412345000013::9'
+RFF+VA:87765432'
+CTA+OC+:P FORGET'
+COM+0044715632478:TE'
+NAD+SU+4012345500004::9'
+RFF+VA:56225432'
+CUX+2:GBP:9+3:EUR:4+1.67'
+DTM+134:2002080120020831:718'
+TDT+20++30+31'
+TOD+3++CIF:23:9'
+LOC+1+BE-BRU'
+LIN+1++4000862141404:SRS'
+PIA+1+ABC1234:IN'
+IMD+C++TU::9'
+QTY+21:48'
+MOA+203:699.84'
+PRI+AAA:14.58:CT:AAE:1:KGM'
+RFF+PL:AUG93RNG04'
+DTM+171:20020801:102'
+PAC+2+:51+CS'
+PCI+14'
+LOC+7+3312345502000::9'
+QTY+11:24'
+DTM+2:20020915:102'
+LOC+7+3312345501003::9'
+QTY+11:24'
+DTM+2:20020913:102'
+TAX+7+VAT+++:::17.5+S'
+UNS+S'
+CNT+2:1'
+UNT+38+000000101'
+UNZ+1+131'`;
+
+const edifactMessage1 = `UNB+UNOB:1+SENDER1:14:ZZUK+RECEIVER1:1:ZZUK+071101:1701+131++ORDERS++1++1'
+UNH+1+ORDERS:D:01B:UN'
+BGM+220+PO357893+9'
+DTM+2:20020830:102'
+DTM+2:200808131430:203'
+FTX+DEL+1++INCLUDE TIME IN DELIVERY DATE'
+RFF+AAN:APPTNO123445'
+NAD+AA+BuyerId12345::1'
+LOC+1+Buyer Place Warehouse 678::1'
+CTA+PD+BuyerEmployee1234:John Smith'
+COM+Buyeremail:EM'
+NAD+AA+ShipToId87654::1'
+LOC+1+ShipToId87654::1'
+CTA+PD+BuyerEmployee1234:John Smith'
+COM+ShipToId87654:EM'
+LIN+1+1+1'
+PIA+5+ENT93474:BH'
+IMD+F++:::Product Description'
+MEA+AAA++EA:1'
+QTY+21:3:A1B'
+PRI+INV:3455.58'
+LIN+2+1+2'
+PIA+5+PRO-23872:BH'
+IMD+F++:::Product Description'
+MEA+AAA++EA:1'
+QTY+21:5:A1B'
+PRI+INV:950.99'
+UNS+S'
+MOA+1:4406.57'
+CNT+2:2'
+UNT+30+1'
+UNZ+1+1'`;
+
+const a = `
+UNB+UNOB:1+SENDER1:14:ZZUK+RECEIVER1:1:ZZUK+071101:1701+131++ORDERS++1++1'
+UNH+1+ORDERS:D:01B:UN'
+BGM+220+PO357893+9'
+DTM+2:20020830:102'
+UNS+S'
+UNT+30+1'
+UNZ+1+1'`;
+
+async function main() {
+    try {
+        const result: any = await axios.post(receiverUrl, edifactMessage1, {
+            headers: {
+                'Content-Type':'text/plain'
+            }
+        });
+        console.log('EDIFACT message sent successfully');
+        console.log(result.data);
+    } catch (err: any) {
+        console.log('Error making a request ',err);
+    }
+}
+
+main();
