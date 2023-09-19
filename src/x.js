@@ -1,6 +1,6 @@
 const axios = require('axios');
 const express = require('express');
-const {X12Parser,X12Interchange} = require('node-x12')
+const { X12Parser, X12Interchange } = require('node-x12')
 
 const port = 3000;
 const app = express();
@@ -19,13 +19,20 @@ app.listen(port, () => {
 });
 
 function parsex12(x12Msg) {
-    const parser = new X12Parser(false,'utf8');
+    const parser = new X12Parser();
     const interchange = parser.parse(x12Msg);
-    // const interchanger = new X12Interchange();
-    console.log(interchange);
-    console.log('=========================================================================================');
-    const obj = interchange.toJSON();   
-    console.log(obj);
+    printObject(interchange);
+}
+
+function printObject(obj, indent = 0) {
+    for (const key in obj) {
+        if (typeof obj[key] === 'object') {
+            console.log(' '.repeat(indent) + key + ':');
+            printObject(obj[key], indent + 2);
+        } else {
+            console.log(' '.repeat(indent) + key + ': ' + obj[key]);
+        }
+    }
 }
 
 const receiverUrl = 'http://localhost:3000';
@@ -70,12 +77,13 @@ IEA*1*000003438~`;
 
 async function main() {
     try {
-        const result = await axios.post(receiverUrl, x12, {
+        await axios.post(receiverUrl, x12, {
             headers: {
                 'Content-Type': 'text/plain'
             }
         });
-    } catch (err) {
+    }
+    catch (err) {
         console.log('Error making a request ', err);
     }
 }

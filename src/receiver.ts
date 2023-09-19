@@ -1,6 +1,7 @@
 const express = require('express');
 import { Reader } from 'edifact';
 import * as mapping from './m1';
+const { X12Parser } = require('node-x12');
 
 const port: any = 4000;
 const app: any = express();
@@ -8,22 +9,40 @@ const app: any = express();
 app.use(express.text());
 
 app.post('/', (req: any, res: any) => {
-    const ediMessage = req.body;
+    const ediMessage: string = req.body;
     res.send('Message received successfully');
     // Processing the EDI message   
-    parseEdifact(ediMessage);
+    const interchangeHeader: string = ediMessage.substring(0, 3);
+    if (interchangeHeader === 'UNB') {
+        console.log('***************EDIFACT message***************');
+        parseEdifact(ediMessage);
+    }
+    else if(interchangeHeader === 'ISA'){
+        console.log('***************ANSI message***************');
+        parseX12(ediMessage);
+    }
+    else {
+        console.log('Invalid format');
+    }
+    
 });
 
 app.listen(port, () => {
     console.log(`Receiver listening on port ${port}`);
 });
 
+function parseX12(ediMessage: string) {
+    const parser = new X12Parser();
+    const interchange = parser.parse(ediMessage);
+    printObject(interchange);
+}
+
 function parseEdifact(edifactMessage: any) {
     const reader: any = new Reader({ autoDetectEncoding: true });
     const result: any = reader.parse(edifactMessage);
     const arr: any = [];
     for (const obj of result) {
-        const segmentObj: any = newFun(obj);
+        const segmentObj: any = edifactMapping(obj);
         arr.push(segmentObj);
     }
     for (const obj of arr) {
@@ -32,7 +51,7 @@ function parseEdifact(edifactMessage: any) {
     }
 }
 
-function newFun(object: any) {
+function edifactMapping(object: any) {
     let segment: any;
     const segmentCode: string = object.name;
     const elements: any = object.elements;
@@ -102,4 +121,15 @@ function newFun(object: any) {
         };
     }
     return segment;
+}
+
+function printObject(obj: Record<any,any>, indent = 0) {
+    for (const key in obj) {
+        if (typeof obj[key] === 'object') {
+            console.log(' '.repeat(indent) + key + ':');
+            printObject(obj[key], indent + 2);
+        } else {
+            console.log(' '.repeat(indent) + key + ': ' + obj[key]);
+        }
+    }
 }
