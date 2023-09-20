@@ -26,6 +26,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express = require('express');
 const edifact_1 = require("edifact");
 const mapping = __importStar(require("./m1"));
+const mappingX12 = __importStar(require("./m2"));
 const { X12Parser } = require('node-x12');
 const segmentGrouping_1 = require("./segmentGrouping");
 const port = 4000;
@@ -54,7 +55,15 @@ app.listen(port, () => {
 function parseX12(ediMessage) {
     const parser = new X12Parser();
     const interchange = parser.parse(ediMessage);
-    printObject(interchange);
+    const jsonObj = interchange.toJSON();
+    // printObject(jsonObj);
+    const arr = [];
+    const segments = jsonObj.functionalGroups[0].transactions[0].segments;
+    for (let segment of segments) {
+        const segmentObj = x12Mapping(segment);
+        arr.push(segmentObj);
+    }
+    console.log(arr);
 }
 function parseEdifact(edifactMessage) {
     const reader = new edifact_1.Reader({ autoDetectEncoding: true });
@@ -64,10 +73,7 @@ function parseEdifact(edifactMessage) {
         const segmentObj = edifactMapping(obj);
         arr.push(segmentObj);
     }
-    for (const obj of arr) {
-        console.log('=================================================================');
-        console.log(obj);
-    }
+    console.log(arr);
     const obj = (0, segmentGrouping_1.group)(arr);
 }
 function edifactMapping(object) {
@@ -140,14 +146,20 @@ function edifactMapping(object) {
     }
     return segment;
 }
-function printObject(obj, indent = 0) {
-    for (const key in obj) {
-        if (typeof obj[key] === 'object') {
-            console.log(' '.repeat(indent) + key + ':');
-            printObject(obj[key], indent + 2);
-        }
-        else {
-            console.log(' '.repeat(indent) + key + ': ' + obj[key]);
-        }
+function x12Mapping(object) {
+    let segment;
+    const segmentCode = object.tag;
+    const elements = object.elements;
+    const segmentMappingObj = {
+        BEG: mappingX12.BEG,
+    };
+    if (segmentMappingObj.hasOwnProperty(segmentCode)) {
+        segment = segmentMappingObj[segmentCode](segmentCode, elements);
     }
+    else {
+        segment = {
+            SegmentName: "Unknown segment code"
+        };
+    }
+    return segment;
 }

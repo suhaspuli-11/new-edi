@@ -1,0 +1,253 @@
+{
+    "envelope": {
+        "interchangeHeader": {
+            "authorizationInformationQualifier": "00",
+            "authorizationInformation": "          ",
+            "securityQualifier": "00",
+            "securityInformation": "          ",
+            "senderQualifier": "ZZ",
+            "senderId": "AMAZONDS       ",
+            "receiverQualifier": "01",
+            "receiverId": "RECEIVERID     ",
+            "date": "2022-04-28",
+            "time": "12:30",
+            "repetitionSeparator": "U",
+            "controlVersionNumber": "00401",
+            "controlNumber": "000000013",
+            "acknowledgementRequestedCode": "0",
+            "usageIndicatorCode": "P",
+            "componentSeparator": ">"
+        },
+        "groupHeader": {
+            "functionalIdentifierCode": "PO",
+            "applicationSenderCode": "AMAZONDS",
+            "applicationReceiverCode": "RECEIVERID",
+            "date": "2022-04-28",
+            "time": "12:30:38",
+            "controlNumber": "000000096",
+            "agencyCode": "X",
+            "release": "004010"
+        },
+        "groupTrailer": {
+            "numberOfTransactions": "1",
+            "controlNumber": "000000096"
+        },
+        "interchangeTrailer": {
+            "numberOfFunctionalGroups": "1",
+            "controlNumber": "000000013"
+        }
+    },
+    "transactionSets": [
+        {
+            "heading": {
+                "transaction_set_header_ST": {
+                    "transaction_set_identifier_code_01": "850",
+                    "transaction_set_control_number_02": 1
+                },
+                "beginning_segment_for_purchase_order_BEG": {
+                    "transaction_set_purpose_code_01": "00",
+                    "purchase_order_type_code_02": "SS",
+                    "purchase_order_number_03": "T7Fd9Zn55",
+                    "date_05": "2022-04-28"
+                },
+                "currency_CUR": {
+                    "entity_identifier_code_01": "BT",
+                    "currency_code_02": "USD"
+                },
+                "reference_identification_REF_ST": [
+                    {
+                        "reference_identification_qualifier_01": "ST",
+                        "reference_identification_02": "1"
+                    }
+                ],
+                "reference_identification_REF_OQ": [
+                    {
+                        "reference_identification_qualifier_01": "OQ",
+                        "reference_identification_02": "002-9977742-6703449"
+                    }
+                ],
+                "date_time_reference_DTM_002": [
+                    {
+                        "date_time_qualifier_01": "002",
+                        "date_02": "2022-05-07",
+                        "time_03": "06:59",
+                        "time_code_04": "GM"
+                    }
+                ],
+                "date_time_reference_DTM_010": [
+                    {
+                        "date_time_qualifier_01": "010",
+                        "date_02": "2022-05-03",
+                        "time_03": "20:30",
+                        "time_code_04": "GM"
+                    }
+                ],
+                "reference_identification_N9_loop": [
+                    {
+                        "reference_identification_N9": {
+                            "reference_identification_qualifier_01": "ZZ",
+                            "reference_identification_02": "03"
+                        },
+                        "message_text_MSG": [
+                            {
+                                "free_form_message_text_01": "As you requested, we've sent this part of your order to ensure quicker service. The other items will ship separately."
+                            }
+                        ]
+                    },
+                    {
+                        "reference_identification_N9": {
+                            "reference_identification_qualifier_01": "ZZ",
+                            "reference_identification_02": "06"
+                        },
+                        "message_text_MSG": [
+                            {
+                                "free_form_message_text_01": "For detailed information about your orders, please visit Your Account. You can also print invoices, change your e-mail address and payment settings, alter your communication preferences, and much more-24 hours a day-at http://www.amazon.com/your-account."
+                            }
+                        ]
+                    },
+                    {
+                        "reference_identification_N9": {
+                            "reference_identification_qualifier_01": "ZZ",
+                            "reference_identification_02": "07"
+                        },
+                        "message_text_MSG": [
+                            {
+                                "free_form_message_text_01": "Visit http://www.amazon.com/returns to return any item-including gifts-in unopened or original condition within 30 days for a full refund(other restrictions apply). Please have your order ID ready. Thanks for shopping at Amazon.com, and please come again!"
+                            }
+                        ]
+                    }
+                ],
+                "name_N1_loop_LW": [
+                    {
+                        "name_N1": {
+                            "entity_identifier_code_01": "LW",
+                            "name_02": "Jennifer Smith"
+                        },
+                        "address_information_N3": [
+                            {
+                                "address_information_01": "93 Hardwood Ln"
+                            }
+                        ],
+                        "geographic_location_N4": [
+                            {
+                                "city_name_01": "Rochester",
+                                "state_or_province_code_02": "NY",
+                                "postal_code_03": "14616-1629",
+                                "country_code_04": "US"
+                            }
+                        ],
+                        "administrative_communications_contact_PER": [
+                            {
+                                "contact_function_code_01": "ZZ",
+                                "communication_number_qualifier_05": "TE",
+                                "communication_number_06": "2065551214"
+                            }
+                        ]
+                    }
+                ],
+                "name_N1_loop_BT": [
+                    {
+                        "name_N1": {
+                            "entity_identifier_code_01": "BT",
+                            "name_02": "Amazon.com.kydc,Inc.",
+                            "identification_code_qualifier_03": "92",
+                            "identification_code_04": "KYDC"
+                        }
+                    }
+                ],
+                "name_N1_loop_SF": [
+                    {
+                        "name_N1": {
+                            "entity_identifier_code_01": "SF",
+                            "name_02": "WHSE",
+                            "identification_code_qualifier_03": "92",
+                            "identification_code_04": "WHSE"
+                        }
+                    }
+                ],
+                "name_N1_loop_ST": [
+                    {
+                        "name_N1": {
+                            "entity_identifier_code_01": "ST",
+                            "name_02": "Jennifer Smith"
+                        },
+                        "address_information_N3": [
+                            {
+                                "address_information_01": "93 Hardwood Ln"
+                            }
+                        ],
+                        "geographic_location_N4": [
+                            {
+                                "city_name_01": "Rochester",
+                                "state_or_province_code_02": "NY",
+                                "postal_code_03": "14616-1629",
+                                "country_code_04": "US",
+                                "location_qualifier_05": "CC",
+                                "location_identifier_06": "United States"
+                            }
+                        ],
+                        "carrier_details_routing_sequence_transit_time_TD5": [
+                            {
+                                "identification_code_qualifier_02": "92",
+                                "identification_code_03": "UPS_GR_RES",
+                                "location_qualifier_07": "ZZ",
+                                "location_identifier_08": "RES"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detail": {
+                "baseline_item_data_PO1_loop": [
+                    {
+                        "baseline_item_data_PO1": {
+                            "assigned_identification_01": "1",
+                            "quantity_ordered_02": 1,
+                            "unit_or_basis_for_measurement_code_03": "EA",
+                            "unit_price_04": 2.41,
+                            "basis_of_unit_price_code_05": "NT",
+                            "product_service_id_qualifier_06": "SK",
+                            "product_service_id_07": "1092189",
+                            "product_service_id_qualifier_10": "TP",
+                            "product_service_id_11": "Kitchen",
+                            "product_service_id_qualifier_12": "BL",
+                            "product_service_id_13": "1",
+                            "product_service_id_qualifier_14": "ZZ",
+                            "product_service_id_15": "Amazon.com, LLC"
+                        },
+                        "pricing_information_CTP_loop": [
+                            {
+                                "pricing_information_CTP": {
+                                    "price_identifier_code_02": "PUR",
+                                    "unit_price_03": 6.54
+                                }
+                            }
+                        ],
+                        "message_text_MSG_description": {
+                            "free_form_message_text_01": "Chicago Cutlery Essentials 3-1/2-Inch Parer Knife"
+                        }
+                    }
+                ]
+            },
+            "summary": {
+                "transaction_totals_CTT_loop": [
+                    {
+                        "transaction_totals_CTT": {
+                            "number_of_line_items_01": 1,
+                            "hash_total_02": 1
+                        }
+                    }
+                ],
+                "transaction_set_trailer_SE": {
+                    "number_of_included_segments_01": 28,
+                    "transaction_set_control_number_02": 1
+                }
+            }
+        }
+    ],
+    "delimiters": {
+        "element": "*",
+        "composite": ">",
+        "segment": "~"
+    }
+}

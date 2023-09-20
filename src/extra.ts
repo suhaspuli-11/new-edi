@@ -142,3 +142,28 @@ CTT*3
 SE*22*1013
 GE*1*1013
 IEA*1*100000013`;
+
+export function addProperties1(object: any, mappings: any) {
+    const segment: any = Object.keys(object)[1];
+    for (const mapping of mappings) {
+        const source = mapping.source, target = mapping.target, subkeys = mapping.subkeys;
+        if (source && source.length > 0) {
+            object[segment][target] = subkeys
+                ? Object.fromEntries(
+                    subkeys.map((key: any, i: number) => [key, source[i]])
+                )
+                : source[0];
+        }
+    }
+}
+
+export function printObject(obj: Record<any, any>, indent = 0) {
+    for (const key in obj) {
+        if (typeof obj[key] === 'object') {
+            console.log(' '.repeat(indent) + key + ':');
+            printObject(obj[key], indent + 2);
+        } else {
+            console.log(' '.repeat(indent) + key + ': ' + obj[key]);
+        }
+    }
+}

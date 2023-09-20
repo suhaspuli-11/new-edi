@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.addProperties1 = exports.addProperties = void 0;
+exports.addPropertiesX12 = exports.addProperties = void 0;
 function addProperties(object, mappings) {
     if (object.code === undefined) {
         console.log('No code ');
@@ -29,15 +29,11 @@ function addProperties(object, mappings) {
     }
 }
 exports.addProperties = addProperties;
-function addProperties1(object, mappings) {
-    const segment = Object.keys(object)[1];
+function addPropertiesX12(object, mappings) {
     for (const mapping of mappings) {
-        const source = mapping.source, target = mapping.target, subkeys = mapping.subkeys;
-        if (source && source.length > 0) {
-            object[segment][target] = subkeys
-                ? Object.fromEntries(subkeys.map((key, i) => [key, source[i]]))
-                : source[0];
-        }
+        const source = mapping.source, target = mapping.target;
+        if (source !== undefined && (typeof source !== 'string' || source.trim() !== ''))
+            object[target] = source;
     }
 }
-exports.addProperties1 = addProperties1;
+exports.addPropertiesX12 = addPropertiesX12;

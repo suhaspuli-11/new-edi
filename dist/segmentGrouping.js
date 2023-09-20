@@ -103,13 +103,42 @@ const mapping = {
 };
 let temp = -1;
 function group(arr) {
-    const newObj = {};
+    const res = {};
+    let newObj = {};
     for (let obj of arr) {
         const code = obj.code;
         const mandatoryFieldsArray = mandatoryFields[code];
         if (mandatoryFieldsArray && mandatoryFieldsArray.length === 1) {
-            eval(`const ${mandatoryFieldsArray[0]}Group = []`);
-            console.log(HEADGroup);
+            if (Object.keys(newObj).length === 0) {
+                newObj[mandatoryFieldsArray[0]] = [obj];
+            }
+            else {
+                const new_key = Object.keys(newObj);
+                res[new_key[0]] = newObj[new_key[0]];
+                newObj = {};
+                newObj[mandatoryFieldsArray[0]] = [obj];
+                temp = mandatoryFieldsArray[0];
+            }
+        }
+        else if (mandatoryFieldsArray === undefined) {
+            const keys = Object.keys(newObj);
+            newObj[keys[0]].push(obj);
+        }
+        else {
+            if (temp === 'HEAD') {
+                if (Object.keys(newObj).length === 0) {
+                    newObj[mandatoryFieldsArray[0]] = [obj];
+                }
+                else {
+                    const new_key = Object.keys(newObj);
+                    res[new_key[0]] = newObj[new_key[0]];
+                    newObj = {};
+                    newObj[mandatoryFieldsArray[0]] = [obj];
+                    temp = mandatoryFieldsArray[0];
+                }
+            }
+            else {
+            }
         }
     }
 }

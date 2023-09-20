@@ -1,8 +1,10 @@
 const express = require('express');
 import { Reader } from 'edifact';
 import * as mapping from './m1';
+import * as mappingX12 from './m2';
 const { X12Parser } = require('node-x12');
 import { group } from './segmentGrouping';
+import { printObject } from './extra';
 
 const port: any = 4000;
 const app: any = express();
@@ -35,7 +37,15 @@ app.listen(port, () => {
 function parseX12(ediMessage: string) {
     const parser = new X12Parser();
     const interchange = parser.parse(ediMessage);
-    printObject(interchange);
+    const jsonObj = interchange.toJSON();
+    // printObject(jsonObj);
+    const arr: any = [];
+    const segments: any = jsonObj.functionalGroups[0].transactions[0].segments;
+    for (let segment of segments) {
+        const segmentObj: any = x12Mapping(segment);
+        arr.push(segmentObj);
+    }
+    console.log(arr);
 }
 
 function parseEdifact(edifactMessage: any) {
@@ -46,10 +56,7 @@ function parseEdifact(edifactMessage: any) {
         const segmentObj: any = edifactMapping(obj);
         arr.push(segmentObj);
     }
-    for (const obj of arr) {
-        console.log('=================================================================');
-        console.log(obj);
-    }
+    console.log(arr);
     const obj: any = group(arr);
 }
 
@@ -125,13 +132,20 @@ function edifactMapping(object: any) {
     return segment;
 }
 
-function printObject(obj: Record<any,any>, indent = 0) {
-    for (const key in obj) {
-        if (typeof obj[key] === 'object') {
-            console.log(' '.repeat(indent) + key + ':');
-            printObject(obj[key], indent + 2);
-        } else {
-            console.log(' '.repeat(indent) + key + ': ' + obj[key]);
-        }
+function x12Mapping(object: any) {
+    let segment: any;
+    const segmentCode: string = object.tag;
+    const elements: any = object.elements;
+    const segmentMappingObj: any = {
+        BEG: mappingX12.BEG,
+    };
+    if (segmentMappingObj.hasOwnProperty(segmentCode)) {
+        segment = segmentMappingObj[segmentCode](segmentCode, elements);
     }
+    else {
+        segment = {
+            SegmentName: "Unknown segment code"
+        };
+    }
+    return segment;
 }

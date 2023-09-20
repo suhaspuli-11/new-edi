@@ -28,17 +28,10 @@ export function addProperties(object: any, mappings: any) {
     }
 }
 
-
-export function addProperties1(object: any, mappings: any) {
-    const segment: any = Object.keys(object)[1];
+export function addPropertiesX12(object: any, mappings: any) {
     for (const mapping of mappings) {
-        const source = mapping.source, target = mapping.target, subkeys = mapping.subkeys;
-        if (source && source.length > 0) {
-            object[segment][target] = subkeys
-                ? Object.fromEntries(
-                    subkeys.map((key: any, i: number) => [key, source[i]])
-                )
-                : source[0];
-        }
+        const source = mapping.source, target = mapping.target;
+        if (source !== undefined && (typeof source !== 'string' || source.trim() !== ''))
+            object[target] = source;
     }
 }
