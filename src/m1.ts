@@ -1,4 +1,4 @@
-import { addProperties } from './mappingService';
+import { setProperties } from './mappingService';
 
 export function UNB(name: string, elements: any[][]): Record<any, any> {
     const InterchangeHeader = {
@@ -38,7 +38,7 @@ export function UNB(name: string, elements: any[][]): Record<any, any> {
         { target: "CommunicationsAgreementID", source: elements[9] },
         { target: "TestIndicator", source: elements[10] },
     ];
-    addProperties(InterchangeHeader, mappings);
+    setProperties(InterchangeHeader, mappings);
     return InterchangeHeader;
 }
 
@@ -61,7 +61,7 @@ export function UNH(name: string, elements: any[][]): Record<any, any> {
             subkeys: ["SequenceOfTransfers", "FirstAndLastTransfers"],
         },
     ];
-    addProperties(MessageHeader, mappings);
+    setProperties(MessageHeader, mappings);
     return MessageHeader;
 }
 
@@ -86,7 +86,7 @@ export function BGM(name: string, elements: any[][]): Record<any, any> {
         { target: "DocumentStatusCode", source: elements[4] },
         { target: "LanguageNameCode", source: elements[5] },
     ];
-    addProperties(BeginningOfMessage, mappings);
+    setProperties(BeginningOfMessage, mappings);
     return BeginningOfMessage;
 }
 
@@ -102,7 +102,7 @@ export function DTM(name: string, elements: any[][]): Record<any, any> {
             subkeys: ["Qualifier", "Date", "FormatQualifier"],
         },
     ];
-    addProperties(DateTimePeriod, mappings);
+    setProperties(DateTimePeriod, mappings);
     return DateTimePeriod;
 }
 
@@ -118,7 +118,7 @@ export function PAI(name: string, elements: any[][]): Record<any, any> {
             subkeys: ["PaymentConditionsCode", "PaymentGuaranteemeansCode", "PaymentMeansCode"],
         },
     ];
-    addProperties(PaymentInstructionDetails, mappings);
+    setProperties(PaymentInstructionDetails, mappings);
     return PaymentInstructionDetails;
 }
 
@@ -143,7 +143,7 @@ export function FTX(name: string, elements: any[][]): Record<any, any> {
         { target: "LanguageNameCode", source: elements[4] },
         { target: "FreeTextFormatCode", source: elements[5] },
     ];
-    addProperties(FreeText, mappings);
+    setProperties(FreeText, mappings);
 
     return FreeText;
 }
@@ -182,7 +182,7 @@ export function GIR(name: string, elements: any[][]): Record<any, any> {
         },
     ];
 
-    addProperties(RelatedIdentificationNumbers, mappings);
+    setProperties(RelatedIdentificationNumbers, mappings);
     return RelatedIdentificationNumbers;
 }
 
@@ -206,7 +206,7 @@ export function IMD(name: string, elements: any[][]): Record<any, any> {
         { target: "SurfaceOrLayerCode", source: elements[3] },
     ];
 
-    addProperties(ItemDescription, mappings);
+    setProperties(ItemDescription, mappings);
     return ItemDescription;
 }
 
@@ -221,7 +221,7 @@ export function RFF(name: string, elements: any[][]): Record<any, any> {
             subkeys: ["ReferenceCodeQualifier", "ReferenceIdentifier", "DocumentLineIdentifier", "VersionIdentifier", "RevisionIdentifier"],
         },
     ];
-    addProperties(Reference, mappings);
+    setProperties(Reference, mappings);
     return Reference;
 }
 
@@ -272,7 +272,7 @@ export function NAD(name: string, elements: any[][]): Record<any, any> {
             source: elements[8],
         },
     ];
-    addProperties(NameAndAddress, mappings);
+    setProperties(NameAndAddress, mappings);
     return NameAndAddress;
 }
 
@@ -300,7 +300,7 @@ export function CUX(name: string, elements: any[][]): Record<any, any> {
             source: elements[3],
         },
     ];
-    addProperties(Currencies, mappings);
+    setProperties(Currencies, mappings);
     return Currencies;
 }
 
@@ -323,7 +323,7 @@ export function TOD(name: string, elements: any[][]): Record<any, any> {
             subkeys: ["DeliveryOrTransportTermsDescriptionCode", "CodeListIdentificationCode", "CodeListResponsibleAgencyCode", "DeliveryOrTransportTermsDescription1", "DeliveryOrTransportTermsDescription2"],
         },
     ];
-    addProperties(TermsOfDeliveryOrTransport, mappings);
+    setProperties(TermsOfDeliveryOrTransport, mappings);
     return TermsOfDeliveryOrTransport;
 }
 
@@ -359,7 +359,7 @@ export function LIN(name: string, elements: any[][]): Record<any, any> {
             source: elements[5],
         },
     ];
-    addProperties(LineItem, mappings);
+    setProperties(LineItem, mappings);
     return LineItem;
 }
 
@@ -374,7 +374,7 @@ export function QTY(name: string, elements: any[][]): Record<any, any> {
             subkeys: ["QuantityTypeCodeQualifier", "Quantity", "MeasurementUnitCode"],
         },
     ];
-    addProperties(Quantity, mappings);
+    setProperties(Quantity, mappings);
     return Quantity;
 }
 
@@ -414,7 +414,7 @@ export function EQD(name: string, elements: any[][]): Record<any, any> {
             source: elements[6],
         },
     ];
-    addProperties(EquipmentDetails, mappings);
+    setProperties(EquipmentDetails, mappings);
     return EquipmentDetails;
 }
 
@@ -433,7 +433,7 @@ export function PRI(name: string, elements: any[][]): Record<any, any> {
             source: elements[1],
         },
     ];
-    addProperties(PriceDetails, mappings);
+    setProperties(PriceDetails, mappings);
     return PriceDetails;
 }
 
@@ -461,7 +461,7 @@ export function PCI(name: string, elements: any[][]): Record<any, any> {
             subkeys: ["MarkingTypeCode", "CodeListIdentificationCode", "CodeListResponsibleAgencyCode"],
         },
     ];
-    addProperties(PackageIdentification, mappings);
+    setProperties(PackageIdentification, mappings);
     return PackageIdentification;
 }
 
@@ -510,7 +510,7 @@ export function TAX(name: string, elements: any[][]): Record<any, any> {
             source: elements[8],
         },
     ];
-    addProperties(DutyTaxFeeDetails, mappings);
+    setProperties(DutyTaxFeeDetails, mappings);
     return DutyTaxFeeDetails;
 }
 
@@ -530,7 +530,7 @@ export function CTA(name: string, elements: any[][]): Record<any, any> {
         },
     ];
 
-    addProperties(ContactInformation, mappings);
+    setProperties(ContactInformation, mappings);
     return ContactInformation;
 }
 
@@ -545,7 +545,7 @@ export function COM(name: string, elements: any[][]): Record<any, any> {
             subkeys: ["CommunicationAddressIdentifier", "CommunicationMeansTypeCode"],
         },
     ];
-    addProperties(CommunicationContact, mappings);
+    setProperties(CommunicationContact, mappings);
     return CommunicationContact;
 }
 
@@ -606,7 +606,7 @@ export function TDT(name: string, elements: any[][]): Record<any, any> {
             subkeys: ["TransportServiceIdentificationCode", "CodeListIdentificationCode", "CodeListResponsibleAgencyCode", "TransportServiceName", "TransportServiceDescription"],
         },
     ];
-    addProperties(TransportInformation, mappings);
+    setProperties(TransportInformation, mappings);
     return TransportInformation;
 }
 
@@ -639,7 +639,7 @@ export function LOC(name: string, elements: any[][]): Record<any, any> {
             source: elements[4],
         },
     ];
-    addProperties(PlaceLocationIdentification, mappings);
+    setProperties(PlaceLocationIdentification, mappings);
     return PlaceLocationIdentification;
 }
 
@@ -679,7 +679,7 @@ export function PIA(name: string, elements: any[][]): Record<any, any> {
         },
     ];
 
-    addProperties(AdditionalProductId, mappings);
+    setProperties(AdditionalProductId, mappings);
 
     return AdditionalProductId;
 }
@@ -715,7 +715,7 @@ export function PYT(name: string, elements: any[][]): Record<any, any> {
             source: elements[5],
         },
     ];
-    addProperties(PaymentTerms, mappings);
+    setProperties(PaymentTerms, mappings);
     return PaymentTerms;
 }
 
@@ -738,7 +738,7 @@ export function SCC(name: string, elements: any[][]): Record<any, any> {
             subkeys: ["FrequencyCode", "DespatchPatternCode", "DespatchPatternTimingCode"],
         },
     ];
-    addProperties(SchedulingConditions, mappings);
+    setProperties(SchedulingConditions, mappings);
     return SchedulingConditions;
 }
 
@@ -753,7 +753,7 @@ export function MOA(name: string, elements: any[][]): Record<any, any> {
             subkeys: ["MonetaryAmountTypeCodeQualifier", "MonetaryAmount", "CurrencyIdentificationCode", "CurrencyTypeCodeQualifier", "StatusDescriptionCode"],
         },
     ];
-    addProperties(MonetaryAmount, mappings);
+    setProperties(MonetaryAmount, mappings);
     return MonetaryAmount;
 }
 
@@ -772,7 +772,7 @@ export function RTE(name: string, elements: any[][]): Record<any, any> {
             source: elements[1],
         },
     ];
-    addProperties(RateDetails, mappings);
+    setProperties(RateDetails, mappings);
     return RateDetails;
 }
 
@@ -806,7 +806,7 @@ export function PAC(name: string, elements: any[][]): Record<any, any> {
             subkeys: ["ReturnablePackageFreightPaymentResponsibilityCode", "ReturnablePackageLoadContentsCode"],
         },
     ];
-    addProperties(Package, mappings);
+    setProperties(Package, mappings);
     return Package;
 }
 
@@ -838,7 +838,7 @@ export function DOC(name: string, elements: any[][]): Record<any, any> {
             source: elements[4],
         }
     ];
-    addProperties(DocumentMessageDetails, mappings);
+    setProperties(DocumentMessageDetails, mappings);
     return DocumentMessageDetails;
 }
 
@@ -857,7 +857,7 @@ export function PCD(name: string, elements: any[][]): Record<any, any> {
             source: elements[1],
         }
     ];
-    addProperties(PercentageDetails, mappings);
+    setProperties(PercentageDetails, mappings);
     return PercentageDetails;
 }
 
@@ -885,7 +885,7 @@ export function MEA(name: string, elements: any[][]): Record<any, any> {
             source: elements[3],
         }
     ];
-    addProperties(Measurements, mappings);
+    setProperties(Measurements, mappings);
     return Measurements;
 }
 
@@ -909,7 +909,7 @@ export function APR(name: string, elements: any[][]): Record<any, any> {
             subkeys: ['ChangeReasonDescriptionCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode', 'ChangeReasonDescription']
         }
     ];
-    addProperties(AdditionalPriceInformation, mappings);
+    setProperties(AdditionalPriceInformation, mappings);
     return AdditionalPriceInformation;
 }
 
@@ -936,7 +936,7 @@ export function RCS(name: string, elements: any[][]): Record<any, any> {
             source: elements[3]
         }
     ];
-    addProperties(RequirementsAndConditions, mappings);
+    setProperties(RequirementsAndConditions, mappings);
     return RequirementsAndConditions;
 }
 
@@ -964,7 +964,7 @@ export function EFI(name: string, elements: any[][]): Record<any, any> {
             source: elements[3],
         }
     ];
-    addProperties(ExternalFileLinkIdentification, mappings);
+    setProperties(ExternalFileLinkIdentification, mappings);
     return ExternalFileLinkIdentification;
 }
 
@@ -987,7 +987,7 @@ export function CED(name: string, elements: any[][]): Record<any, any> {
             source: elements[2]
         }
     ];
-    addProperties(ComputerEnvironmentDetails, mappings);
+    setProperties(ComputerEnvironmentDetails, mappings);
     return ComputerEnvironmentDetails;
 }
 
@@ -1011,7 +1011,7 @@ export function QVR(name: string, elements: any[][]): Record<any, any> {
             subkeys: ['ChangeReasonDescriptionCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode', 'ChangeReasonDescription']
         }
     ];
-    addProperties(QuantityVariances, mappings);
+    setProperties(QuantityVariances, mappings);
     return QuantityVariances;
 }
 
@@ -1039,7 +1039,7 @@ export function CCI(name: string, elements: any[][]): Record<any, any> {
             source: elements[3],
         }
     ];
-    addProperties(CharacteristicOrClassId, mappings);
+    setProperties(CharacteristicOrClassId, mappings);
     return CharacteristicOrClassId;
 }
 
@@ -1061,7 +1061,7 @@ export function STG(name: string, elements: any[][]): Record<any, any> {
             source: elements[2],
         }
     ];
-    addProperties(Reference, mappings);
+    setProperties(Reference, mappings);
     return Reference;
 }
 
@@ -1099,7 +1099,7 @@ export function ALI(name: string, elements: any[][]): Record<any, any> {
             source: elements[6]
         }
     ];
-    addProperties(AdditionalInformation, mappings);
+    setProperties(AdditionalInformation, mappings);
     return AdditionalInformation;
 }
 
@@ -1127,7 +1127,7 @@ export function FII(name: string, elements: any[][]): Record<any, any> {
             source: elements[3]
         }
     ];
-    addProperties(FinancialInstitutionInformation, mappings);
+    setProperties(FinancialInstitutionInformation, mappings);
     return FinancialInstitutionInformation;
 }
 
@@ -1147,7 +1147,7 @@ export function RJL(name: string, elements: any[][]): Record<any, any> {
             subkeys: ['AccountingEntryTypeNameCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode', 'AccountingEntryTypeName']
         }
     ];
-    addProperties(AccountingJournalIdentification, mappings);
+    setProperties(AccountingJournalIdentification, mappings);
     return AccountingJournalIdentification;
 }
 
@@ -1186,7 +1186,7 @@ export function GIN(name: string, elements: any[][]): Record<any, any> {
             subkeys: ['ObjectIdentifier1', 'ObjectIdentifier2']
         }
     ];
-    addProperties(GoodsIdentityNumber, mappings);
+    setProperties(GoodsIdentityNumber, mappings);
     return GoodsIdentityNumber;
 }
 
@@ -1206,7 +1206,7 @@ export function HAN(name: string, elements: any[][]): Record<any, any> {
             subkeys: ['HazardousMaterialCategoryNameCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode', 'HazardousMaterialCategoryName']
         }
     ];
-    addProperties(HandlingInstructions, mappings);
+    setProperties(HandlingInstructions, mappings);
     return HandlingInstructions;
 }
 
@@ -1225,7 +1225,7 @@ export function RNG(name: string, elements: any[][]): Record<any, any> {
             subkeys: ['MeasurementUnitCode', 'RangeMinimumQuantity', 'RangeMaximumQuantity']
         }
     ];
-    addProperties(RangeDetails, mappings);
+    setProperties(RangeDetails, mappings);
     return RangeDetails;
 }
 
@@ -1257,7 +1257,7 @@ export function ALC(name: string, elements: any[][]): Record<any, any> {
             subkeys: ['SpecialServiceDescriptionCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode', 'SpecialServiceDescription1', 'SpecialServiceDescription2']
         }
     ];
-    addProperties(AllowanceOrCharge, mappings);
+    setProperties(AllowanceOrCharge, mappings);
     return AllowanceOrCharge;
 }
 
@@ -1329,7 +1329,7 @@ export function DGS(name: string, elements: any[][]): Record<any, any> {
             subkeys: ['TunnelRestrictionCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode']
         }
     ];
-    addProperties(DangerousGoods, mappings);
+    setProperties(DangerousGoods, mappings);
     return DangerousGoods;
 }
 
@@ -1352,7 +1352,7 @@ export function GEI(name: string, elements: any[][]): Record<any, any> {
             source: elements[2]
         }
     ];
-    addProperties(ProcessingInformation, mappings);
+    setProperties(ProcessingInformation, mappings);
     return ProcessingInformation;
 }
 
@@ -1378,7 +1378,7 @@ export function MTD(name: string, elements: any[][]): Record<any, any> {
             source: elements[3]
         }
     ];
-    addProperties(MaintenanceOperationDetails, mappings);
+    setProperties(MaintenanceOperationDetails, mappings);
     return MaintenanceOperationDetails;
 }
 
@@ -1393,7 +1393,7 @@ export function CAV(name: string, elements: any[][]): Record<any, any> {
             subkeys: ['CharacteristicValueDescriptionCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode', 'CharacteristicValueDescription1', 'CharacteristicValueDescription2']
         }
     ];
-    addProperties(CharacteristicValue, mappings);
+    setProperties(CharacteristicValue, mappings);
     return CharacteristicValue;
 }
 
@@ -1438,7 +1438,7 @@ export function STS(name: string, elements: any[][]): Record<any, any> {
             subkeys: ['StatusReasonDescriptionCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode', 'StatusReasonDescription']
         }
     ];
-    addProperties(Status, mappings);
+    setProperties(Status, mappings);
     return Status;
 }
 
@@ -1452,7 +1452,7 @@ export function UNS(name: string, elements: any[][]): Record<any, any> {
             source: elements[0],
         },
     ];
-    addProperties(SectionControl, mappings);
+    setProperties(SectionControl, mappings);
     return SectionControl;
 }
 
@@ -1467,7 +1467,7 @@ export function CNT(name: string, elements: any[][]): Record<any, any> {
             subkeys: ["ControlTotalTypeCodeQualifier", "ControlTotalQuantity", "MeasurementUnitCode"],
         },
     ];
-    addProperties(ControlTotal, mappings);
+    setProperties(ControlTotal, mappings);
     return ControlTotal;
 }
 
@@ -1485,7 +1485,7 @@ export function UNT(name: string, elements: any[][]): Record<any, any> {
             source: elements[1],
         },
     ];
-    addProperties(MessageTrailer, mappings);
+    setProperties(MessageTrailer, mappings);
     return MessageTrailer;
 }
 
@@ -1503,6 +1503,6 @@ export function UNZ(name: string, elements: any[][]): Record<any, any> {
             source: elements[1],
         },
     ];
-    addProperties(InterchangeTrailer, mappings);
+    setProperties(InterchangeTrailer, mappings);
     return InterchangeTrailer;
 }   

@@ -1,16 +1,15 @@
-export function addProperties(object: any, mappings: any) {
-    if (object.code === undefined) {
-        console.log('No code ');
-        return;
-    }
+export function setProperties(object: any, mappings: any) {
     for (const mapping of mappings) {
-        const source = mapping.source, target = mapping.target, subkeys = mapping.subkeys;
+        let source = mapping.source, target = mapping.target, subkeys = mapping.subkeys;
+        if (typeof source === 'string') {
+            source = source.split('>');
+        }
         if (source && source.length > 0) {
             const filteredSource = source.filter((value: any) => value !== undefined && (typeof value !== 'string' || value.trim() !== ''));
 
             if (filteredSource.length > 0) {
                 if (subkeys) {
-                    const subkeysObject = subkeys.reduce((result: any, key: any, i: number) => {
+                    const subkeysObject: any = subkeys.reduce((result: any, key: any, i: number) => {
                         const value = filteredSource[i];
                         if (value !== undefined && (typeof value !== 'string' || value.trim() !== '')) {
                             result[key] = value;
@@ -25,13 +24,5 @@ export function addProperties(object: any, mappings: any) {
                 }
             }
         }
-    }
-}
-
-export function addPropertiesX12(object: any, mappings: any) {
-    for (const mapping of mappings) {
-        const source = mapping.source, target = mapping.target;
-        if (source !== undefined && (typeof source !== 'string' || source.trim() !== ''))
-            object[target] = source;
     }
 }

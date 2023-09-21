@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-receiver": "tsc && node ./dist/receiver.js",
-    "start-sender": "node ./dist/sender.js"
+    "start1": "tsc && node ./dist/receiver.js",
+    "start2": "node ./dist/sender.js"
   },
   "keywords": [],
   "author": "",
