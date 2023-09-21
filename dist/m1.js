@@ -40,7 +40,7 @@ function UNB(name, elements) {
         { target: "CommunicationsAgreementID", source: elements[9] },
         { target: "TestIndicator", source: elements[10] },
     ];
-    (0, mappingService_1.addProperties)(InterchangeHeader, mappings);
+    (0, mappingService_1.setProperties)(InterchangeHeader, mappings);
     return InterchangeHeader;
 }
 exports.UNB = UNB;
@@ -62,7 +62,7 @@ function UNH(name, elements) {
             subkeys: ["SequenceOfTransfers", "FirstAndLastTransfers"],
         },
     ];
-    (0, mappingService_1.addProperties)(MessageHeader, mappings);
+    (0, mappingService_1.setProperties)(MessageHeader, mappings);
     return MessageHeader;
 }
 exports.UNH = UNH;
@@ -86,7 +86,7 @@ function BGM(name, elements) {
         { target: "DocumentStatusCode", source: elements[4] },
         { target: "LanguageNameCode", source: elements[5] },
     ];
-    (0, mappingService_1.addProperties)(BeginningOfMessage, mappings);
+    (0, mappingService_1.setProperties)(BeginningOfMessage, mappings);
     return BeginningOfMessage;
 }
 exports.BGM = BGM;
@@ -101,7 +101,7 @@ function DTM(name, elements) {
             subkeys: ["Qualifier", "Date", "FormatQualifier"],
         },
     ];
-    (0, mappingService_1.addProperties)(DateTimePeriod, mappings);
+    (0, mappingService_1.setProperties)(DateTimePeriod, mappings);
     return DateTimePeriod;
 }
 exports.DTM = DTM;
@@ -116,7 +116,7 @@ function PAI(name, elements) {
             subkeys: ["PaymentConditionsCode", "PaymentGuaranteemeansCode", "PaymentMeansCode"],
         },
     ];
-    (0, mappingService_1.addProperties)(PaymentInstructionDetails, mappings);
+    (0, mappingService_1.setProperties)(PaymentInstructionDetails, mappings);
     return PaymentInstructionDetails;
 }
 exports.PAI = PAI;
@@ -140,7 +140,7 @@ function FTX(name, elements) {
         { target: "LanguageNameCode", source: elements[4] },
         { target: "FreeTextFormatCode", source: elements[5] },
     ];
-    (0, mappingService_1.addProperties)(FreeText, mappings);
+    (0, mappingService_1.setProperties)(FreeText, mappings);
     return FreeText;
 }
 exports.FTX = FTX;
@@ -176,7 +176,7 @@ function GIR(name, elements) {
             subkeys: ["Identifier", "IdentificationCodeQualifier", "StatusDescriptionCode"],
         },
     ];
-    (0, mappingService_1.addProperties)(RelatedIdentificationNumbers, mappings);
+    (0, mappingService_1.setProperties)(RelatedIdentificationNumbers, mappings);
     return RelatedIdentificationNumbers;
 }
 exports.GIR = GIR;
@@ -198,7 +198,7 @@ function IMD(name, elements) {
         },
         { target: "SurfaceOrLayerCode", source: elements[3] },
     ];
-    (0, mappingService_1.addProperties)(ItemDescription, mappings);
+    (0, mappingService_1.setProperties)(ItemDescription, mappings);
     return ItemDescription;
 }
 exports.IMD = IMD;
@@ -213,7 +213,7 @@ function RFF(name, elements) {
             subkeys: ["ReferenceCodeQualifier", "ReferenceIdentifier", "DocumentLineIdentifier", "VersionIdentifier", "RevisionIdentifier"],
         },
     ];
-    (0, mappingService_1.addProperties)(Reference, mappings);
+    (0, mappingService_1.setProperties)(Reference, mappings);
     return Reference;
 }
 exports.RFF = RFF;
@@ -264,7 +264,7 @@ function NAD(name, elements) {
             source: elements[8],
         },
     ];
-    (0, mappingService_1.addProperties)(NameAndAddress, mappings);
+    (0, mappingService_1.setProperties)(NameAndAddress, mappings);
     return NameAndAddress;
 }
 exports.NAD = NAD;
@@ -292,7 +292,7 @@ function CUX(name, elements) {
             source: elements[3],
         },
     ];
-    (0, mappingService_1.addProperties)(Currencies, mappings);
+    (0, mappingService_1.setProperties)(Currencies, mappings);
     return Currencies;
 }
 exports.CUX = CUX;
@@ -315,7 +315,7 @@ function TOD(name, elements) {
             subkeys: ["DeliveryOrTransportTermsDescriptionCode", "CodeListIdentificationCode", "CodeListResponsibleAgencyCode", "DeliveryOrTransportTermsDescription1", "DeliveryOrTransportTermsDescription2"],
         },
     ];
-    (0, mappingService_1.addProperties)(TermsOfDeliveryOrTransport, mappings);
+    (0, mappingService_1.setProperties)(TermsOfDeliveryOrTransport, mappings);
     return TermsOfDeliveryOrTransport;
 }
 exports.TOD = TOD;
@@ -351,7 +351,7 @@ function LIN(name, elements) {
             source: elements[5],
         },
     ];
-    (0, mappingService_1.addProperties)(LineItem, mappings);
+    (0, mappingService_1.setProperties)(LineItem, mappings);
     return LineItem;
 }
 exports.LIN = LIN;
@@ -366,7 +366,7 @@ function QTY(name, elements) {
             subkeys: ["QuantityTypeCodeQualifier", "Quantity", "MeasurementUnitCode"],
         },
     ];
-    (0, mappingService_1.addProperties)(Quantity, mappings);
+    (0, mappingService_1.setProperties)(Quantity, mappings);
     return Quantity;
 }
 exports.QTY = QTY;
@@ -406,7 +406,7 @@ function EQD(name, elements) {
             source: elements[6],
         },
     ];
-    (0, mappingService_1.addProperties)(EquipmentDetails, mappings);
+    (0, mappingService_1.setProperties)(EquipmentDetails, mappings);
     return EquipmentDetails;
 }
 exports.EQD = EQD;
@@ -425,7 +425,7 @@ function PRI(name, elements) {
             source: elements[1],
         },
     ];
-    (0, mappingService_1.addProperties)(PriceDetails, mappings);
+    (0, mappingService_1.setProperties)(PriceDetails, mappings);
     return PriceDetails;
 }
 exports.PRI = PRI;
@@ -453,7 +453,7 @@ function PCI(name, elements) {
             subkeys: ["MarkingTypeCode", "CodeListIdentificationCode", "CodeListResponsibleAgencyCode"],
         },
     ];
-    (0, mappingService_1.addProperties)(PackageIdentification, mappings);
+    (0, mappingService_1.setProperties)(PackageIdentification, mappings);
     return PackageIdentification;
 }
 exports.PCI = PCI;
@@ -502,7 +502,7 @@ function TAX(name, elements) {
             source: elements[8],
         },
     ];
-    (0, mappingService_1.addProperties)(DutyTaxFeeDetails, mappings);
+    (0, mappingService_1.setProperties)(DutyTaxFeeDetails, mappings);
     return DutyTaxFeeDetails;
 }
 exports.TAX = TAX;
@@ -521,7 +521,7 @@ function CTA(name, elements) {
             subkeys: ["ContactIdentifier", "ContactName"],
         },
     ];
-    (0, mappingService_1.addProperties)(ContactInformation, mappings);
+    (0, mappingService_1.setProperties)(ContactInformation, mappings);
     return ContactInformation;
 }
 exports.CTA = CTA;
@@ -536,7 +536,7 @@ function COM(name, elements) {
             subkeys: ["CommunicationAddressIdentifier", "CommunicationMeansTypeCode"],
         },
     ];
-    (0, mappingService_1.addProperties)(CommunicationContact, mappings);
+    (0, mappingService_1.setProperties)(CommunicationContact, mappings);
     return CommunicationContact;
 }
 exports.COM = COM;
@@ -597,7 +597,7 @@ function TDT(name, elements) {
             subkeys: ["TransportServiceIdentificationCode", "CodeListIdentificationCode", "CodeListResponsibleAgencyCode", "TransportServiceName", "TransportServiceDescription"],
         },
     ];
-    (0, mappingService_1.addProperties)(TransportInformation, mappings);
+    (0, mappingService_1.setProperties)(TransportInformation, mappings);
     return TransportInformation;
 }
 exports.TDT = TDT;
@@ -630,7 +630,7 @@ function LOC(name, elements) {
             source: elements[4],
         },
     ];
-    (0, mappingService_1.addProperties)(PlaceLocationIdentification, mappings);
+    (0, mappingService_1.setProperties)(PlaceLocationIdentification, mappings);
     return PlaceLocationIdentification;
 }
 exports.LOC = LOC;
@@ -669,7 +669,7 @@ function PIA(name, elements) {
             subkeys: ["ItemIdentifier", "ItemTypeIdentificationCode", "CodeListIdentificationCode", "CodeListResponsibleAgencyCode"],
         },
     ];
-    (0, mappingService_1.addProperties)(AdditionalProductId, mappings);
+    (0, mappingService_1.setProperties)(AdditionalProductId, mappings);
     return AdditionalProductId;
 }
 exports.PIA = PIA;
@@ -704,7 +704,7 @@ function PYT(name, elements) {
             source: elements[5],
         },
     ];
-    (0, mappingService_1.addProperties)(PaymentTerms, mappings);
+    (0, mappingService_1.setProperties)(PaymentTerms, mappings);
     return PaymentTerms;
 }
 exports.PYT = PYT;
@@ -727,7 +727,7 @@ function SCC(name, elements) {
             subkeys: ["FrequencyCode", "DespatchPatternCode", "DespatchPatternTimingCode"],
         },
     ];
-    (0, mappingService_1.addProperties)(SchedulingConditions, mappings);
+    (0, mappingService_1.setProperties)(SchedulingConditions, mappings);
     return SchedulingConditions;
 }
 exports.SCC = SCC;
@@ -742,7 +742,7 @@ function MOA(name, elements) {
             subkeys: ["MonetaryAmountTypeCodeQualifier", "MonetaryAmount", "CurrencyIdentificationCode", "CurrencyTypeCodeQualifier", "StatusDescriptionCode"],
         },
     ];
-    (0, mappingService_1.addProperties)(MonetaryAmount, mappings);
+    (0, mappingService_1.setProperties)(MonetaryAmount, mappings);
     return MonetaryAmount;
 }
 exports.MOA = MOA;
@@ -761,7 +761,7 @@ function RTE(name, elements) {
             source: elements[1],
         },
     ];
-    (0, mappingService_1.addProperties)(RateDetails, mappings);
+    (0, mappingService_1.setProperties)(RateDetails, mappings);
     return RateDetails;
 }
 exports.RTE = RTE;
@@ -795,7 +795,7 @@ function PAC(name, elements) {
             subkeys: ["ReturnablePackageFreightPaymentResponsibilityCode", "ReturnablePackageLoadContentsCode"],
         },
     ];
-    (0, mappingService_1.addProperties)(Package, mappings);
+    (0, mappingService_1.setProperties)(Package, mappings);
     return Package;
 }
 exports.PAC = PAC;
@@ -827,7 +827,7 @@ function DOC(name, elements) {
             source: elements[4],
         }
     ];
-    (0, mappingService_1.addProperties)(DocumentMessageDetails, mappings);
+    (0, mappingService_1.setProperties)(DocumentMessageDetails, mappings);
     return DocumentMessageDetails;
 }
 exports.DOC = DOC;
@@ -846,7 +846,7 @@ function PCD(name, elements) {
             source: elements[1],
         }
     ];
-    (0, mappingService_1.addProperties)(PercentageDetails, mappings);
+    (0, mappingService_1.setProperties)(PercentageDetails, mappings);
     return PercentageDetails;
 }
 exports.PCD = PCD;
@@ -874,7 +874,7 @@ function MEA(name, elements) {
             source: elements[3],
         }
     ];
-    (0, mappingService_1.addProperties)(Measurements, mappings);
+    (0, mappingService_1.setProperties)(Measurements, mappings);
     return Measurements;
 }
 exports.MEA = MEA;
@@ -898,7 +898,7 @@ function APR(name, elements) {
             subkeys: ['ChangeReasonDescriptionCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode', 'ChangeReasonDescription']
         }
     ];
-    (0, mappingService_1.addProperties)(AdditionalPriceInformation, mappings);
+    (0, mappingService_1.setProperties)(AdditionalPriceInformation, mappings);
     return AdditionalPriceInformation;
 }
 exports.APR = APR;
@@ -925,7 +925,7 @@ function RCS(name, elements) {
             source: elements[3]
         }
     ];
-    (0, mappingService_1.addProperties)(RequirementsAndConditions, mappings);
+    (0, mappingService_1.setProperties)(RequirementsAndConditions, mappings);
     return RequirementsAndConditions;
 }
 exports.RCS = RCS;
@@ -953,7 +953,7 @@ function EFI(name, elements) {
             source: elements[3],
         }
     ];
-    (0, mappingService_1.addProperties)(ExternalFileLinkIdentification, mappings);
+    (0, mappingService_1.setProperties)(ExternalFileLinkIdentification, mappings);
     return ExternalFileLinkIdentification;
 }
 exports.EFI = EFI;
@@ -976,7 +976,7 @@ function CED(name, elements) {
             source: elements[2]
         }
     ];
-    (0, mappingService_1.addProperties)(ComputerEnvironmentDetails, mappings);
+    (0, mappingService_1.setProperties)(ComputerEnvironmentDetails, mappings);
     return ComputerEnvironmentDetails;
 }
 exports.CED = CED;
@@ -1000,7 +1000,7 @@ function QVR(name, elements) {
             subkeys: ['ChangeReasonDescriptionCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode', 'ChangeReasonDescription']
         }
     ];
-    (0, mappingService_1.addProperties)(QuantityVariances, mappings);
+    (0, mappingService_1.setProperties)(QuantityVariances, mappings);
     return QuantityVariances;
 }
 exports.QVR = QVR;
@@ -1028,7 +1028,7 @@ function CCI(name, elements) {
             source: elements[3],
         }
     ];
-    (0, mappingService_1.addProperties)(CharacteristicOrClassId, mappings);
+    (0, mappingService_1.setProperties)(CharacteristicOrClassId, mappings);
     return CharacteristicOrClassId;
 }
 exports.CCI = CCI;
@@ -1050,7 +1050,7 @@ function STG(name, elements) {
             source: elements[2],
         }
     ];
-    (0, mappingService_1.addProperties)(Reference, mappings);
+    (0, mappingService_1.setProperties)(Reference, mappings);
     return Reference;
 }
 exports.STG = STG;
@@ -1088,7 +1088,7 @@ function ALI(name, elements) {
             source: elements[6]
         }
     ];
-    (0, mappingService_1.addProperties)(AdditionalInformation, mappings);
+    (0, mappingService_1.setProperties)(AdditionalInformation, mappings);
     return AdditionalInformation;
 }
 exports.ALI = ALI;
@@ -1116,7 +1116,7 @@ function FII(name, elements) {
             source: elements[3]
         }
     ];
-    (0, mappingService_1.addProperties)(FinancialInstitutionInformation, mappings);
+    (0, mappingService_1.setProperties)(FinancialInstitutionInformation, mappings);
     return FinancialInstitutionInformation;
 }
 exports.FII = FII;
@@ -1136,7 +1136,7 @@ function RJL(name, elements) {
             subkeys: ['AccountingEntryTypeNameCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode', 'AccountingEntryTypeName']
         }
     ];
-    (0, mappingService_1.addProperties)(AccountingJournalIdentification, mappings);
+    (0, mappingService_1.setProperties)(AccountingJournalIdentification, mappings);
     return AccountingJournalIdentification;
 }
 exports.RJL = RJL;
@@ -1175,7 +1175,7 @@ function GIN(name, elements) {
             subkeys: ['ObjectIdentifier1', 'ObjectIdentifier2']
         }
     ];
-    (0, mappingService_1.addProperties)(GoodsIdentityNumber, mappings);
+    (0, mappingService_1.setProperties)(GoodsIdentityNumber, mappings);
     return GoodsIdentityNumber;
 }
 exports.GIN = GIN;
@@ -1195,7 +1195,7 @@ function HAN(name, elements) {
             subkeys: ['HazardousMaterialCategoryNameCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode', 'HazardousMaterialCategoryName']
         }
     ];
-    (0, mappingService_1.addProperties)(HandlingInstructions, mappings);
+    (0, mappingService_1.setProperties)(HandlingInstructions, mappings);
     return HandlingInstructions;
 }
 exports.HAN = HAN;
@@ -1214,7 +1214,7 @@ function RNG(name, elements) {
             subkeys: ['MeasurementUnitCode', 'RangeMinimumQuantity', 'RangeMaximumQuantity']
         }
     ];
-    (0, mappingService_1.addProperties)(RangeDetails, mappings);
+    (0, mappingService_1.setProperties)(RangeDetails, mappings);
     return RangeDetails;
 }
 exports.RNG = RNG;
@@ -1246,7 +1246,7 @@ function ALC(name, elements) {
             subkeys: ['SpecialServiceDescriptionCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode', 'SpecialServiceDescription1', 'SpecialServiceDescription2']
         }
     ];
-    (0, mappingService_1.addProperties)(AllowanceOrCharge, mappings);
+    (0, mappingService_1.setProperties)(AllowanceOrCharge, mappings);
     return AllowanceOrCharge;
 }
 exports.ALC = ALC;
@@ -1318,7 +1318,7 @@ function DGS(name, elements) {
             subkeys: ['TunnelRestrictionCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode']
         }
     ];
-    (0, mappingService_1.addProperties)(DangerousGoods, mappings);
+    (0, mappingService_1.setProperties)(DangerousGoods, mappings);
     return DangerousGoods;
 }
 exports.DGS = DGS;
@@ -1341,7 +1341,7 @@ function GEI(name, elements) {
             source: elements[2]
         }
     ];
-    (0, mappingService_1.addProperties)(ProcessingInformation, mappings);
+    (0, mappingService_1.setProperties)(ProcessingInformation, mappings);
     return ProcessingInformation;
 }
 exports.GEI = GEI;
@@ -1367,7 +1367,7 @@ function MTD(name, elements) {
             source: elements[3]
         }
     ];
-    (0, mappingService_1.addProperties)(MaintenanceOperationDetails, mappings);
+    (0, mappingService_1.setProperties)(MaintenanceOperationDetails, mappings);
     return MaintenanceOperationDetails;
 }
 exports.MTD = MTD;
@@ -1382,7 +1382,7 @@ function CAV(name, elements) {
             subkeys: ['CharacteristicValueDescriptionCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode', 'CharacteristicValueDescription1', 'CharacteristicValueDescription2']
         }
     ];
-    (0, mappingService_1.addProperties)(CharacteristicValue, mappings);
+    (0, mappingService_1.setProperties)(CharacteristicValue, mappings);
     return CharacteristicValue;
 }
 exports.CAV = CAV;
@@ -1427,7 +1427,7 @@ function STS(name, elements) {
             subkeys: ['StatusReasonDescriptionCode', 'CodeListIdentificationCode', 'CodeListResponsibleAgencyCode', 'StatusReasonDescription']
         }
     ];
-    (0, mappingService_1.addProperties)(Status, mappings);
+    (0, mappingService_1.setProperties)(Status, mappings);
     return Status;
 }
 exports.STS = STS;
@@ -1441,7 +1441,7 @@ function UNS(name, elements) {
             source: elements[0],
         },
     ];
-    (0, mappingService_1.addProperties)(SectionControl, mappings);
+    (0, mappingService_1.setProperties)(SectionControl, mappings);
     return SectionControl;
 }
 exports.UNS = UNS;
@@ -1456,7 +1456,7 @@ function CNT(name, elements) {
             subkeys: ["ControlTotalTypeCodeQualifier", "ControlTotalQuantity", "MeasurementUnitCode"],
         },
     ];
-    (0, mappingService_1.addProperties)(ControlTotal, mappings);
+    (0, mappingService_1.setProperties)(ControlTotal, mappings);
     return ControlTotal;
 }
 exports.CNT = CNT;
@@ -1474,7 +1474,7 @@ function UNT(name, elements) {
             source: elements[1],
         },
     ];
-    (0, mappingService_1.addProperties)(MessageTrailer, mappings);
+    (0, mappingService_1.setProperties)(MessageTrailer, mappings);
     return MessageTrailer;
 }
 exports.UNT = UNT;
@@ -1492,7 +1492,7 @@ function UNZ(name, elements) {
             source: elements[1],
         },
     ];
-    (0, mappingService_1.addProperties)(InterchangeTrailer, mappings);
+    (0, mappingService_1.setProperties)(InterchangeTrailer, mappings);
     return InterchangeTrailer;
 }
 exports.UNZ = UNZ;

@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.addProperties = void 0;
-function addProperties(object, mappings) {
+exports.setProperties = void 0;
+function setProperties(object, mappings) {
     for (const mapping of mappings) {
         let source = mapping.source, target = mapping.target, subkeys = mapping.subkeys;
         if (typeof source === 'string') {
@@ -27,4 +27,4 @@ function addProperties(object, mappings) {
         }
     }
 }
-exports.addProperties = addProperties;
+exports.setProperties = setProperties;

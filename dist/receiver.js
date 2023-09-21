@@ -57,15 +57,18 @@ function parseX12(ediMessage) {
     try {
         const interchange = parser.parse(ediMessage);
         const jsonObj = interchange.toJSON();
+        console.log(interchange);
         // printObject(jsonObj);
+        console.log(jsonObj);
         const arr = [];
         const segments = jsonObj.functionalGroups[0].transactions[0].segments;
+        const header = jsonObj.functionalGroups[0].header;
         // console.log(segments);
         for (let segment of segments) {
             const segmentObj = x12Mapping(segment);
             arr.push(segmentObj);
         }
-        console.log(arr);
+        // console.log(arr);
     }
     catch (err) {
         console.log(err);
@@ -74,6 +77,8 @@ function parseX12(ediMessage) {
 function parseEdifact(edifactMessage) {
     const reader = new edifact_1.Reader({ autoDetectEncoding: true });
     const result = reader.parse(edifactMessage);
+    for (let obj of result)
+        console.log(obj);
     const arr = [];
     for (const obj of result) {
         const segmentObj = edifactMapping(obj);
@@ -169,7 +174,11 @@ function x12Mapping(object) {
         N1: mappingX12.N1,
         N2: mappingX12.N2,
         N3: mappingX12.N3,
-        PO1: mappingX12.PO1
+        N4: mappingX12.N4,
+        PO1: mappingX12.PO1,
+        MSG: mappingX12.MSG,
+        TD5: mappingX12.TD5,
+        CTT: mappingX12.CTT
     };
     if (segmentMappingObj.hasOwnProperty(segmentCode)) {
         segment = segmentMappingObj[segmentCode](segmentCode, elements);

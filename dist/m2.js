@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CODE = exports.PO1 = exports.N3 = exports.N2 = exports.N1 = exports.N9 = exports.CTP = exports.FOB = exports.TAX = exports.REF = exports.DTM = exports.PER = exports.CUR = exports.BEG = void 0;
+exports.CODE = exports.CTT = exports.TD5 = exports.MSG = exports.N4 = exports.PO1 = exports.N3 = exports.N2 = exports.N1 = exports.N9 = exports.CTP = exports.FOB = exports.TAX = exports.REF = exports.DTM = exports.PER = exports.CUR = exports.BEG = void 0;
 const mappingService_1 = require("./mappingService");
 function BEG(name, elements) {
     const BeginningSegmentForPurchaseOrder = {
@@ -56,7 +56,7 @@ function BEG(name, elements) {
             source: elements[11]
         }
     ];
-    (0, mappingService_1.addProperties)(BeginningSegmentForPurchaseOrder, mappings);
+    (0, mappingService_1.setProperties)(BeginningSegmentForPurchaseOrder, mappings);
     return BeginningSegmentForPurchaseOrder;
 }
 exports.BEG = BEG;
@@ -150,7 +150,7 @@ function CUR(name, elements) {
             source: elements[20]
         },
     ];
-    (0, mappingService_1.addProperties)(Currency, mappings);
+    (0, mappingService_1.setProperties)(Currency, mappings);
     return Currency;
 }
 exports.CUR = CUR;
@@ -196,7 +196,7 @@ function PER(name, elements) {
             source: elements[8]
         }
     ];
-    (0, mappingService_1.addProperties)(AdministrativeCommunicationsContact, mappings);
+    (0, mappingService_1.setProperties)(AdministrativeCommunicationsContact, mappings);
     return AdministrativeCommunicationsContact;
 }
 exports.PER = PER;
@@ -230,7 +230,7 @@ function DTM(name, elements) {
             source: elements[5]
         }
     ];
-    (0, mappingService_1.addProperties)(DateTimeReference, mappings);
+    (0, mappingService_1.setProperties)(DateTimeReference, mappings);
     return DateTimeReference;
 }
 exports.DTM = DTM;
@@ -257,7 +257,7 @@ function REF(name, elements) {
             subkeys: ['ReferenceIdentificationQualifier', 'ReferenceIdentification', 'ReferenceIdentificationQualifier', 'ReferenceIdentification', 'ReferenceIdentificationQualifier', 'ReferenceIdentification']
         }
     ];
-    (0, mappingService_1.addProperties)(ReferenceInformation, mappings);
+    (0, mappingService_1.setProperties)(ReferenceInformation, mappings);
     return ReferenceInformation;
 }
 exports.REF = REF;
@@ -319,7 +319,7 @@ function TAX(name, elements) {
             source: elements[12]
         }
     ];
-    (0, mappingService_1.addProperties)(TaxReference, mappings);
+    (0, mappingService_1.setProperties)(TaxReference, mappings);
     return TaxReference;
 }
 exports.TAX = TAX;
@@ -365,7 +365,7 @@ function FOB(name, elements) {
             source: elements[8]
         }
     ];
-    (0, mappingService_1.addProperties)(FOBRelatedInstructions, mappings);
+    (0, mappingService_1.setProperties)(FOBRelatedInstructions, mappings);
     return FOBRelatedInstructions;
 }
 exports.FOB = FOB;
@@ -420,7 +420,7 @@ function CTP(name, elements) {
             source: elements[10]
         }
     ];
-    (0, mappingService_1.addProperties)(PricingInformation, mappings);
+    (0, mappingService_1.setProperties)(PricingInformation, mappings);
     return PricingInformation;
 }
 exports.CTP = CTP;
@@ -459,7 +459,7 @@ function N9(name, elements) {
             subkeys: ['ReferenceIdentificationQualifier', 'ReferenceIdentification', 'ReferenceIdentificationQualifier', 'ReferenceIdentification', 'ReferenceIdentificationQualifier', 'ReferenceIdentification']
         }
     ];
-    (0, mappingService_1.addProperties)(ExtendedReferenceInformation, mappings);
+    (0, mappingService_1.setProperties)(ExtendedReferenceInformation, mappings);
     return ExtendedReferenceInformation;
 }
 exports.N9 = N9;
@@ -493,7 +493,7 @@ function N1(name, elements) {
             source: elements[5]
         }
     ];
-    (0, mappingService_1.addProperties)(PartyIdentification, mappings);
+    (0, mappingService_1.setProperties)(PartyIdentification, mappings);
     return PartyIdentification;
 }
 exports.N1 = N1;
@@ -511,7 +511,7 @@ function N2(name, elements) {
             source: elements[1]
         }
     ];
-    (0, mappingService_1.addProperties)(AdditionalNameInformation, mappings);
+    (0, mappingService_1.setProperties)(AdditionalNameInformation, mappings);
     return AdditionalNameInformation;
 }
 exports.N2 = N2;
@@ -529,7 +529,7 @@ function N3(name, elements) {
             source: elements[1]
         }
     ];
-    (0, mappingService_1.addProperties)(PartyLocation, mappings);
+    (0, mappingService_1.setProperties)(PartyLocation, mappings);
     return PartyLocation;
 }
 exports.N3 = N3;
@@ -639,10 +639,154 @@ function PO1(name, elements) {
             source: elements[24]
         }
     ];
-    (0, mappingService_1.addProperties)(BaselineItemData, mappings);
+    (0, mappingService_1.setProperties)(BaselineItemData, mappings);
     return BaselineItemData;
 }
 exports.PO1 = PO1;
+function N4(name, elements) {
+    const GeographicLocation = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "",
+            source: elements[0]
+        },
+    ];
+    (0, mappingService_1.setProperties)(GeographicLocation, mappings);
+    return GeographicLocation;
+}
+exports.N4 = N4;
+function MSG(name, elements) {
+    const MessageText = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "FreeFormMessageText",
+            source: elements[0]
+        },
+        {
+            target: "PrinterCarriageControlCode",
+            source: elements[1]
+        },
+        {
+            target: "Number",
+            source: elements[2]
+        },
+    ];
+    (0, mappingService_1.setProperties)(MessageText, mappings);
+    return MessageText;
+}
+exports.MSG = MSG;
+function TD5(name, elements) {
+    const SegmentName = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "RoutingSequenceCode",
+            source: elements[0]
+        },
+        {
+            target: "IdentificationCodeQualifier",
+            source: elements[1]
+        },
+        {
+            target: "IdentificationCode",
+            source: elements[2]
+        },
+        {
+            target: "TransportationMethodTypeCode",
+            source: elements[3]
+        },
+        {
+            target: "Routing",
+            source: elements[4]
+        },
+        {
+            target: "ShipmentOrderStatusCode",
+            source: elements[5]
+        },
+        {
+            target: "LocationQualifier",
+            source: elements[6]
+        },
+        {
+            target: "LocationIdentifier",
+            source: elements[7]
+        },
+        {
+            target: "TransitDirectionCode",
+            source: elements[8]
+        },
+        {
+            target: "TransitTimeDirectionQualifier",
+            source: elements[9]
+        },
+        {
+            target: "TransitTime",
+            source: elements[10]
+        },
+        {
+            target: "ServiceLevelCode",
+            source: elements[11]
+        },
+        {
+            target: "ServiceLevelCode",
+            source: elements[12]
+        },
+        {
+            target: "ServiceLevelCode",
+            source: elements[13]
+        },
+        {
+            target: "CountryCode",
+            source: elements[14]
+        }
+    ];
+    (0, mappingService_1.setProperties)(SegmentName, mappings);
+    return SegmentName;
+}
+exports.TD5 = TD5;
+function CTT(name, elements) {
+    const SegmentName = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "NumberOfLineItems",
+            source: elements[0]
+        },
+        {
+            target: "HashTotal",
+            source: elements[1]
+        },
+        {
+            target: "Weight",
+            source: elements[2]
+        },
+        {
+            target: "UnitOrBasisForMeasurementCode",
+            source: elements[3]
+        },
+        {
+            target: "Volume",
+            source: elements[4]
+        },
+        {
+            target: "UnitOrBasisForMeasurementCode",
+            source: elements[5]
+        },
+        {
+            target: "Description",
+            source: elements[6]
+        }
+    ];
+    (0, mappingService_1.setProperties)(SegmentName, mappings);
+    return SegmentName;
+}
+exports.CTT = CTT;
 function CODE(name, elements) {
     const SegmentName = {
         code: name
@@ -653,7 +797,7 @@ function CODE(name, elements) {
             source: elements[0]
         },
     ];
-    (0, mappingService_1.addProperties)(SegmentName, mappings);
+    (0, mappingService_1.setProperties)(SegmentName, mappings);
     return SegmentName;
 }
 exports.CODE = CODE;

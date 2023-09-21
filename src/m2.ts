@@ -655,6 +655,136 @@ export function N4(name: string, elements: any[][]) {
     return GeographicLocation;
 }
 
+export function MSG(name: string, elements: any[][]) {
+    const MessageText = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "FreeFormMessageText",
+            source: elements[0]
+        },
+        {
+            target: "PrinterCarriageControlCode",
+            source: elements[1]
+        },
+        {
+            target: "Number",
+            source: elements[2]
+        },
+    ]
+    setProperties(MessageText, mappings);
+    return MessageText;
+}
+
+export function TD5(name: string, elements: any[][]) {
+    const SegmentName = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "RoutingSequenceCode",
+            source: elements[0]
+        },
+        {
+            target: "IdentificationCodeQualifier",
+            source: elements[1]
+        },
+        {
+            target: "IdentificationCode",
+            source: elements[2]
+        },
+        {
+            target: "TransportationMethodTypeCode",
+            source: elements[3]
+        },
+        {
+            target: "Routing",
+            source: elements[4]
+        },
+        {
+            target: "ShipmentOrderStatusCode",
+            source: elements[5]
+        },
+        {
+            target: "LocationQualifier",
+            source: elements[6]
+        },
+        {
+            target: "LocationIdentifier",
+            source: elements[7]
+        },
+        {
+            target: "TransitDirectionCode",
+            source: elements[8]
+        },
+        {
+            target: "TransitTimeDirectionQualifier",
+            source: elements[9]
+        },
+        {
+            target: "TransitTime",
+            source: elements[10]
+        },
+        {
+            target: "ServiceLevelCode",
+            source: elements[11]
+        },
+        {
+            target: "ServiceLevelCode",
+            source: elements[12]
+        },
+        {
+            target: "ServiceLevelCode",
+            source: elements[13]
+        },
+        {
+            target: "CountryCode",
+            source: elements[14]
+        }
+    ]
+    setProperties(SegmentName, mappings);
+    return SegmentName;
+}
+
+export function CTT(name: string, elements: any[][]) {
+    const SegmentName = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "NumberOfLineItems",
+            source: elements[0]
+        },
+        {
+            target: "HashTotal",
+            source: elements[1]
+        },
+        {
+            target: "Weight",
+            source: elements[2]
+        },
+        {
+            target: "UnitOrBasisForMeasurementCode",
+            source: elements[3]
+        },
+        {
+            target: "Volume",
+            source: elements[4]
+        },
+        {
+            target: "UnitOrBasisForMeasurementCode",
+            source: elements[5]
+        },
+        {
+            target: "Description",
+            source: elements[6]
+        }
+    ]
+    setProperties(SegmentName, mappings);
+    return SegmentName;
+}
+
 export function CODE(name: string, elements: any[][]) {
     const SegmentName = {
         code: name
