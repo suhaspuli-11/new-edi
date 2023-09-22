@@ -785,6 +785,323 @@ export function CTT(name: string, elements: any[][]) {
     return SegmentName;
 }
 
+export function PAM(name: string, elements: any[][]) {
+    const PeriodAmount = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "QuantityQualifier",
+            source: elements[0]
+        },
+        {
+            target: "Quantity",
+            source: elements[1]
+        },
+        {
+            target: "CompositeUnitOfMeasure",
+            source: elements[2],
+            subkeys: ['UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier', 'UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier', 'UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier', 'UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier', 'UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier']
+        },
+        {
+            target: "AmountQualifierCode",
+            source: elements[3]
+        },
+        {
+            target: "MonetaryAmount",
+            source: elements[4]
+        },
+        {
+            target: "UnitOfTimePeriodOrIntervalCode",
+            source: elements[5]
+        },
+        {
+            target: "DateTimeQualifier",
+            source: elements[6]
+        },
+        {
+            target: "Date",
+            source: elements[7]
+        },
+        {
+            target: "Time",
+            source: elements[8]
+        },
+        {
+            target: "DateTimeQualifier",
+            source: elements[9]
+        },
+        {
+            target: "Date",
+            source: elements[10]
+        },
+        {
+            target: "Time",
+            source: elements[11]
+        },
+        {
+            target: "PercentQualifier",
+            source: elements[12]
+        },
+        {
+            target: "PercentageAsDecimal",
+            source: elements[13]
+        },
+        {
+            target: "YesOrNoConditionOrResponseCode",
+            source: elements[14]
+        }
+    ]
+    setProperties(PeriodAmount, mappings);
+    return PeriodAmount;
+}
+
+export function CSH(name: string, elements: any[][]) {
+    const SalesRequirements = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "SalesRequirementCode",
+            source: elements[0]
+        },
+        {
+            target: "ActionCode",
+            source: elements[1]
+        },
+        {
+            target: "Amount",
+            source: elements[2]
+        },
+        {
+            target: "AccountNumber",
+            source: elements[3]
+        },
+        {
+            target: "Date",
+            source: elements[4]
+        },
+        {
+            target: "AgencyQualifierCode",
+            source: elements[5]
+        },
+        {
+            target: "SpecialServicesCode",
+            source: elements[6]
+        },
+        {
+            target: "ProductServiceSubstitutionCode",
+            source: elements[7]
+        },
+        {
+            target: "PercentageAsDecimal",
+            source: elements[8]
+        },
+        {
+            target: "PercentQualifier",
+            source: elements[9]
+        }
+    ]
+    setProperties(SalesRequirements, mappings);
+    return SalesRequirements;
+}
+
+export function TC2(name: string, elements: any[][]) {
+    const Commodity = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "CommodityCodeQualifier",
+            source: elements[0]
+        },
+        {
+            target: "CommodityCode",
+            source: elements[1]
+        }
+    ]
+    setProperties(Commodity, mappings);
+    return Commodity;
+}
+
+export function SAC(name: string, elements: any[][]) {
+    const ServicePromotionAllowanceOrChargeInformation = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "AllowanceOrChargeIndicatorCode",
+            source: elements[0]
+        },
+        {
+            target: "ServicePromotionAllowanceOrChargeCode",
+            source: elements[1]
+        },
+        {
+            target: "AgencyQualifierCode",
+            source: elements[2]
+        },
+        {
+            target: "AgencyServicePromotionAllowanceOrChargeCode",
+            source: elements[3]
+        },
+        {
+            target: "Amount",
+            source: elements[4]
+        },
+        {
+            target: "AllowanceChargePercentQualifier",
+            source: elements[5]
+        },
+        {
+            target: "PercentDecimalFormat",
+            source: elements[6]
+        },
+        {
+            target: "Rate",
+            source: elements[7]
+        },
+        {
+            target: "UnitOrBasisForMeasurementCode",
+            source: elements[8]
+        },
+        {
+            target: "Quantity",
+            source: elements[9]
+        },
+        {
+            target: "Quantity",
+            source: elements[10]
+        },
+        {
+            target: "AllowanceOrChargeMethodOfHandlingCode",
+            source: elements[11]
+        },
+        {
+            target: "ReferenceIdentification",
+            source: elements[12]
+        },
+        {
+            target: "OptionNumber",
+            source: elements[13]
+        },
+        {
+            target: "Description",
+            source: elements[14]
+        },
+        {
+            target: "LanguageCode",
+            source: elements[15]
+        }
+    ]
+    setProperties(ServicePromotionAllowanceOrChargeInformation, mappings);
+    return ServicePromotionAllowanceOrChargeInformation;
+}
+
+export function ITD(name: string, elements: any[][]) {
+    const TermsOfSaleOrDeferredTermsOfSale = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "TermsTypeCode",
+            source: elements[0]
+        },
+        {
+            target: "TermsBasisDateCode",
+            source: elements[1]
+        },
+        {
+            target: "TermsDiscountPercent",
+            source: elements[2]
+        },
+        {
+            target: "TermsDiscountDueDate",
+            source: elements[3]
+        },
+        {
+            target: "TermsDiscountDaysDue",
+            source: elements[4]
+        },
+        {
+            target: "TermsNetDueDate",
+            source: elements[5]
+        },
+        {
+            target: "TermsNetDays",
+            source: elements[6]
+        },
+        {
+            target: "TermsDiscountAmount",
+            source: elements[7]
+        },
+        {
+            target: "TermsDeferredDueDate",
+            source: elements[8]
+        },
+        {
+            target: "DeferredAmountDue",
+            source: elements[9]
+        },
+        {
+            target: "PercentOfInvoicePayable",
+            source: elements[10]
+        },
+        {
+            target: "Description",
+            source: elements[11]
+        },
+        {
+            target: "DayOfMonth",
+            source: elements[12]
+        },
+        {
+            target: "PaymentMethodTypeCode",
+            source: elements[13]
+        },
+        {
+            target: "PercentageAsDecimal",
+            source: elements[14]
+        }
+    ]
+    setProperties(TermsOfSaleOrDeferredTermsOfSale, mappings);
+    return TermsOfSaleOrDeferredTermsOfSale;
+}
+
+export function DIS(name: string, elements: any[][]) {
+    const DiscountDetail = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "DiscountTermsTypeCode",
+            source: elements[0]
+        },
+        {
+            target: "DiscountBaseQualifier",
+            source: elements[1]
+        },
+        {
+            target: "DiscountBaseValue",
+            source: elements[2]
+        },
+        {
+            target: "DiscountControlLimitQualifier",
+            source: elements[3]
+        },
+        {
+            target: "DiscountControlLimit",
+            source: elements[4]
+        },
+        {
+            target: "DiscountControlLimit",
+            source: elements[5]
+        }
+    ]
+    setProperties(DiscountDetail, mappings);
+    return DiscountDetail;
+}
+
 export function CODE(name: string, elements: any[][]) {
     const SegmentName = {
         code: name
