@@ -1,6 +1,144 @@
 import { setProperties } from './mappingService';
 
-export function BEG(name: string, elements: any[][]): Record<any, any> {
+export function ISA(elements: any) {
+    const InterchangeControlHeader = {
+        code: "ISA"
+    };
+    const mappings = [
+        {
+            target: "AuthorizationInformationQualifier",
+            source: elements[0]
+        },
+        {
+            target: "AuthorizationInformation",
+            source: elements[1]
+        },
+        {
+            target: "SecurityInformationQualifier",
+            source: elements[2]
+        },
+        {
+            target: "SecurityInformation",
+            source: elements[3]
+        },
+        {
+            target: "InterchangeIDQualifier",
+            source: elements[4]
+        },
+        {
+            target: "InterchangeSenderID",
+            source: elements[5]
+        },
+        {
+            target: "InterchangeIDQualifier",
+            source: elements[6]
+        },
+        {
+            target: "InterchangeReceiverID",
+            source: elements[7]
+        },
+        {
+            target: "InterchangeDate",
+            source: elements[8]
+        },
+        {
+            target: "InterchangeTime",
+            source: elements[9]
+        },
+        {
+            target: "RepetitionSeparator",
+            source: elements[10]
+        },
+        {
+            target: "InterchangeControlVersionNumberCode",
+            source: elements[11]
+        },
+        {
+            target: "InterchangeControlNumber",
+            source: elements[12]
+        },
+        {
+            target: "AcknowledgmentRequestedCode",
+            source: elements[13]
+        },
+        {
+            target: "InterchangeUsageIndicatorCode",
+            source: elements[14]
+        },
+        {
+            target: "ComponentElementSeparator",
+            source: elements[15]
+        }
+    ]
+    setProperties(InterchangeControlHeader, mappings);
+    return InterchangeControlHeader;
+}
+
+export function GS(elements: any) {
+    const FunctionalGroupHeader = {
+        code: 'GS'
+    };
+    const mappings = [
+        {
+            target: "FunctionalIdentifierCode",
+            source: elements[0]
+        },
+        {
+            target: "ApplicationSendersCode",
+            source: elements[1]
+        },
+        {
+            target: "ApplicationReceiversCode",
+            source: elements[2]
+        },
+        {
+            target: "Date",
+            source: elements[3]
+        },
+        {
+            target: "Time",
+            source: elements[4]
+        },
+        {
+            target: "GroupControlNumber",
+            source: elements[5]
+        },
+        {
+            target: "ResponsibleAgencyCode",
+            source: elements[6]
+        },
+        {
+            target: "VersionReleaseIndustryIdentifierCode",
+            source: elements[7]
+        }
+    ]
+    setProperties(FunctionalGroupHeader, mappings);
+    return FunctionalGroupHeader;
+}
+
+export function ST(elements: any) {
+    const TransactionSetHeader = {
+        code: 'ST'
+    };
+    const mappings = [
+        {
+            target: "TransactionSetIdentifierCode",
+            source: elements[0]
+        },
+        {
+            target: "TransactionSetControlNumber",
+            source: elements[1]
+        },
+        {
+            target: "ImplementationConventionReference",
+            source: elements[2]
+        }
+    ]
+    setProperties(TransactionSetHeader, mappings);
+    return TransactionSetHeader;
+}
+
+export function BEG(name: string, elements: any) {
     const BeginningSegmentForPurchaseOrder = {
         code: name
     };
@@ -58,7 +196,7 @@ export function BEG(name: string, elements: any[][]): Record<any, any> {
     return BeginningSegmentForPurchaseOrder;
 }
 
-export function CUR(name: string, elements: any[][]) {
+export function CUR(name: string, elements: any) {
     const Currency = {
         code: name
     };
@@ -152,7 +290,7 @@ export function CUR(name: string, elements: any[][]) {
     return Currency;
 }
 
-export function PER(name: string, elements: any[][]) {
+export function PER(name: string, elements: any) {
     const AdministrativeCommunicationsContact = {
         code: name
     };
@@ -198,7 +336,7 @@ export function PER(name: string, elements: any[][]) {
     return AdministrativeCommunicationsContact;
 }
 
-export function DTM(name: string, elements: any[][]) {
+export function DTM(name: string, elements: any) {
     const DateTimeReference = {
         code: name
     };
@@ -232,7 +370,7 @@ export function DTM(name: string, elements: any[][]) {
     return DateTimeReference;
 }
 
-export function REF(name: string, elements: any[][]) {
+export function REF(name: string, elements: any) {
     const ReferenceInformation = {
         code: name
     };
@@ -259,7 +397,7 @@ export function REF(name: string, elements: any[][]) {
     return ReferenceInformation;
 }
 
-export function TAX(name: string, elements: any[][]) {
+export function TAX(name: string, elements: any) {
     const TaxReference = {
         code: name
     };
@@ -321,7 +459,7 @@ export function TAX(name: string, elements: any[][]) {
     return TaxReference;
 }
 
-export function FOB(name: string, elements: any[][]) {
+export function FOB(name: string, elements: any) {
     const FOBRelatedInstructions = {
         code: name
     };
@@ -367,7 +505,7 @@ export function FOB(name: string, elements: any[][]) {
     return FOBRelatedInstructions;
 }
 
-export function CTP(name: string, elements: any[][]) {
+export function CTP(name: string, elements: any) {
     const PricingInformation = {
         code: name
     };
@@ -422,7 +560,7 @@ export function CTP(name: string, elements: any[][]) {
     return PricingInformation;
 }
 
-export function N9(name: string, elements: any[][]) {
+export function N9(name: string, elements: any) {
     const ExtendedReferenceInformation = {
         code: name
     };
@@ -461,7 +599,7 @@ export function N9(name: string, elements: any[][]) {
     return ExtendedReferenceInformation;
 }
 
-export function N1(name: string, elements: any[][]) {
+export function N1(name: string, elements: any) {
     const PartyIdentification = {
         code: name
     };
@@ -495,7 +633,7 @@ export function N1(name: string, elements: any[][]) {
     return PartyIdentification;
 }
 
-export function N2(name: string, elements: any[][]) {
+export function N2(name: string, elements: any) {
     const AdditionalNameInformation = {
         code: name
     };
@@ -513,7 +651,7 @@ export function N2(name: string, elements: any[][]) {
     return AdditionalNameInformation;
 }
 
-export function N3(name: string, elements: any[][]) {
+export function N3(name: string, elements: any) {
     const PartyLocation = {
         code: name
     };
@@ -531,7 +669,7 @@ export function N3(name: string, elements: any[][]) {
     return PartyLocation;
 }
 
-export function PO1(name: string, elements: any[][]) {
+export function PO1(name: string, elements: any) {
     const BaselineItemData = {
         code: name
     };
@@ -641,7 +779,7 @@ export function PO1(name: string, elements: any[][]) {
     return BaselineItemData;
 }
 
-export function N4(name: string, elements: any[][]) {
+export function N4(name: string, elements: any) {
     const GeographicLocation = {
         code: name
     };
@@ -655,7 +793,7 @@ export function N4(name: string, elements: any[][]) {
     return GeographicLocation;
 }
 
-export function MSG(name: string, elements: any[][]) {
+export function MSG(name: string, elements: any) {
     const MessageText = {
         code: name
     };
@@ -677,7 +815,7 @@ export function MSG(name: string, elements: any[][]) {
     return MessageText;
 }
 
-export function TD5(name: string, elements: any[][]) {
+export function TD5(name: string, elements: any) {
     const SegmentName = {
         code: name
     };
@@ -747,7 +885,7 @@ export function TD5(name: string, elements: any[][]) {
     return SegmentName;
 }
 
-export function CTT(name: string, elements: any[][]) {
+export function CTT(name: string, elements: any) {
     const SegmentName = {
         code: name
     };
@@ -785,7 +923,7 @@ export function CTT(name: string, elements: any[][]) {
     return SegmentName;
 }
 
-export function PAM(name: string, elements: any[][]) {
+export function PAM(name: string, elements: any) {
     const PeriodAmount = {
         code: name
     };
@@ -856,7 +994,7 @@ export function PAM(name: string, elements: any[][]) {
     return PeriodAmount;
 }
 
-export function CSH(name: string, elements: any[][]) {
+export function CSH(name: string, elements: any) {
     const SalesRequirements = {
         code: name
     };
@@ -906,7 +1044,7 @@ export function CSH(name: string, elements: any[][]) {
     return SalesRequirements;
 }
 
-export function TC2(name: string, elements: any[][]) {
+export function TC2(name: string, elements: any) {
     const Commodity = {
         code: name
     };
@@ -924,7 +1062,7 @@ export function TC2(name: string, elements: any[][]) {
     return Commodity;
 }
 
-export function SAC(name: string, elements: any[][]) {
+export function SAC(name: string, elements: any) {
     const ServicePromotionAllowanceOrChargeInformation = {
         code: name
     };
@@ -998,7 +1136,7 @@ export function SAC(name: string, elements: any[][]) {
     return ServicePromotionAllowanceOrChargeInformation;
 }
 
-export function ITD(name: string, elements: any[][]) {
+export function ITD(name: string, elements: any) {
     const TermsOfSaleOrDeferredTermsOfSale = {
         code: name
     };
@@ -1068,7 +1206,7 @@ export function ITD(name: string, elements: any[][]) {
     return TermsOfSaleOrDeferredTermsOfSale;
 }
 
-export function DIS(name: string, elements: any[][]) {
+export function DIS(name: string, elements: any) {
     const DiscountDetail = {
         code: name
     };
@@ -1102,7 +1240,487 @@ export function DIS(name: string, elements: any[][]) {
     return DiscountDetail;
 }
 
-export function CODE(name: string, elements: any[][]) {
+export function INC(name: string, elements: any) {
+    const InstallmentInformation = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "TermsTypeCode",
+            source: elements[0]
+        },
+        {
+            target: "UnitOrBasisForMeasurementCode",
+            source: elements[1],
+            subkeys: ['UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier', 'UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier', 'UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier', 'UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier', 'UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier']
+        },
+        {
+            target: "Quantity",
+            source: elements[2]
+        },
+        {
+            target: "Quantity",
+            source: elements[3]
+        },
+        {
+            target: "MonetaryAmount",
+            source: elements[4]
+        },
+        {
+            target: "AmountQualifierCode",
+            source: elements[5]
+        }
+    ]
+    setProperties(InstallmentInformation, mappings);
+    return InstallmentInformation;
+}
+
+export function LIN(name: string, elements: any) {
+    const ItemIdentification = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "AssignedIdentification",
+            source: elements[0]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[1]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[2]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[3]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[4]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[5]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[6]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[7]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[8]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[9]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[10]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[11]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[12]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[13]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[14]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[15]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[16]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[17]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[18]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[19]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[20]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[21]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[22]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[23]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[24]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[25]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[26]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[27]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[28]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[29]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[30]
+        }
+    ]
+    setProperties(ItemIdentification, mappings);
+    return ItemIdentification;
+}
+
+export function SI(name: string, elements: any) {
+    const ServiceCharacteristicIdentification = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "AgencyQualifierCode",
+            source: elements[0]
+        },
+        {
+            target: "ServiceCharacteristicsQualifier",
+            source: elements[1]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[2]
+        },
+        {
+            target: "ServiceCharacteristicsQualifier",
+            source: elements[3]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[4]
+        },
+        {
+            target: "ServiceCharacteristicsQualifier",
+            source: elements[5]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[6]
+        },
+        {
+            target: "ServiceCharacteristicsQualifier",
+            source: elements[7]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[8]
+        },
+        {
+            target: "ServiceCharacteristicsQualifier",
+            source: elements[9]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[10]
+        },
+        {
+            target: "ServiceCharacteristicsQualifier",
+            source: elements[11]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[12]
+        },
+        {
+            target: "ServiceCharacteristicsQualifier",
+            source: elements[13]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[14]
+        },
+        {
+            target: "ServiceCharacteristicsQualifier",
+            source: elements[15]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[16]
+        },
+        {
+            target: "ServiceCharacteristicsQualifier",
+            source: elements[17]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[18]
+        },
+        {
+            target: "ServiceCharacteristicsQualifier",
+            source: elements[19]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[20]
+        }
+    ]
+    setProperties(ServiceCharacteristicIdentification, mappings);
+    return ServiceCharacteristicIdentification;
+}
+
+export function PID(name: string, elements: any) {
+    const ProductItemDescription = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "ItemDescriptionTypeCode",
+            source: elements[0]
+        },
+        {
+            target: "ProductProcessCharacteristicCode",
+            source: elements[1]
+        },
+        {
+            target: "AgencyQualifierCode",
+            source: elements[2]
+        },
+        {
+            target: "ProductDescriptionCode",
+            source: elements[3]
+        },
+        {
+            target: "Description",
+            source: elements[4]
+        },
+        {
+            target: "SurfaceLayerPositionCode",
+            source: elements[5]
+        },
+        {
+            target: "SourceSubqualifier",
+            source: elements[6]
+        },
+        {
+            target: "YesOrNoConditionOrResponseCode",
+            source: elements[7]
+        },
+        {
+            target: "LanguageCode",
+            source: elements[8]
+        },
+        {
+            target: "ProductServiceConditionCode",
+            source: elements[9]
+        }
+    ]
+    setProperties(ProductItemDescription, mappings);
+    return ProductItemDescription;
+}
+
+export function MEA(name: string, elements: any) {
+    const Measurements = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "MeasurementReferenceIDCode",
+            source: elements[0]
+        },
+        {
+            target: "MeasurementQualifier",
+            source: elements[1]
+        },
+        {
+            target: "MeasurementValue",
+            source: elements[2]
+        },
+        {
+            target: "CompositeUnitOfMeasure",
+            source: elements[3],
+            subkeys: ['UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier', 'UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier', 'UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier', 'UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier', 'UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier']
+        },
+        {
+            target: "RangeMinimum",
+            source: elements[4]
+        },
+        {
+            target: "RangeMaximum",
+            source: elements[5]
+        },
+        {
+            target: "MeasurementSignificanceCode",
+            source: elements[6]
+        },
+        {
+            target: "MeasurementAttributeCode",
+            source: elements[7]
+        },
+        {
+            target: "SurfaceLayerPositionCode",
+            source: elements[8]
+        },
+        {
+            target: "MeasurementMethodOrDeviceCode",
+            source: elements[9]
+        },
+        {
+            target: "CodeListQualifierCode",
+            source: elements[10]
+        },
+        {
+            target: "IndustryCode",
+            source: elements[11]
+        }
+    ]
+    setProperties(Measurements, mappings);
+    return Measurements;
+}
+
+export function PWK(name: string, elements: any) {
+    const Paperwork = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "ReportTypeCode",
+            source: elements[0]
+        },
+        {
+            target: "ReportTransmissionCode",
+            source: elements[1]
+        },
+        {
+            target: "ReportCopiesNeeded",
+            source: elements[2]
+        },
+        {
+            target: "EntityIdentifierCode",
+            source: elements[3]
+        },
+        {
+            target: "IdentificationCodeQualifier",
+            source: elements[4]
+        },
+        {
+            target: "IdentificationCode",
+            source: elements[5]
+        },
+        {
+            target: "Description",
+            source: elements[6]
+        },
+        {
+            target: "ActionsIndicated",
+            source: elements[7]
+        },
+        {
+            target: "RequestCategoryCode",
+            source: elements[8]
+        },
+        {
+            target: "CodeListQualifierCode",
+            source: elements[9]
+        },
+        {
+            target: "IndustryCode",
+            source: elements[10]
+        }
+    ]
+    setProperties(Paperwork, mappings);
+    return Paperwork;
+}
+
+export function SE(elements: any) {
+    const TransactionSetTrailer = {
+        code: "SE"
+    };
+    const mappings = [
+        {
+            target: "NumberOfIncludedSegments",
+            source: elements[0]
+        },
+        {
+            target: "TransactionSetControlNumber",
+            source: elements[1]
+        }
+    ]
+    setProperties(TransactionSetTrailer, mappings);
+    return TransactionSetTrailer;
+}
+
+export function GE(elements: any) {
+    const FunctionalGroupTrailer = {
+        code: "GE"
+    };
+    const mappings = [
+        {
+            target: "NumbeOfTransactionSetsIncluded",
+            source: elements[0]
+        },
+        {
+            target: "GroupControlNumber",
+            source: elements[1]
+        }
+    ]
+    setProperties(FunctionalGroupTrailer, mappings);
+    return FunctionalGroupTrailer;
+}
+
+export function IEA(elements: any) {
+    const InterchangeControlTrailer = {
+        code: "IEA"
+    };
+    const mappings = [
+        {
+            target: "NumberOfIncludedFunctionalGroups",
+            source: elements[0]
+        },
+        {
+            target: "InterchangeControlNumber",
+            source: elements[1]
+        }
+    ]
+    setProperties(InterchangeControlTrailer, mappings);
+    return InterchangeControlTrailer;
+}
+
+export function CODE(name: string, elements: any) {
     const SegmentName = {
         code: name
     };

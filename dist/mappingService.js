@@ -4,6 +4,10 @@ exports.setProperties = void 0;
 function setProperties(object, mappings) {
     for (const mapping of mappings) {
         let source = mapping.source, target = mapping.target, subkeys = mapping.subkeys;
+        if (source === '>') {
+            object[target] = '>';
+            return;
+        }
         if (typeof source === 'string') {
             source = source.split('>');
         }

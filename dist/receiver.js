@@ -29,6 +29,7 @@ const mapping = __importStar(require("./m1"));
 const mappingX12 = __importStar(require("./m2"));
 const { X12Parser } = require('node-x12');
 const segmentGrouping_1 = require("./segmentGrouping");
+const extra_1 = require("./extra");
 const port = 4000;
 const app = express();
 app.use(express.text());
@@ -55,15 +56,21 @@ app.listen(port, () => {
 function parseX12(ediMessage) {
     const parser = new X12Parser();
     try {
-        const interchange = parser.parse(ediMessage);
-        const jsonObj = interchange.toJSON();
-        console.log(interchange);
-        // printObject(jsonObj);
-        console.log(jsonObj);
+        const res = parser.parse(ediMessage);
+        (0, extra_1.printObject)(res);
+        const result = res.toJSON();
+        // printObject(result);
         const arr = [];
-        const segments = jsonObj.functionalGroups[0].transactions[0].segments;
-        const header = jsonObj.functionalGroups[0].header;
-        // console.log(segments);
+        const interchangeHeaderElements = result.header;
+        const groupHeaderElements = result.functionalGroups[0].header;
+        const transactionHeaderElements = result.functionalGroups[0].transactions[0].header;
+        const isa = mappingX12.ISA(interchangeHeaderElements);
+        const gs = mappingX12.GS(groupHeaderElements);
+        const st = mappingX12.ST(transactionHeaderElements);
+        arr.push(isa);
+        arr.push(gs);
+        arr.push(st);
+        const segments = result.functionalGroups[0].transactions[0].segments;
         for (let segment of segments) {
             const segmentObj = x12Mapping(segment);
             arr.push(segmentObj);
@@ -74,6 +81,40 @@ function parseX12(ediMessage) {
         console.log(err);
     }
 }
+function x12Mapping(object) {
+    let segment;
+    const segmentCode = object.tag;
+    const elements = object.elements;
+    const segmentMappingObj = {
+        BEG: mappingX12.BEG,
+        CUR: mappingX12.CUR,
+        REF: mappingX12.REF,
+        TAX: mappingX12.TAX,
+        DTM: mappingX12.DTM,
+        PER: mappingX12.PER,
+        FOB: mappingX12.FOB,
+        CTP: mappingX12.CTP,
+        N9: mappingX12.N9,
+        N1: mappingX12.N1,
+        N2: mappingX12.N2,
+        N3: mappingX12.N3,
+        N4: mappingX12.N4,
+        PO1: mappingX12.PO1,
+        MSG: mappingX12.MSG,
+        TD5: mappingX12.TD5,
+        CTT: mappingX12.CTT
+    };
+    if (segmentMappingObj.hasOwnProperty(segmentCode)) {
+        segment = segmentMappingObj[segmentCode](segmentCode, elements);
+    }
+    else {
+        segment = {
+            SegmentName: "Unknown segment code"
+        };
+    }
+    return segment;
+}
+;
 function parseEdifact(edifactMessage) {
     const reader = new edifact_1.Reader({ autoDetectEncoding: true });
     const result = reader.parse(edifactMessage);
@@ -157,37 +198,3 @@ function edifactMapping(object) {
     }
     return segment;
 }
-function x12Mapping(object) {
-    let segment;
-    const segmentCode = object.tag;
-    const elements = object.elements;
-    const segmentMappingObj = {
-        BEG: mappingX12.BEG,
-        CUR: mappingX12.CUR,
-        REF: mappingX12.REF,
-        TAX: mappingX12.TAX,
-        DTM: mappingX12.DTM,
-        PER: mappingX12.PER,
-        FOB: mappingX12.FOB,
-        CTP: mappingX12.CTP,
-        N9: mappingX12.N9,
-        N1: mappingX12.N1,
-        N2: mappingX12.N2,
-        N3: mappingX12.N3,
-        N4: mappingX12.N4,
-        PO1: mappingX12.PO1,
-        MSG: mappingX12.MSG,
-        TD5: mappingX12.TD5,
-        CTT: mappingX12.CTT
-    };
-    if (segmentMappingObj.hasOwnProperty(segmentCode)) {
-        segment = segmentMappingObj[segmentCode](segmentCode, elements);
-    }
-    else {
-        segment = {
-            SegmentName: "Unknown segment code"
-        };
-    }
-    return segment;
-}
-;

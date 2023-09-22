@@ -1,7 +1,145 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CODE = exports.CTT = exports.TD5 = exports.MSG = exports.N4 = exports.PO1 = exports.N3 = exports.N2 = exports.N1 = exports.N9 = exports.CTP = exports.FOB = exports.TAX = exports.REF = exports.DTM = exports.PER = exports.CUR = exports.BEG = void 0;
+exports.CODE = exports.IEA = exports.GE = exports.SE = exports.PWK = exports.MEA = exports.PID = exports.SI = exports.LIN = exports.INC = exports.DIS = exports.ITD = exports.SAC = exports.TC2 = exports.CSH = exports.PAM = exports.CTT = exports.TD5 = exports.MSG = exports.N4 = exports.PO1 = exports.N3 = exports.N2 = exports.N1 = exports.N9 = exports.CTP = exports.FOB = exports.TAX = exports.REF = exports.DTM = exports.PER = exports.CUR = exports.BEG = exports.ST = exports.GS = exports.ISA = void 0;
 const mappingService_1 = require("./mappingService");
+function ISA(elements) {
+    const InterchangeControlHeader = {
+        code: "ISA"
+    };
+    const mappings = [
+        {
+            target: "AuthorizationInformationQualifier",
+            source: elements[0]
+        },
+        {
+            target: "AuthorizationInformation",
+            source: elements[1]
+        },
+        {
+            target: "SecurityInformationQualifier",
+            source: elements[2]
+        },
+        {
+            target: "SecurityInformation",
+            source: elements[3]
+        },
+        {
+            target: "InterchangeIDQualifier",
+            source: elements[4]
+        },
+        {
+            target: "InterchangeSenderID",
+            source: elements[5]
+        },
+        {
+            target: "InterchangeIDQualifier",
+            source: elements[6]
+        },
+        {
+            target: "InterchangeReceiverID",
+            source: elements[7]
+        },
+        {
+            target: "InterchangeDate",
+            source: elements[8]
+        },
+        {
+            target: "InterchangeTime",
+            source: elements[9]
+        },
+        {
+            target: "RepetitionSeparator",
+            source: elements[10]
+        },
+        {
+            target: "InterchangeControlVersionNumberCode",
+            source: elements[11]
+        },
+        {
+            target: "InterchangeControlNumber",
+            source: elements[12]
+        },
+        {
+            target: "AcknowledgmentRequestedCode",
+            source: elements[13]
+        },
+        {
+            target: "InterchangeUsageIndicatorCode",
+            source: elements[14]
+        },
+        {
+            target: "ComponentElementSeparator",
+            source: elements[15]
+        }
+    ];
+    (0, mappingService_1.setProperties)(InterchangeControlHeader, mappings);
+    return InterchangeControlHeader;
+}
+exports.ISA = ISA;
+function GS(elements) {
+    const FunctionalGroupHeader = {
+        code: 'GS'
+    };
+    const mappings = [
+        {
+            target: "FunctionalIdentifierCode",
+            source: elements[0]
+        },
+        {
+            target: "ApplicationSendersCode",
+            source: elements[1]
+        },
+        {
+            target: "ApplicationReceiversCode",
+            source: elements[2]
+        },
+        {
+            target: "Date",
+            source: elements[3]
+        },
+        {
+            target: "Time",
+            source: elements[4]
+        },
+        {
+            target: "GroupControlNumber",
+            source: elements[5]
+        },
+        {
+            target: "ResponsibleAgencyCode",
+            source: elements[6]
+        },
+        {
+            target: "VersionReleaseIndustryIdentifierCode",
+            source: elements[7]
+        }
+    ];
+    (0, mappingService_1.setProperties)(FunctionalGroupHeader, mappings);
+    return FunctionalGroupHeader;
+}
+exports.GS = GS;
+function ST(elements) {
+    const TransactionSetHeader = {
+        code: 'ST'
+    };
+    const mappings = [
+        {
+            target: "TransactionSetIdentifierCode",
+            source: elements[0]
+        },
+        {
+            target: "TransactionSetControlNumber",
+            source: elements[1]
+        },
+        {
+            target: "ImplementationConventionReference",
+            source: elements[2]
+        }
+    ];
+    (0, mappingService_1.setProperties)(TransactionSetHeader, mappings);
+    return TransactionSetHeader;
+}
+exports.ST = ST;
 function BEG(name, elements) {
     const BeginningSegmentForPurchaseOrder = {
         code: name
@@ -787,6 +925,803 @@ function CTT(name, elements) {
     return SegmentName;
 }
 exports.CTT = CTT;
+function PAM(name, elements) {
+    const PeriodAmount = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "QuantityQualifier",
+            source: elements[0]
+        },
+        {
+            target: "Quantity",
+            source: elements[1]
+        },
+        {
+            target: "CompositeUnitOfMeasure",
+            source: elements[2],
+            subkeys: ['UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier', 'UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier', 'UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier', 'UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier', 'UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier']
+        },
+        {
+            target: "AmountQualifierCode",
+            source: elements[3]
+        },
+        {
+            target: "MonetaryAmount",
+            source: elements[4]
+        },
+        {
+            target: "UnitOfTimePeriodOrIntervalCode",
+            source: elements[5]
+        },
+        {
+            target: "DateTimeQualifier",
+            source: elements[6]
+        },
+        {
+            target: "Date",
+            source: elements[7]
+        },
+        {
+            target: "Time",
+            source: elements[8]
+        },
+        {
+            target: "DateTimeQualifier",
+            source: elements[9]
+        },
+        {
+            target: "Date",
+            source: elements[10]
+        },
+        {
+            target: "Time",
+            source: elements[11]
+        },
+        {
+            target: "PercentQualifier",
+            source: elements[12]
+        },
+        {
+            target: "PercentageAsDecimal",
+            source: elements[13]
+        },
+        {
+            target: "YesOrNoConditionOrResponseCode",
+            source: elements[14]
+        }
+    ];
+    (0, mappingService_1.setProperties)(PeriodAmount, mappings);
+    return PeriodAmount;
+}
+exports.PAM = PAM;
+function CSH(name, elements) {
+    const SalesRequirements = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "SalesRequirementCode",
+            source: elements[0]
+        },
+        {
+            target: "ActionCode",
+            source: elements[1]
+        },
+        {
+            target: "Amount",
+            source: elements[2]
+        },
+        {
+            target: "AccountNumber",
+            source: elements[3]
+        },
+        {
+            target: "Date",
+            source: elements[4]
+        },
+        {
+            target: "AgencyQualifierCode",
+            source: elements[5]
+        },
+        {
+            target: "SpecialServicesCode",
+            source: elements[6]
+        },
+        {
+            target: "ProductServiceSubstitutionCode",
+            source: elements[7]
+        },
+        {
+            target: "PercentageAsDecimal",
+            source: elements[8]
+        },
+        {
+            target: "PercentQualifier",
+            source: elements[9]
+        }
+    ];
+    (0, mappingService_1.setProperties)(SalesRequirements, mappings);
+    return SalesRequirements;
+}
+exports.CSH = CSH;
+function TC2(name, elements) {
+    const Commodity = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "CommodityCodeQualifier",
+            source: elements[0]
+        },
+        {
+            target: "CommodityCode",
+            source: elements[1]
+        }
+    ];
+    (0, mappingService_1.setProperties)(Commodity, mappings);
+    return Commodity;
+}
+exports.TC2 = TC2;
+function SAC(name, elements) {
+    const ServicePromotionAllowanceOrChargeInformation = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "AllowanceOrChargeIndicatorCode",
+            source: elements[0]
+        },
+        {
+            target: "ServicePromotionAllowanceOrChargeCode",
+            source: elements[1]
+        },
+        {
+            target: "AgencyQualifierCode",
+            source: elements[2]
+        },
+        {
+            target: "AgencyServicePromotionAllowanceOrChargeCode",
+            source: elements[3]
+        },
+        {
+            target: "Amount",
+            source: elements[4]
+        },
+        {
+            target: "AllowanceChargePercentQualifier",
+            source: elements[5]
+        },
+        {
+            target: "PercentDecimalFormat",
+            source: elements[6]
+        },
+        {
+            target: "Rate",
+            source: elements[7]
+        },
+        {
+            target: "UnitOrBasisForMeasurementCode",
+            source: elements[8]
+        },
+        {
+            target: "Quantity",
+            source: elements[9]
+        },
+        {
+            target: "Quantity",
+            source: elements[10]
+        },
+        {
+            target: "AllowanceOrChargeMethodOfHandlingCode",
+            source: elements[11]
+        },
+        {
+            target: "ReferenceIdentification",
+            source: elements[12]
+        },
+        {
+            target: "OptionNumber",
+            source: elements[13]
+        },
+        {
+            target: "Description",
+            source: elements[14]
+        },
+        {
+            target: "LanguageCode",
+            source: elements[15]
+        }
+    ];
+    (0, mappingService_1.setProperties)(ServicePromotionAllowanceOrChargeInformation, mappings);
+    return ServicePromotionAllowanceOrChargeInformation;
+}
+exports.SAC = SAC;
+function ITD(name, elements) {
+    const TermsOfSaleOrDeferredTermsOfSale = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "TermsTypeCode",
+            source: elements[0]
+        },
+        {
+            target: "TermsBasisDateCode",
+            source: elements[1]
+        },
+        {
+            target: "TermsDiscountPercent",
+            source: elements[2]
+        },
+        {
+            target: "TermsDiscountDueDate",
+            source: elements[3]
+        },
+        {
+            target: "TermsDiscountDaysDue",
+            source: elements[4]
+        },
+        {
+            target: "TermsNetDueDate",
+            source: elements[5]
+        },
+        {
+            target: "TermsNetDays",
+            source: elements[6]
+        },
+        {
+            target: "TermsDiscountAmount",
+            source: elements[7]
+        },
+        {
+            target: "TermsDeferredDueDate",
+            source: elements[8]
+        },
+        {
+            target: "DeferredAmountDue",
+            source: elements[9]
+        },
+        {
+            target: "PercentOfInvoicePayable",
+            source: elements[10]
+        },
+        {
+            target: "Description",
+            source: elements[11]
+        },
+        {
+            target: "DayOfMonth",
+            source: elements[12]
+        },
+        {
+            target: "PaymentMethodTypeCode",
+            source: elements[13]
+        },
+        {
+            target: "PercentageAsDecimal",
+            source: elements[14]
+        }
+    ];
+    (0, mappingService_1.setProperties)(TermsOfSaleOrDeferredTermsOfSale, mappings);
+    return TermsOfSaleOrDeferredTermsOfSale;
+}
+exports.ITD = ITD;
+function DIS(name, elements) {
+    const DiscountDetail = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "DiscountTermsTypeCode",
+            source: elements[0]
+        },
+        {
+            target: "DiscountBaseQualifier",
+            source: elements[1]
+        },
+        {
+            target: "DiscountBaseValue",
+            source: elements[2]
+        },
+        {
+            target: "DiscountControlLimitQualifier",
+            source: elements[3]
+        },
+        {
+            target: "DiscountControlLimit",
+            source: elements[4]
+        },
+        {
+            target: "DiscountControlLimit",
+            source: elements[5]
+        }
+    ];
+    (0, mappingService_1.setProperties)(DiscountDetail, mappings);
+    return DiscountDetail;
+}
+exports.DIS = DIS;
+function INC(name, elements) {
+    const InstallmentInformation = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "TermsTypeCode",
+            source: elements[0]
+        },
+        {
+            target: "UnitOrBasisForMeasurementCode",
+            source: elements[1],
+            subkeys: ['UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier', 'UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier', 'UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier', 'UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier', 'UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier']
+        },
+        {
+            target: "Quantity",
+            source: elements[2]
+        },
+        {
+            target: "Quantity",
+            source: elements[3]
+        },
+        {
+            target: "MonetaryAmount",
+            source: elements[4]
+        },
+        {
+            target: "AmountQualifierCode",
+            source: elements[5]
+        }
+    ];
+    (0, mappingService_1.setProperties)(InstallmentInformation, mappings);
+    return InstallmentInformation;
+}
+exports.INC = INC;
+function LIN(name, elements) {
+    const ItemIdentification = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "AssignedIdentification",
+            source: elements[0]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[1]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[2]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[3]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[4]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[5]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[6]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[7]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[8]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[9]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[10]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[11]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[12]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[13]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[14]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[15]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[16]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[17]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[18]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[19]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[20]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[21]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[22]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[23]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[24]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[25]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[26]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[27]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[28]
+        },
+        {
+            target: "ProductServiceIDQualifier",
+            source: elements[29]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[30]
+        }
+    ];
+    (0, mappingService_1.setProperties)(ItemIdentification, mappings);
+    return ItemIdentification;
+}
+exports.LIN = LIN;
+function SI(name, elements) {
+    const ServiceCharacteristicIdentification = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "AgencyQualifierCode",
+            source: elements[0]
+        },
+        {
+            target: "ServiceCharacteristicsQualifier",
+            source: elements[1]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[2]
+        },
+        {
+            target: "ServiceCharacteristicsQualifier",
+            source: elements[3]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[4]
+        },
+        {
+            target: "ServiceCharacteristicsQualifier",
+            source: elements[5]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[6]
+        },
+        {
+            target: "ServiceCharacteristicsQualifier",
+            source: elements[7]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[8]
+        },
+        {
+            target: "ServiceCharacteristicsQualifier",
+            source: elements[9]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[10]
+        },
+        {
+            target: "ServiceCharacteristicsQualifier",
+            source: elements[11]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[12]
+        },
+        {
+            target: "ServiceCharacteristicsQualifier",
+            source: elements[13]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[14]
+        },
+        {
+            target: "ServiceCharacteristicsQualifier",
+            source: elements[15]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[16]
+        },
+        {
+            target: "ServiceCharacteristicsQualifier",
+            source: elements[17]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[18]
+        },
+        {
+            target: "ServiceCharacteristicsQualifier",
+            source: elements[19]
+        },
+        {
+            target: "ProductServiceID",
+            source: elements[20]
+        }
+    ];
+    (0, mappingService_1.setProperties)(ServiceCharacteristicIdentification, mappings);
+    return ServiceCharacteristicIdentification;
+}
+exports.SI = SI;
+function PID(name, elements) {
+    const ProductItemDescription = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "ItemDescriptionTypeCode",
+            source: elements[0]
+        },
+        {
+            target: "ProductProcessCharacteristicCode",
+            source: elements[1]
+        },
+        {
+            target: "AgencyQualifierCode",
+            source: elements[2]
+        },
+        {
+            target: "ProductDescriptionCode",
+            source: elements[3]
+        },
+        {
+            target: "Description",
+            source: elements[4]
+        },
+        {
+            target: "SurfaceLayerPositionCode",
+            source: elements[5]
+        },
+        {
+            target: "SourceSubqualifier",
+            source: elements[6]
+        },
+        {
+            target: "YesOrNoConditionOrResponseCode",
+            source: elements[7]
+        },
+        {
+            target: "LanguageCode",
+            source: elements[8]
+        },
+        {
+            target: "ProductServiceConditionCode",
+            source: elements[9]
+        }
+    ];
+    (0, mappingService_1.setProperties)(ProductItemDescription, mappings);
+    return ProductItemDescription;
+}
+exports.PID = PID;
+function MEA(name, elements) {
+    const Measurements = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "MeasurementReferenceIDCode",
+            source: elements[0]
+        },
+        {
+            target: "MeasurementQualifier",
+            source: elements[1]
+        },
+        {
+            target: "MeasurementValue",
+            source: elements[2]
+        },
+        {
+            target: "CompositeUnitOfMeasure",
+            source: elements[3],
+            subkeys: ['UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier', 'UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier', 'UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier', 'UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier', 'UnitOrBasisForMeasurementCode', 'Exponent', 'Multiplier']
+        },
+        {
+            target: "RangeMinimum",
+            source: elements[4]
+        },
+        {
+            target: "RangeMaximum",
+            source: elements[5]
+        },
+        {
+            target: "MeasurementSignificanceCode",
+            source: elements[6]
+        },
+        {
+            target: "MeasurementAttributeCode",
+            source: elements[7]
+        },
+        {
+            target: "SurfaceLayerPositionCode",
+            source: elements[8]
+        },
+        {
+            target: "MeasurementMethodOrDeviceCode",
+            source: elements[9]
+        },
+        {
+            target: "CodeListQualifierCode",
+            source: elements[10]
+        },
+        {
+            target: "IndustryCode",
+            source: elements[11]
+        }
+    ];
+    (0, mappingService_1.setProperties)(Measurements, mappings);
+    return Measurements;
+}
+exports.MEA = MEA;
+function PWK(name, elements) {
+    const Paperwork = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "ReportTypeCode",
+            source: elements[0]
+        },
+        {
+            target: "ReportTransmissionCode",
+            source: elements[1]
+        },
+        {
+            target: "ReportCopiesNeeded",
+            source: elements[2]
+        },
+        {
+            target: "EntityIdentifierCode",
+            source: elements[3]
+        },
+        {
+            target: "IdentificationCodeQualifier",
+            source: elements[4]
+        },
+        {
+            target: "IdentificationCode",
+            source: elements[5]
+        },
+        {
+            target: "Description",
+            source: elements[6]
+        },
+        {
+            target: "ActionsIndicated",
+            source: elements[7]
+        },
+        {
+            target: "RequestCategoryCode",
+            source: elements[8]
+        },
+        {
+            target: "CodeListQualifierCode",
+            source: elements[9]
+        },
+        {
+            target: "IndustryCode",
+            source: elements[10]
+        }
+    ];
+    (0, mappingService_1.setProperties)(Paperwork, mappings);
+    return Paperwork;
+}
+exports.PWK = PWK;
+function SE(elements) {
+    const TransactionSetTrailer = {
+        code: "SE"
+    };
+    const mappings = [
+        {
+            target: "NumberOfIncludedSegments",
+            source: elements[0]
+        },
+        {
+            target: "TransactionSetControlNumber",
+            source: elements[1]
+        }
+    ];
+    (0, mappingService_1.setProperties)(TransactionSetTrailer, mappings);
+    return TransactionSetTrailer;
+}
+exports.SE = SE;
+function GE(elements) {
+    const FunctionalGroupTrailer = {
+        code: "GE"
+    };
+    const mappings = [
+        {
+            target: "NumbeOfTransactionSetsIncluded",
+            source: elements[0]
+        },
+        {
+            target: "GroupControlNumber",
+            source: elements[1]
+        }
+    ];
+    (0, mappingService_1.setProperties)(FunctionalGroupTrailer, mappings);
+    return FunctionalGroupTrailer;
+}
+exports.GE = GE;
+function IEA(elements) {
+    const InterchangeControlTrailer = {
+        code: "IEA"
+    };
+    const mappings = [
+        {
+            target: "NumberOfIncludedFunctionalGroups",
+            source: elements[0]
+        },
+        {
+            target: "InterchangeControlNumber",
+            source: elements[1]
+        }
+    ];
+    (0, mappingService_1.setProperties)(InterchangeControlTrailer, mappings);
+    return InterchangeControlTrailer;
+}
+exports.IEA = IEA;
 function CODE(name, elements) {
     const SegmentName = {
         code: name
