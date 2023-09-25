@@ -885,44 +885,6 @@ export function TD5(name: string, elements: any) {
     return SegmentName;
 }
 
-export function CTT(name: string, elements: any) {
-    const SegmentName = {
-        code: name
-    };
-    const mappings = [
-        {
-            target: "NumberOfLineItems",
-            source: elements[0]
-        },
-        {
-            target: "HashTotal",
-            source: elements[1]
-        },
-        {
-            target: "Weight",
-            source: elements[2]
-        },
-        {
-            target: "UnitOrBasisForMeasurementCode",
-            source: elements[3]
-        },
-        {
-            target: "Volume",
-            source: elements[4]
-        },
-        {
-            target: "UnitOrBasisForMeasurementCode",
-            source: elements[5]
-        },
-        {
-            target: "Description",
-            source: elements[6]
-        }
-    ]
-    setProperties(SegmentName, mappings);
-    return SegmentName;
-}
-
 export function PAM(name: string, elements: any) {
     const PeriodAmount = {
         code: name
@@ -1664,6 +1626,1017 @@ export function PWK(name: string, elements: any) {
     ]
     setProperties(Paperwork, mappings);
     return Paperwork;
+}
+
+export function PKG(name: string, elements: any) {
+    const MarkingPackagingLoading = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "ItemDescriptionTypeCode",
+            source: elements[0]
+        },
+        {
+            target: "PackagingCharacteristicCode",
+            source: elements[1]
+        },
+        {
+            target: "AgencyQualifierCode",
+            source: elements[2]
+        },
+        {
+            target: "PackagingDescriptionCode",
+            source: elements[3]
+        },
+        {
+            target: "Description",
+            source: elements[4]
+        },
+        {
+            target: "UnitLoadOptionCode",
+            source: elements[5]
+        },
+        {
+            target: "LanguageCode",
+            source: elements[6]
+        }
+    ]
+    setProperties(MarkingPackagingLoading, mappings);
+    return MarkingPackagingLoading;
+}
+
+export function TD4(name: string, elements: any) {
+    const CarrierDetails = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "SpecialHandlingCode",
+            source: elements[0]
+        },
+        {
+            target: "HazardousMaterialCodeQualifier",
+            source: elements[1]
+        },
+        {
+            target: "HazardousMaterialClassCode",
+            source: elements[2]
+        },
+        {
+            target: "Description",
+            source: elements[3]
+        },
+        {
+            target: "YesOrNoConditionOrResponseCode",
+            source: elements[4]
+        },
+        {
+            target: "HazardousMaterialShippingName ",
+            source: elements[5]
+        },
+        {
+            target: "DangerousGoodsPrimaryClassificationCode",
+            source: elements[6]
+        },
+        {
+            target: "PrimaryClassificationCode",
+            source: elements[7]
+        }
+    ]
+    setProperties(CarrierDetails, mappings);
+    return CarrierDetails;
+}
+
+export function TXI(name: string, elements: any) {
+    const TaxInformation = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "TaxTypeCode",
+            source: elements[0]
+        },
+        {
+            target: "MonetaryAmount",
+            source: elements[1]
+        },
+        {
+            target: "PercentageAsDecimal",
+            source: elements[2]
+        },
+        {
+            target: "TaxJurisdictionCodeQualifier",
+            source: elements[3]
+        },
+        {
+            target: "TaxJurisdictionCode",
+            source: elements[4]
+        },
+        {
+            target: "TaxExemptCode",
+            source: elements[5]
+        },
+        {
+            target: "RelationshipCode",
+            source: elements[6]
+        },
+        {
+            target: "DollarBasisForPercent",
+            source: elements[7]
+        },
+        {
+            target: "TaxIdentificationNumber",
+            source: elements[8]
+        },
+        {
+            target: "AssignedIdentification",
+            source: elements[9]
+        },
+        {
+            target: "Description",
+            source: elements[10]
+        },
+        {
+            target: "Quantity",
+            source: elements[11]
+        },
+        {
+            target: "NameLastOrOrganizationName",
+            source: elements[12]
+        }
+    ]
+    setProperties(TaxInformation, mappings);
+    return TaxInformation;
+}
+
+export function AMT(name: string, elements: any) {
+    const MonetaryAmountInformation = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "AmountQualifierCode",
+            source: elements[0]
+        },
+        {
+            target: "MonetaryAmount",
+            source: elements[1]
+        },
+        {
+            target: "CreditOrDebitFlagCode",
+            source: elements[2]
+        }
+    ]
+    setProperties(MonetaryAmountInformation, mappings);
+    return MonetaryAmountInformation;
+}
+
+export function EFI(name: string, elements: any) {
+    const ElectronicFormatIdentification = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "SecurityLevelCode",
+            source: elements[0]
+        },
+        {
+            target: "FreeFormMessageText",
+            source: elements[1]
+        },
+        {
+            target: "SecurityTechniqueCode",
+            source: elements[2]
+        },
+        {
+            target: "VersionIdentifier",
+            source: elements[3]
+        },
+        {
+            target: "ProgramIdentifier",
+            source: elements[4]
+        },
+        {
+            target: "VersionIdentifier",
+            source: elements[5]
+        },
+        {
+            target: "InterchangeFormat",
+            source: elements[6]
+        },
+        {
+            target: "VersionIdentifier",
+            source: elements[7]
+        },
+        {
+            target: "CompressionTechnique",
+            source: elements[8]
+        },
+        {
+            target: "DrawingSheetSizeCode",
+            source: elements[9]
+        },
+        {
+            target: "FileName",
+            source: elements[10]
+        },
+        {
+            target: "BlockType",
+            source: elements[11]
+        },
+        {
+            target: "RecordLength",
+            source: elements[12]
+        },
+        {
+            target: "BlockLength",
+            source: elements[13]
+        },
+        {
+            target: "VersionIdentifier",
+            source: elements[14]
+        },
+        {
+            target: "Filter ID Code",
+            source: elements[15]
+        }
+    ]
+    setProperties(ElectronicFormatIdentification, mappings);
+    return ElectronicFormatIdentification;
+}
+
+export function G61(name: string, elements: any) {
+    const Contact = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "ContactFunctionCode",
+            source: elements[0]
+        },
+        {
+            target: "Name",
+            source: elements[1]
+        },
+        {
+            target: "CommunicationNumberQualifier",
+            source: elements[2]
+        },
+        {
+            target: "CommunicationNumber",
+            source: elements[3]
+        },
+        {
+            target: "ContactInquiryReference",
+            source: elements[4]
+        }
+    ]
+    setProperties(Contact, mappings);
+    return Contact;
+}
+
+export function CN1(name: string, elements: any) {
+    const ContractInformation = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "ContractTypeCode",
+            source: elements[0]
+        },
+        {
+            target: "MonetaryAmount",
+            source: elements[1]
+        },
+        {
+            target: "PercentDecimalFormat",
+            source: elements[2]
+        },
+        {
+            target: "ReferenceIdentification",
+            source: elements[3]
+        },
+        {
+            target: "TermsDiscountPercent",
+            source: elements[4]
+        },
+        {
+            target: "VersionIdentifier",
+            source: elements[5]
+        }
+    ]
+    setProperties(ContractInformation, mappings);
+    return ContractInformation;
+}
+
+export function PO3(name: string, elements: any) {
+    const AdditionalItemDetail = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "ChangeReasonCode",
+            source: elements[0]
+        },
+        {
+            target: "Date",
+            source: elements[1]
+        },
+        {
+            target: "PriceIdentifierCode",
+            source: elements[2]
+        },
+        {
+            target: "UnitPrice",
+            source: elements[3]
+        },
+        {
+            target: "BasisOfUnitPriceCode",
+            source: elements[4]
+        },
+        {
+            target: "Quantity",
+            source: elements[5]
+        },
+        {
+            target: "UnitOrBasisForMeasurementCode",
+            source: elements[6]
+        },
+        {
+            target: "Description",
+            source: elements[7]
+        }
+    ]
+    setProperties(AdditionalItemDetail, mappings);
+    return AdditionalItemDetail;
+}
+
+export function YNQ(name: string, elements: any) {
+    const YesOrNoQuestion = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "ConditionIndicatorCode",
+            source: elements[0]
+        },
+        {
+            target: "YesOrNoConditionOrResponseCode",
+            source: elements[1]
+        },
+        {
+            target: "DateTimePeriodFormatQualifier",
+            source: elements[2]
+        },
+        {
+            target: "DateTimePeriod",
+            source: elements[3]
+        },
+        {
+            target: "FreeFormMessageText1",
+            source: elements[4]
+        },
+        {
+            target: "FreeFormMessageText2",
+            source: elements[5]
+        },
+        {
+            target: "FreeFormMessageText3",
+            source: elements[6]
+        },
+        {
+            target: "CodeListQualifierCode",
+            source: elements[7]
+        },
+        {
+            target: "IndustryCode",
+            source: elements[8]
+        },
+        {
+            target: "FreeFormMessageText4",
+            source: elements[9]
+        }
+    ]
+    setProperties(YesOrNoQuestion, mappings);
+    return YesOrNoQuestion;
+}
+
+export function IT8(name: string, elements: any) {
+    const ConditionsOfSale = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "SalesRequirementCode",
+            source: elements[0]
+        },
+        {
+            target: "ActionCode",
+            source: elements[1]
+        },
+        {
+            target: "Amount",
+            source: elements[2]
+        },
+        {
+            target: "AccountNumber",
+            source: elements[3]
+        },
+        {
+            target: "Date",
+            source: elements[4]
+        },
+        {
+            target: "AgencyQualifierCode",
+            source: elements[5]
+        },
+        {
+            target: "ProductOrServiceSubstitutionCode",
+            source: elements[6]
+        },
+        {
+            target: "ProductOrServiceIDQualifier",
+            source: elements[7]
+        },
+        {
+            target: "ProductOrServiceID",
+            source: elements[8]
+        },
+        {
+            target: "ProductOrServiceIDQualifier",
+            source: elements[9]
+        },
+        {
+            target: "ProductOrServiceID",
+            source: elements[10]
+        },
+        {
+            target: "ProductOrServiceIDQualifier",
+            source: elements[11]
+        },
+        {
+            target: "ProductOrServiceID",
+            source: elements[12]
+        },
+        {
+            target: "ProductOrServiceIDQualifier",
+            source: elements[13]
+        },
+        {
+            target: "ProductOrServiceID",
+            source: elements[14]
+        },
+        {
+            target: "ProductOrServiceIDQualifier",
+            source: elements[15]
+        },
+        {
+            target: "ProductOrServiceID",
+            source: elements[16]
+        },
+        {
+            target: "ProductOrServiceIDQualifier",
+            source: elements[17]
+        },
+        {
+            target: "ProductOrServiceID",
+            source: elements[18]
+        },
+        {
+            target: "ProductOrServiceIDQualifier",
+            source: elements[19]
+        },
+        {
+            target: "ProductOrServiceID",
+            source: elements[20]
+        },
+        {
+            target: "ProductOrServiceIDQualifier",
+            source: elements[21]
+        },
+        {
+            target: "ProductOrServiceID",
+            source: elements[22]
+        },
+        {
+            target: "ProductOrServiceIDQualifier",
+            source: elements[23]
+        },
+        {
+            target: "ProductOrServiceID",
+            source: elements[24]
+        },
+        {
+            target: "ProductOrServiceIDQualifier",
+            source: elements[25]
+        },
+        {
+            target: "ProductOrServiceID",
+            source: elements[26]
+        }
+    ]
+    setProperties(ConditionsOfSale, mappings);
+    return ConditionsOfSale;
+}
+
+export function LS(name: string, elements: any) {
+    const LoopHeader = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "LoopIdentifierCode",
+            source: elements[0]
+        }
+    ]
+    setProperties(LoopHeader, mappings);
+    return LoopHeader;
+}
+
+export function LE(name: string, elements: any) {
+    const SegmentName = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "LoopIdentifierCode",
+            source: elements[0]
+        },
+    ]
+    setProperties(SegmentName, mappings);
+    return SegmentName;
+}
+
+export function TD3(name: string, elements: any) {
+    const CarrierDetails = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "EquipmentDescriptionCode",
+            source: elements[0]
+        },
+        {
+            target: "EquipmentInitial",
+            source: elements[1]
+        },
+        {
+            target: "EquipmentNumber",
+            source: elements[2]
+        },
+        {
+            target: "WeightQualifier",
+            source: elements[3]
+        },
+        {
+            target: "Weight",
+            source: elements[4]
+        },
+        {
+            target: "UnitOrBasisForMeasurementCode",
+            source: elements[5]
+        },
+        {
+            target: "OwnershipCode",
+            source: elements[6]
+        },
+        {
+            target: "SealStatusCode",
+            source: elements[7]
+        },
+        {
+            target: "SealNumber",
+            source: elements[8]
+        },
+        {
+            target: "EquipmentTypeCode",
+            source: elements[9]
+        }
+    ]
+    setProperties(CarrierDetails, mappings);
+    return CarrierDetails;
+}
+
+export function MAN(name: string, elements: any) {
+    const MarksAndNumbersInformation = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "MarksAndNumbersQualifier1",
+            source: elements[0]
+        },
+        {
+            target: "MarksAndNumbers1",
+            source: elements[1]
+        },
+        {
+            target: "MarksAndNumbers2",
+            source: elements[2]
+        },
+        {
+            target: "MarksAndNumbersQualifier2",
+            source: elements[3]
+        },
+        {
+            target: "MarksAndNumbers3",
+            source: elements[4]
+        },
+        {
+            target: "MarksAndNumbers4",
+            source: elements[5]
+        }
+    ]
+    setProperties(MarksAndNumbersInformation, mappings);
+    return MarksAndNumbersInformation;
+}
+
+export function CTB(name: string, elements: any) {
+    const RestrictionsOrConditions = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "RestrictionsOrConditionsQualifier",
+            source: elements[0]
+        },
+        {
+            target: "Description",
+            source: elements[1]
+        },
+        {
+            target: "QuantityQualifier",
+            source: elements[2]
+        },
+        {
+            target: "Quantity",
+            source: elements[3]
+        },
+        {
+            target: "AmountQualifierCode",
+            source: elements[4]
+        },
+        {
+            target: "Amount",
+            source: elements[5]
+        },
+        {
+
+            target: "CompositeUnitOfMeasure",
+
+            source: elements[6],
+
+            subkeys: ['UnitOrBasisForMeasurementCode1', 'Exponent1', 'Multiplier1', 'UnitOrBasisForMeasurementCode2', 'Exponent2', 'Multiplier2', 'UnitOrBasisForMeasurementCode3', 'Exponent3', 'Multiplier3', 'UnitOrBasisForMeasurementCode4', 'Exponent4', 'Multiplier4', 'UnitOrBasisForMeasurementCode5', 'Exponent5', 'Multiplier5']
+
+        }
+    ]
+    setProperties(RestrictionsOrConditions, mappings);
+    return RestrictionsOrConditions;
+}
+
+export function QTY(name: string, elements: any) {
+    const QuantityInformation = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "QuantityQualifier",
+            source: elements[0]
+        },
+        {
+            target: "Quantity",
+            source: elements[1]
+        },
+        ,
+        {
+
+            target: "CompositeUnitOfMeasure",
+
+            source: elements[2],
+
+            subkeys: ['UnitOrBasisForMeasurementCode1', 'Exponent1', 'Multiplier1', 'UnitOrBasisForMeasurementCode2', 'Exponent2', 'Multiplier2', 'UnitOrBasisForMeasurementCode3', 'Exponent3', 'Multiplier3', 'UnitOrBasisForMeasurementCode4', 'Exponent4', 'Multiplier4', 'UnitOrBasisForMeasurementCode5', 'Exponent5', 'Multiplier5']
+
+        },
+        {
+            target: "FreeFormInformation",
+            source: elements[3]
+        }
+    ]
+    setProperties(QuantityInformation, mappings);
+    return QuantityInformation;
+}
+
+export function PCT(name: string, elements: any) {
+    const PercentAmounts = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "PercentQualifier",
+            source: elements[0]
+        },
+        {
+            target: "PercentageAsDecimal",
+            source: elements[1]
+        }
+    ]
+    setProperties(PercentAmounts, mappings);
+    return PercentAmounts;
+}
+
+export function FA2(name: string, elements: any) {
+    const AccountingData = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "BreakdownStructureDetailCode",
+            source: elements[0]
+        },
+        {
+            target: "FinancialInformationCode",
+            source: elements[1]
+        }
+    ]
+    setProperties(AccountingData, mappings);
+    return AccountingData;
+}
+
+export function NX2(name: string, elements: any) {
+    const LocationIDComponent = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "AddressComponentQualifier1",
+            source: elements[0]
+        },
+        {
+            target: "AddressInformation1",
+            source: elements[1]
+        },
+        {
+            target: "CountyDesignatorCode",
+            source: elements[2]
+        },
+        {
+            target: "AddressComponentQualifier2",
+            source: elements[3]
+        },
+        {
+            target: "AddressInformation2",
+            source: elements[4]
+        }
+    ]
+    setProperties(LocationIDComponent, mappings);
+    return LocationIDComponent;
+}
+
+export function LQ(name: string, elements: any) {
+    const IndustryCodeIdentification = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "CodeListQualifierCode",
+            source: elements[0]
+        },
+        {
+            target: "IndustryCode",
+            source: elements[1]
+        }
+    ]
+    setProperties(IndustryCodeIdentification, mappings);
+    return IndustryCodeIdentification;
+}
+
+export function SPI(name: string, elements: any) {
+    const SpecificationIdentifier = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "SecurityLevelCode1",
+            source: elements[0]
+        },
+        {
+            target: "ReferenceIdentificationQualifier",
+            source: elements[1]
+        },
+        {
+            target: "ReferenceIdentification",
+            source: elements[2]
+        },
+        {
+            target: "EntityTitle",
+            source: elements[3]
+        },
+        {
+            target: "EntityPurpose",
+            source: elements[4]
+        },
+        {
+            target: "EntityStatusCode",
+            source: elements[5]
+        },
+        {
+            target: "TransactionSetPurposeCode",
+            source: elements[6]
+        },
+        {
+            target: "ReportTypeCode",
+            source: elements[7]
+        },
+        {
+            target: "SecurityLevelCode2",
+            source: elements[8]
+        },
+        {
+            target: "AgencyQualifierCode",
+            source: elements[9]
+        },
+        {
+            target: "SourceSubqualifier",
+            source: elements[10]
+        },
+        {
+            target: "AssignedNumber",
+            source: elements[11]
+        },
+        {
+            target: "CertificationTypeCode",
+            source: elements[12]
+        },
+        {
+            target: "ProposalDataDetailIdentifierCode",
+            source: elements[13]
+        },
+        {
+            target: "HierarchicalStructureCode",
+            source: elements[14]
+        }
+    ]
+    setProperties(SpecificationIdentifier, mappings);
+    return SpecificationIdentifier;
+}
+
+export function PAL(name: string, elements: any) {
+    const PalletTypeAndLoadCharacteristics = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "PalletTypeCode",
+            source: elements[0]
+        },
+        {
+            target: "PalletTiers",
+            source: elements[1]
+        },
+        {
+            target: "PalletBlocks",
+            source: elements[2]
+        },
+        {
+            target: "Pack",
+            source: elements[3]
+        },
+        {
+            target: "UnitWeight",
+            source: elements[4]
+        },
+        {
+            target: "UnitOrBasisForMeasurementCode1",
+            source: elements[5]
+        },
+        {
+            target: "Length",
+            source: elements[6]
+        },
+        {
+            target: "Width",
+            source: elements[7]
+        },
+        {
+            target: "Height",
+            source: elements[8]
+        },
+        {
+            target: "UnitOrBasisForMeasurementCode2",
+            source: elements[9]
+        },
+        {
+            target: "GrossWeightPerPack",
+            source: elements[10]
+        },
+        {
+            target: "UnitOrBasisForMeasurementCode3",
+            source: elements[11]
+        },
+        {
+            target: "GrossVolumePerPack",
+            source: elements[12]
+        },
+        {
+            target: "UnitOrBasisForMeasurementCode4",
+            source: elements[13]
+        },
+        {
+            target: "PalletExchangeCode",
+            source: elements[14]
+        },
+        {
+            target: "InnerPack",
+            source: elements[15]
+        },
+        {
+            target: "PalletStructureCode",
+            source: elements[16]
+        },
+        {
+            target: "Quantity",
+            source: elements[17]
+        },
+        {
+            target: "YesOrNoConditionOrResponseCode",
+            source: elements[18]
+        },
+        {
+            target: "Description",
+            source: elements[19]
+        }
+    ]
+    setProperties(PalletTypeAndLoadCharacteristics, mappings);
+    return PalletTypeAndLoadCharacteristics;
+}
+
+export function IT3(name: string, elements: any) {
+    const AdditionalItemData = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "NumberOfUnitsShipped",
+            source: elements[0]
+        },
+        {
+            target: "UnitOrBasisForMeasurementCode",
+            source: elements[1]
+        },
+        {
+            target: "ShipmentOrOrderStatusCode",
+            source: elements[2]
+        },
+        {
+            target: "QuantityDifference",
+            source: elements[3]
+        },
+        {
+            target: "ChangeReasonCode",
+            source: elements[4]
+        }
+    ]
+    setProperties(AdditionalItemData, mappings);
+    return AdditionalItemData;
+}
+
+export function CTT(name: string, elements: any) {
+    const TransactionTotals = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "NumberOfLineItems",
+            source: elements[0]
+        },
+        {
+            target: "HashTotal",
+            source: elements[1]
+        },
+        {
+            target: "Weight",
+            source: elements[2]
+        },
+        {
+            target: "UnitOrBasisForMeasurementCode1",
+            source: elements[3]
+        },
+        {
+            target: "Volume",
+            source: elements[4]
+        },
+        {
+            target: "UnitOrBasisForMeasurementCode2",
+            source: elements[5]
+        },
+        {
+            target: "Description",
+            source: elements[3]
+        }
+    ]
+    setProperties(TransactionTotals, mappings);
+    return TransactionTotals;
 }
 
 export function SE(elements: any) {
