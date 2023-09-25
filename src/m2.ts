@@ -2639,6 +2639,419 @@ export function CTT(name: string, elements: any) {
     return TransactionTotals;
 }
 
+export function TD1(name: string, elements: any) {
+    const CarrierDetails = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "PackagingCode",
+            source: elements[0]
+        },
+        {
+            target: "LadingQuantity",
+            source: elements[1]
+        },
+        {
+            target: "CommodityCodeQualifier",
+            source: elements[2]
+        },
+        {
+            target: "CommodityCode",
+            source: elements[3]
+        },
+        {
+            target: "LadingDescription",
+            source: elements[4]
+        },
+        {
+            target: "WeightQualifier",
+            source: elements[5]
+        },
+        {
+            target: "Weight",
+            source: elements[6]
+        },
+        {
+            target: "UnitOrBasisForMeasurementCode1",
+            source: elements[7]
+        },
+        {
+            target: "Volume",
+            source: elements[8]
+        },
+        {
+            target: "UnitOrBasisForMeasurementCode2",
+            source: elements[9]
+        },
+    ]
+    setProperties(CarrierDetails, mappings);
+    return CarrierDetails;
+}
+
+export function LDT(name: string, elements: any) {
+    const LeadTime = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "LeadTimeCode",
+            source: elements[0]
+        },
+        {
+            target: "Quantity",
+            source: elements[1]
+        },
+        {
+            target: "UnitOfTimePeriodOrIntervalCode",
+            source: elements[2]
+        },
+        {
+            target: "Date",
+            source: elements[3]
+        }
+    ]
+    setProperties(LeadTime, mappings);
+    return LeadTime;
+}
+
+export function MTX(name: string, elements: any) {
+    const Text = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "NoteReferenceCode",
+            source: elements[0]
+        },
+        {
+            target: "TextualData1",
+            source: elements[1]
+        },
+        {
+            target: "TextualData2",
+            source: elements[2]
+        },
+        {
+            target: "PrinterCarriageControlCode",
+            source: elements[3]
+        },
+        {
+            target: "Number",
+            source: elements[4]
+        },
+        {
+            target: "LanguageCode",
+            source: elements[5]
+        }
+
+    ]
+    setProperties(Text, mappings);
+    return Text;
+}
+
+export function FA1(name: string, elements: any) {
+    const TypeOfFinancialAccountingData = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "AgencyQualifierCode",
+            source: elements[0]
+        },
+        {
+            target: "ServicePromotionAllowanceOrChargeCode",
+            source: elements[1]
+        },
+        {
+            target: "AllowanceOrChargeIndicatorCode",
+            source: elements[2]
+        },
+    ]
+    setProperties(TypeOfFinancialAccountingData, mappings);
+    return TypeOfFinancialAccountingData;
+}
+
+export function IN2(name: string, elements: any) {
+    const IndividualNameStructureComponents = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "NameComponentQualifier",
+            source: elements[0]
+        },
+        {
+            target: "Name1",
+            source: elements[1]
+        },
+        {
+            target: "Name2",
+            source: elements[2]
+        },
+    ]
+    setProperties(IndividualNameStructureComponents, mappings);
+    return IndividualNameStructureComponents;
+}
+
+export function LM(name: string, elements: any) {
+    const CodeSourceInformation = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "AgencyQualifierCode",
+            source: elements[0]
+        },
+        {
+            target: "SourceSubqualifier",
+            source: elements[1]
+        }
+    ]
+    setProperties(CodeSourceInformation, mappings);
+    return CodeSourceInformation;
+}
+
+export function CB1(name: string, elements: any) {
+    const ContractAndCostAccountingStandardsData = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "AcquisitionDataCode",
+            source: elements[0]
+        },
+        {
+            target: "FinancingTypeCode",
+            source: elements[1]
+        }
+    ]
+    setProperties(ContractAndCostAccountingStandardsData, mappings);
+    return ContractAndCostAccountingStandardsData;
+}
+
+export function ADV(name: string, elements: any) {
+    const AdvertisingDemographicInformation = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "AgencyQualifierCode",
+            source: elements[0]
+        },
+        {
+            target: "ServiceCharacteristicsQualifier",
+            source: elements[1]
+        },
+        {
+            target: "RangeMinimum1",
+            source: elements[2]
+        },
+        {
+            target: "RangeMinimum2",
+            source: elements[3]
+        },
+        {
+            target: "Category",
+            source: elements[4]
+        },
+        {
+            target: "ServiceCharacteristicsQualifier",
+            source: elements[5]
+        },
+        {
+            target: "MeasurementValue",
+            source: elements[6]
+        },
+    ]
+    setProperties(AdvertisingDemographicInformation, mappings);
+    return AdvertisingDemographicInformation;
+}
+
+export function PO4(name: string, elements: any) {
+    const ItemPhysicalDetails = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "Pack",
+            source: elements[0]
+        },
+        {
+            target: "Size",
+            source: elements[1]
+        },
+        {
+            target: "UnitOrBasisForMeasurementCode1",
+            source: elements[2]
+        },
+        {
+            target: "PackagingCode",
+            source: elements[3]
+        },
+        {
+            target: "WeightQualifier",
+            source: elements[4]
+        },
+        {
+            target: "GrossWeightPerPack",
+            source: elements[5]
+        },
+        {
+            target: "UnitOrBasisForMeasurementCode2",
+            source: elements[6]
+        },
+        {
+            target: "GrossVolumePerPack",
+            source: elements[7]
+        },
+        {
+            target: "UnitOrBasisForMeasurementCode3",
+            source: elements[8]
+        },
+        {
+            target: "Length",
+            source: elements[9]
+        },
+        {
+            target: "Width",
+            source: elements[10]
+        },
+        {
+            target: "Height",
+            source: elements[11]
+        },
+        {
+            target: "UnitOrBasisForMeasurementCode4",
+            source: elements[12]
+        },
+        {
+            target: "InnerPack",
+            source: elements[13]
+        },
+        {
+            target: "SurfaceOrLayerOrPositionCode",
+            source: elements[14]
+        },
+        {
+            target: "AssignedIdentification1",
+            source: elements[15]
+        },
+        {
+            target: "AssignedIdentification2",
+            source: elements[16]
+        },
+        {
+            target: "Number",
+            source: elements[17]
+        }
+    ]
+    setProperties(ItemPhysicalDetails, mappings);
+    return ItemPhysicalDetails;
+}
+
+export function SDQ(name: string, elements: any) {
+    const DestinationQuantity = {
+        code: name
+    };
+    const mappings = [
+        {
+            target: "UnitOrBasisForMeasurementCode",
+            source: elements[0]
+        },
+        {
+            target: "IdentificationCodeQualifier",
+            source: elements[1]
+        },
+        {
+            target: "IdentificationCode1",
+            source: elements[2]
+        },
+        {
+            target: "Quantity1",
+            source: elements[3]
+        },
+        {
+            target: "IdentificationCode2",
+            source: elements[4]
+        },
+        {
+            target: "Quantity2",
+            source: elements[5]
+        },
+        {
+            target: "IdentificationCode3",
+            source: elements[6]
+        },
+        {
+            target: "Quantity3",
+            source: elements[7]
+        },
+        {
+            target: "IdentificationCode4",
+            source: elements[8]
+        },
+        {
+            target: "Quantity4",
+            source: elements[9]
+        },
+        {
+            target: "IdentificationCode5",
+            source: elements[10]
+        },
+        {
+            target: "Quantity5",
+            source: elements[11]
+        },
+        {
+            target: "IdentificationCode6",
+            source: elements[12]
+        },
+        {
+            target: "Quantity6",
+            source: elements[13]
+        },
+        {
+            target: "IdentificationCode7",
+            source: elements[14]
+        },
+        {
+            target: "Quantity7",
+            source: elements[15]
+        },
+        {
+            target: "IdentificationCode8",
+            source: elements[16]
+        },
+        {
+            target: "Quantity8",
+            source: elements[17]
+        },
+        {
+            target: "IdentificationCode9",
+            source: elements[18]
+        },
+        {
+            target: "Quantity9",
+            source: elements[19]
+        },
+        {
+            target: "IdentificationCode10",
+            source: elements[20]
+        },
+        {
+            target: "Quantity10",
+            source: elements[21]
+        },
+        {
+            target: "LocationIdentifier",
+            source: elements[22]
+        }
+    ]
+    setProperties(DestinationQuantity, mappings);
+    return DestinationQuantity;
+}
+
 export function SE(elements: any) {
     const TransactionSetTrailer = {
         code: "SE"
