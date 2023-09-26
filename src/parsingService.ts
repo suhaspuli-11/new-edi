@@ -20,9 +20,11 @@ export function parseX12(ediMessage: string) {
         arr.push(gs);
         arr.push(st);
 
+        const delimiter: any = isa.ComponentElementSeparator;
+
         const segments: any = result.functionalGroups[0].transactions[0].segments;
         for (let segment of segments) {
-            const segmentObj: any = x12Mapping(segment);
+            const segmentObj: any = x12Mapping(segment,delimiter);
             arr.push(segmentObj);
         }
 
@@ -35,13 +37,10 @@ export function parseX12(ediMessage: string) {
 export function parseEdifact(edifactMessage: any) {
     const reader: any = new Reader({ autoDetectEncoding: true });
     const result: any = reader.parse(edifactMessage);
-    for (let obj of result)
-        console.log(obj);
     const arr: any = [];
     for (const obj of result) {
         const segmentObj: any = edifactMapping(obj);
         arr.push(segmentObj);
     }
     console.log(arr);
-    // const obj: any = group(arr);
 }

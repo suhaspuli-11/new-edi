@@ -15,13 +15,13 @@ app.post('/', (req: any, res: any) => {
         console.log('***************EDIFACT message***************');
         parseEdifact(ediMessage);
     }
-    else if(interchangeHeader === 'ISA'){
+    //Processing the X12 message
+    else if (interchangeHeader === 'ISA') {
         console.log('***************ANSI message***************');
         parseX12(ediMessage);
     }
     else {
         console.log('Invalid format');
-        res.send('Wrong format');
     } 
 });
 

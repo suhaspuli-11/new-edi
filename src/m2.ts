@@ -1,6 +1,6 @@
 import { setProperties } from './mappingService';
 
-export function ISA(elements: any) {
+export function ISA(elements: any[]) {
     const InterchangeControlHeader = {
         code: "ISA"
     };
@@ -74,7 +74,7 @@ export function ISA(elements: any) {
     return InterchangeControlHeader;
 }
 
-export function GS(elements: any) {
+export function GS(elements: any[]) {
     const FunctionalGroupHeader = {
         code: 'GS'
     };
@@ -116,7 +116,7 @@ export function GS(elements: any) {
     return FunctionalGroupHeader;
 }
 
-export function ST(elements: any) {
+export function ST(elements: any[]) {
     const TransactionSetHeader = {
         code: 'ST'
     };
@@ -138,7 +138,7 @@ export function ST(elements: any) {
     return TransactionSetHeader;
 }
 
-export function BEG(name: string, elements: any) {
+export function BEG(name: string, elements: any[], delimiter: any): Record<any, any> {
     const BeginningSegmentForPurchaseOrder = {
         code: name
     };
@@ -192,11 +192,11 @@ export function BEG(name: string, elements: any) {
             source: elements[11]
         }
     ];
-    setProperties(BeginningSegmentForPurchaseOrder, mappings);
+    setProperties(BeginningSegmentForPurchaseOrder, mappings, delimiter);
     return BeginningSegmentForPurchaseOrder;
 }
 
-export function CUR(name: string, elements: any) {
+export function CUR(name: string, elements: any[], delimiter: any): Record<any, any> {
     const Currency = {
         code: name
     };
@@ -286,11 +286,11 @@ export function CUR(name: string, elements: any) {
             source: elements[20]
         },
     ];
-    setProperties(Currency, mappings);
+    setProperties(Currency, mappings, delimiter);
     return Currency;
 }
 
-export function PER(name: string, elements: any) {
+export function PER(name: string, elements: any[], delimiter: any): Record<any, any> {
     const AdministrativeCommunicationsContact = {
         code: name
     };
@@ -332,11 +332,11 @@ export function PER(name: string, elements: any) {
             source: elements[8]
         }
     ]
-    setProperties(AdministrativeCommunicationsContact, mappings);
+    setProperties(AdministrativeCommunicationsContact, mappings, delimiter);
     return AdministrativeCommunicationsContact;
 }
 
-export function DTM(name: string, elements: any) {
+export function DTM(name: string, elements: any[], delimiter: any): Record<any, any> {
     const DateTimeReference = {
         code: name
     };
@@ -366,11 +366,11 @@ export function DTM(name: string, elements: any) {
             source: elements[5]
         }
     ]
-    setProperties(DateTimeReference, mappings);
+    setProperties(DateTimeReference, mappings, delimiter);
     return DateTimeReference;
 }
 
-export function REF(name: string, elements: any) {
+export function REF(name: string, elements: any[], delimiter: any): Record<any, any> {
     const ReferenceInformation = {
         code: name
     };
@@ -393,11 +393,11 @@ export function REF(name: string, elements: any) {
             subkeys: ['ReferenceIdentificationQualifier', 'ReferenceIdentification', 'ReferenceIdentificationQualifier', 'ReferenceIdentification', 'ReferenceIdentificationQualifier', 'ReferenceIdentification']
         }
     ]
-    setProperties(ReferenceInformation, mappings);
+    setProperties(ReferenceInformation, mappings, delimiter);
     return ReferenceInformation;
 }
 
-export function TAX(name: string, elements: any) {
+export function TAX(name: string, elements: any[], delimiter: any): Record<any, any> {
     const TaxReference = {
         code: name
     };
@@ -455,11 +455,11 @@ export function TAX(name: string, elements: any) {
             source: elements[12]
         }
     ]
-    setProperties(TaxReference, mappings);
+    setProperties(TaxReference, mappings, delimiter);
     return TaxReference;
 }
 
-export function FOB(name: string, elements: any) {
+export function FOB(name: string, elements: any[], delimiter: any): Record<any, any> {
     const FOBRelatedInstructions = {
         code: name
     };
@@ -501,11 +501,11 @@ export function FOB(name: string, elements: any) {
             source: elements[8]
         }
     ]
-    setProperties(FOBRelatedInstructions, mappings);
+    setProperties(FOBRelatedInstructions, mappings, delimiter);
     return FOBRelatedInstructions;
 }
 
-export function CTP(name: string, elements: any) {
+export function CTP(name: string, elements: any[], delimiter: any): Record<any, any> {
     const PricingInformation = {
         code: name
     };
@@ -556,11 +556,11 @@ export function CTP(name: string, elements: any) {
             source: elements[10]
         }
     ]
-    setProperties(PricingInformation, mappings);
+    setProperties(PricingInformation, mappings, delimiter);
     return PricingInformation;
 }
 
-export function N9(name: string, elements: any) {
+export function N9(name: string, elements: any[], delimiter: any): Record<any, any> {
     const ExtendedReferenceInformation = {
         code: name
     };
@@ -595,11 +595,11 @@ export function N9(name: string, elements: any) {
             subkeys: ['ReferenceIdentificationQualifier', 'ReferenceIdentification', 'ReferenceIdentificationQualifier', 'ReferenceIdentification', 'ReferenceIdentificationQualifier', 'ReferenceIdentification']
         }
     ]
-    setProperties(ExtendedReferenceInformation, mappings);
+    setProperties(ExtendedReferenceInformation, mappings, delimiter);
     return ExtendedReferenceInformation;
 }
 
-export function N1(name: string, elements: any) {
+export function N1(name: string, elements: any[], delimiter: any): Record<any, any> {
     const PartyIdentification = {
         code: name
     };
@@ -629,11 +629,11 @@ export function N1(name: string, elements: any) {
             source: elements[5]
         }
     ]
-    setProperties(PartyIdentification, mappings);
+    setProperties(PartyIdentification, mappings, delimiter);
     return PartyIdentification;
 }
 
-export function N2(name: string, elements: any) {
+export function N2(name: string, elements: any[], delimiter: any): Record<any, any> {
     const AdditionalNameInformation = {
         code: name
     };
@@ -647,11 +647,11 @@ export function N2(name: string, elements: any) {
             source: elements[1]
         }
     ]
-    setProperties(AdditionalNameInformation, mappings);
+    setProperties(AdditionalNameInformation, mappings, delimiter);
     return AdditionalNameInformation;
 }
 
-export function N3(name: string, elements: any) {
+export function N3(name: string, elements: any[], delimiter: any): Record<any, any> {
     const PartyLocation = {
         code: name
     };
@@ -665,11 +665,11 @@ export function N3(name: string, elements: any) {
             source: elements[1]
         }
     ]
-    setProperties(PartyLocation, mappings);
+    setProperties(PartyLocation, mappings, delimiter);
     return PartyLocation;
 }
 
-export function PO1(name: string, elements: any) {
+export function PO1(name: string, elements: any[], delimiter: any): Record<any, any> {
     const BaselineItemData = {
         code: name
     };
@@ -775,25 +775,53 @@ export function PO1(name: string, elements: any) {
             source: elements[24]
         }
     ]
-    setProperties(BaselineItemData, mappings);
+    setProperties(BaselineItemData, mappings, delimiter);
     return BaselineItemData;
 }
 
-export function N4(name: string, elements: any) {
+export function N4(name: string, elements: any[], delimiter: any): Record<any, any> {
     const GeographicLocation = {
         code: name
     };
     const mappings = [
         {
-            target: "",
+            target: "CityName",
             source: elements[0]
         },
+        {
+            target: "StateOrProvinceCode",
+            source: elements[1]
+        },
+        {
+            target: "PostalCode",
+            source: elements[2]
+        },
+        {
+            target: "CountryCode",
+            source: elements[3]
+        },
+        {
+            target: "LocationQualifier",
+            source: elements[4]
+        },
+        {
+            target: "LocationIdentifier",
+            source: elements[5]
+        },
+        {
+            target: "CountrySubdivisionCode",
+            source: elements[6]
+        },
+        {
+            target: "PostalCodeFormatted",
+            source: elements[7]
+        }
     ]
-    setProperties(GeographicLocation, mappings);
+    setProperties(GeographicLocation, mappings, delimiter);
     return GeographicLocation;
 }
 
-export function MSG(name: string, elements: any) {
+export function MSG(name: string, elements: any[], delimiter: any): Record<any, any> {
     const MessageText = {
         code: name
     };
@@ -811,11 +839,11 @@ export function MSG(name: string, elements: any) {
             source: elements[2]
         },
     ]
-    setProperties(MessageText, mappings);
+    setProperties(MessageText, mappings, delimiter);
     return MessageText;
 }
 
-export function TD5(name: string, elements: any) {
+export function TD5(name: string, elements: any[], delimiter: any): Record<any, any> {
     const SegmentName = {
         code: name
     };
@@ -881,11 +909,11 @@ export function TD5(name: string, elements: any) {
             source: elements[14]
         }
     ]
-    setProperties(SegmentName, mappings);
+    setProperties(SegmentName, mappings, delimiter);
     return SegmentName;
 }
 
-export function PAM(name: string, elements: any) {
+export function PAM(name: string, elements: any[], delimiter: any): Record<any, any> {
     const PeriodAmount = {
         code: name
     };
@@ -952,11 +980,11 @@ export function PAM(name: string, elements: any) {
             source: elements[14]
         }
     ]
-    setProperties(PeriodAmount, mappings);
+    setProperties(PeriodAmount, mappings, delimiter);
     return PeriodAmount;
 }
 
-export function CSH(name: string, elements: any) {
+export function CSH(name: string, elements: any[], delimiter: any): Record<any, any> {
     const SalesRequirements = {
         code: name
     };
@@ -1002,11 +1030,11 @@ export function CSH(name: string, elements: any) {
             source: elements[9]
         }
     ]
-    setProperties(SalesRequirements, mappings);
+    setProperties(SalesRequirements, mappings, delimiter);
     return SalesRequirements;
 }
 
-export function TC2(name: string, elements: any) {
+export function TC2(name: string, elements: any[], delimiter: any): Record<any, any> {
     const Commodity = {
         code: name
     };
@@ -1020,11 +1048,11 @@ export function TC2(name: string, elements: any) {
             source: elements[1]
         }
     ]
-    setProperties(Commodity, mappings);
+    setProperties(Commodity, mappings, delimiter);
     return Commodity;
 }
 
-export function SAC(name: string, elements: any) {
+export function SAC(name: string, elements: any[], delimiter: any): Record<any, any> {
     const ServicePromotionAllowanceOrChargeInformation = {
         code: name
     };
@@ -1094,11 +1122,11 @@ export function SAC(name: string, elements: any) {
             source: elements[15]
         }
     ]
-    setProperties(ServicePromotionAllowanceOrChargeInformation, mappings);
+    setProperties(ServicePromotionAllowanceOrChargeInformation, mappings, delimiter);
     return ServicePromotionAllowanceOrChargeInformation;
 }
 
-export function ITD(name: string, elements: any) {
+export function ITD(name: string, elements: any[], delimiter: any): Record<any, any> {
     const TermsOfSaleOrDeferredTermsOfSale = {
         code: name
     };
@@ -1164,11 +1192,11 @@ export function ITD(name: string, elements: any) {
             source: elements[14]
         }
     ]
-    setProperties(TermsOfSaleOrDeferredTermsOfSale, mappings);
+    setProperties(TermsOfSaleOrDeferredTermsOfSale, mappings, delimiter);
     return TermsOfSaleOrDeferredTermsOfSale;
 }
 
-export function DIS(name: string, elements: any) {
+export function DIS(name: string, elements: any[], delimiter: any): Record<any, any> {
     const DiscountDetail = {
         code: name
     };
@@ -1198,11 +1226,11 @@ export function DIS(name: string, elements: any) {
             source: elements[5]
         }
     ]
-    setProperties(DiscountDetail, mappings);
+    setProperties(DiscountDetail, mappings, delimiter);
     return DiscountDetail;
 }
 
-export function INC(name: string, elements: any) {
+export function INC(name: string, elements: any[], delimiter: any): Record<any, any> {
     const InstallmentInformation = {
         code: name
     };
@@ -1233,11 +1261,11 @@ export function INC(name: string, elements: any) {
             source: elements[5]
         }
     ]
-    setProperties(InstallmentInformation, mappings);
+    setProperties(InstallmentInformation, mappings, delimiter);
     return InstallmentInformation;
 }
 
-export function LIN(name: string, elements: any) {
+export function LIN(name: string, elements: any[], delimiter: any): Record<any, any> {
     const ItemIdentification = {
         code: name
     };
@@ -1367,11 +1395,11 @@ export function LIN(name: string, elements: any) {
             source: elements[30]
         }
     ]
-    setProperties(ItemIdentification, mappings);
+    setProperties(ItemIdentification, mappings, delimiter);
     return ItemIdentification;
 }
 
-export function SI(name: string, elements: any) {
+export function SI(name: string, elements: any[], delimiter: any): Record<any, any> {
     const ServiceCharacteristicIdentification = {
         code: name
     };
@@ -1461,11 +1489,11 @@ export function SI(name: string, elements: any) {
             source: elements[20]
         }
     ]
-    setProperties(ServiceCharacteristicIdentification, mappings);
+    setProperties(ServiceCharacteristicIdentification, mappings, delimiter);
     return ServiceCharacteristicIdentification;
 }
 
-export function PID(name: string, elements: any) {
+export function PID(name: string, elements: any[], delimiter: any): Record<any, any> {
     const ProductItemDescription = {
         code: name
     };
@@ -1511,11 +1539,11 @@ export function PID(name: string, elements: any) {
             source: elements[9]
         }
     ]
-    setProperties(ProductItemDescription, mappings);
+    setProperties(ProductItemDescription, mappings, delimiter);
     return ProductItemDescription;
 }
 
-export function MEA(name: string, elements: any) {
+export function MEA(name: string, elements: any[], delimiter: any): Record<any, any> {
     const Measurements = {
         code: name
     };
@@ -1570,11 +1598,11 @@ export function MEA(name: string, elements: any) {
             source: elements[11]
         }
     ]
-    setProperties(Measurements, mappings);
+    setProperties(Measurements, mappings, delimiter);
     return Measurements;
 }
 
-export function PWK(name: string, elements: any) {
+export function PWK(name: string, elements: any[], delimiter: any): Record<any, any> {
     const Paperwork = {
         code: name
     };
@@ -1624,11 +1652,11 @@ export function PWK(name: string, elements: any) {
             source: elements[10]
         }
     ]
-    setProperties(Paperwork, mappings);
+    setProperties(Paperwork, mappings, delimiter);
     return Paperwork;
 }
 
-export function PKG(name: string, elements: any) {
+export function PKG(name: string, elements: any[], delimiter: any): Record<any, any> {
     const MarkingPackagingLoading = {
         code: name
     };
@@ -1662,11 +1690,11 @@ export function PKG(name: string, elements: any) {
             source: elements[6]
         }
     ]
-    setProperties(MarkingPackagingLoading, mappings);
+    setProperties(MarkingPackagingLoading, mappings, delimiter);
     return MarkingPackagingLoading;
 }
 
-export function TD4(name: string, elements: any) {
+export function TD4(name: string, elements: any[], delimiter: any): Record<any, any> {
     const CarrierDetails = {
         code: name
     };
@@ -1704,11 +1732,11 @@ export function TD4(name: string, elements: any) {
             source: elements[7]
         }
     ]
-    setProperties(CarrierDetails, mappings);
+    setProperties(CarrierDetails, mappings, delimiter);
     return CarrierDetails;
 }
 
-export function TXI(name: string, elements: any) {
+export function TXI(name: string, elements: any[], delimiter: any): Record<any, any> {
     const TaxInformation = {
         code: name
     };
@@ -1766,11 +1794,11 @@ export function TXI(name: string, elements: any) {
             source: elements[12]
         }
     ]
-    setProperties(TaxInformation, mappings);
+    setProperties(TaxInformation, mappings, delimiter);
     return TaxInformation;
 }
 
-export function AMT(name: string, elements: any) {
+export function AMT(name: string, elements: any[], delimiter: any): Record<any, any> {
     const MonetaryAmountInformation = {
         code: name
     };
@@ -1788,11 +1816,11 @@ export function AMT(name: string, elements: any) {
             source: elements[2]
         }
     ]
-    setProperties(MonetaryAmountInformation, mappings);
+    setProperties(MonetaryAmountInformation, mappings, delimiter);
     return MonetaryAmountInformation;
 }
 
-export function EFI(name: string, elements: any) {
+export function EFI(name: string, elements: any[], delimiter: any): Record<any, any> {
     const ElectronicFormatIdentification = {
         code: name
     };
@@ -1862,11 +1890,11 @@ export function EFI(name: string, elements: any) {
             source: elements[15]
         }
     ]
-    setProperties(ElectronicFormatIdentification, mappings);
+    setProperties(ElectronicFormatIdentification, mappings, delimiter);
     return ElectronicFormatIdentification;
 }
 
-export function G61(name: string, elements: any) {
+export function G61(name: string, elements: any[], delimiter: any): Record<any, any> {
     const Contact = {
         code: name
     };
@@ -1892,11 +1920,11 @@ export function G61(name: string, elements: any) {
             source: elements[4]
         }
     ]
-    setProperties(Contact, mappings);
+    setProperties(Contact, mappings, delimiter);
     return Contact;
 }
 
-export function CN1(name: string, elements: any) {
+export function CN1(name: string, elements: any[], delimiter: any): Record<any, any> {
     const ContractInformation = {
         code: name
     };
@@ -1926,11 +1954,11 @@ export function CN1(name: string, elements: any) {
             source: elements[5]
         }
     ]
-    setProperties(ContractInformation, mappings);
+    setProperties(ContractInformation, mappings, delimiter);
     return ContractInformation;
 }
 
-export function PO3(name: string, elements: any) {
+export function PO3(name: string, elements: any[], delimiter: any): Record<any, any> {
     const AdditionalItemDetail = {
         code: name
     };
@@ -1968,11 +1996,11 @@ export function PO3(name: string, elements: any) {
             source: elements[7]
         }
     ]
-    setProperties(AdditionalItemDetail, mappings);
+    setProperties(AdditionalItemDetail, mappings, delimiter);
     return AdditionalItemDetail;
 }
 
-export function YNQ(name: string, elements: any) {
+export function YNQ(name: string, elements: any[], delimiter: any): Record<any, any> {
     const YesOrNoQuestion = {
         code: name
     };
@@ -2018,11 +2046,11 @@ export function YNQ(name: string, elements: any) {
             source: elements[9]
         }
     ]
-    setProperties(YesOrNoQuestion, mappings);
+    setProperties(YesOrNoQuestion, mappings, delimiter);
     return YesOrNoQuestion;
 }
 
-export function IT8(name: string, elements: any) {
+export function IT8(name: string, elements: any[], delimiter: any): Record<any, any> {
     const ConditionsOfSale = {
         code: name
     };
@@ -2136,11 +2164,11 @@ export function IT8(name: string, elements: any) {
             source: elements[26]
         }
     ]
-    setProperties(ConditionsOfSale, mappings);
+    setProperties(ConditionsOfSale, mappings, delimiter);
     return ConditionsOfSale;
 }
 
-export function LS(name: string, elements: any) {
+export function LS(name: string, elements: any[], delimiter: any): Record<any, any> {
     const LoopHeader = {
         code: name
     };
@@ -2150,11 +2178,11 @@ export function LS(name: string, elements: any) {
             source: elements[0]
         }
     ]
-    setProperties(LoopHeader, mappings);
+    setProperties(LoopHeader, mappings, delimiter);
     return LoopHeader;
 }
 
-export function LE(name: string, elements: any) {
+export function LE(name: string, elements: any[], delimiter: any): Record<any, any> {
     const SegmentName = {
         code: name
     };
@@ -2164,11 +2192,11 @@ export function LE(name: string, elements: any) {
             source: elements[0]
         },
     ]
-    setProperties(SegmentName, mappings);
+    setProperties(SegmentName, mappings, delimiter);
     return SegmentName;
 }
 
-export function TD3(name: string, elements: any) {
+export function TD3(name: string, elements: any[], delimiter: any): Record<any, any> {
     const CarrierDetails = {
         code: name
     };
@@ -2214,11 +2242,11 @@ export function TD3(name: string, elements: any) {
             source: elements[9]
         }
     ]
-    setProperties(CarrierDetails, mappings);
+    setProperties(CarrierDetails, mappings, delimiter);
     return CarrierDetails;
 }
 
-export function MAN(name: string, elements: any) {
+export function MAN(name: string, elements: any[], delimiter: any): Record<any, any> {
     const MarksAndNumbersInformation = {
         code: name
     };
@@ -2248,11 +2276,11 @@ export function MAN(name: string, elements: any) {
             source: elements[5]
         }
     ]
-    setProperties(MarksAndNumbersInformation, mappings);
+    setProperties(MarksAndNumbersInformation, mappings, delimiter);
     return MarksAndNumbersInformation;
 }
 
-export function CTB(name: string, elements: any) {
+export function CTB(name: string, elements: any[], delimiter: any): Record<any, any> {
     const RestrictionsOrConditions = {
         code: name
     };
@@ -2291,11 +2319,11 @@ export function CTB(name: string, elements: any) {
 
         }
     ]
-    setProperties(RestrictionsOrConditions, mappings);
+    setProperties(RestrictionsOrConditions, mappings, delimiter);
     return RestrictionsOrConditions;
 }
 
-export function QTY(name: string, elements: any) {
+export function QTY(name: string, elements: any[], delimiter: any): Record<any, any> {
     const QuantityInformation = {
         code: name
     };
@@ -2323,11 +2351,11 @@ export function QTY(name: string, elements: any) {
             source: elements[3]
         }
     ]
-    setProperties(QuantityInformation, mappings);
+    setProperties(QuantityInformation, mappings, delimiter);
     return QuantityInformation;
 }
 
-export function PCT(name: string, elements: any) {
+export function PCT(name: string, elements: any[], delimiter: any): Record<any, any> {
     const PercentAmounts = {
         code: name
     };
@@ -2341,11 +2369,11 @@ export function PCT(name: string, elements: any) {
             source: elements[1]
         }
     ]
-    setProperties(PercentAmounts, mappings);
+    setProperties(PercentAmounts, mappings, delimiter);
     return PercentAmounts;
 }
 
-export function FA2(name: string, elements: any) {
+export function FA2(name: string, elements: any[], delimiter: any): Record<any, any> {
     const AccountingData = {
         code: name
     };
@@ -2359,11 +2387,11 @@ export function FA2(name: string, elements: any) {
             source: elements[1]
         }
     ]
-    setProperties(AccountingData, mappings);
+    setProperties(AccountingData, mappings, delimiter);
     return AccountingData;
 }
 
-export function NX2(name: string, elements: any) {
+export function NX2(name: string, elements: any[], delimiter: any): Record<any, any> {
     const LocationIDComponent = {
         code: name
     };
@@ -2389,11 +2417,11 @@ export function NX2(name: string, elements: any) {
             source: elements[4]
         }
     ]
-    setProperties(LocationIDComponent, mappings);
+    setProperties(LocationIDComponent, mappings, delimiter);
     return LocationIDComponent;
 }
 
-export function LQ(name: string, elements: any) {
+export function LQ(name: string, elements: any[], delimiter: any): Record<any, any> {
     const IndustryCodeIdentification = {
         code: name
     };
@@ -2407,11 +2435,11 @@ export function LQ(name: string, elements: any) {
             source: elements[1]
         }
     ]
-    setProperties(IndustryCodeIdentification, mappings);
+    setProperties(IndustryCodeIdentification, mappings, delimiter);
     return IndustryCodeIdentification;
 }
 
-export function SPI(name: string, elements: any) {
+export function SPI(name: string, elements: any[], delimiter: any): Record<any, any> {
     const SpecificationIdentifier = {
         code: name
     };
@@ -2477,11 +2505,11 @@ export function SPI(name: string, elements: any) {
             source: elements[14]
         }
     ]
-    setProperties(SpecificationIdentifier, mappings);
+    setProperties(SpecificationIdentifier, mappings, delimiter);
     return SpecificationIdentifier;
 }
 
-export function PAL(name: string, elements: any) {
+export function PAL(name: string, elements: any[], delimiter: any): Record<any, any> {
     const PalletTypeAndLoadCharacteristics = {
         code: name
     };
@@ -2567,11 +2595,11 @@ export function PAL(name: string, elements: any) {
             source: elements[19]
         }
     ]
-    setProperties(PalletTypeAndLoadCharacteristics, mappings);
+    setProperties(PalletTypeAndLoadCharacteristics, mappings, delimiter);
     return PalletTypeAndLoadCharacteristics;
 }
 
-export function IT3(name: string, elements: any) {
+export function IT3(name: string, elements: any[], delimiter: any): Record<any, any> {
     const AdditionalItemData = {
         code: name
     };
@@ -2597,11 +2625,11 @@ export function IT3(name: string, elements: any) {
             source: elements[4]
         }
     ]
-    setProperties(AdditionalItemData, mappings);
+    setProperties(AdditionalItemData, mappings, delimiter);
     return AdditionalItemData;
 }
 
-export function CTT(name: string, elements: any) {
+export function CTT(name: string, elements: any[], delimiter: any): Record<any, any> {
     const TransactionTotals = {
         code: name
     };
@@ -2635,11 +2663,11 @@ export function CTT(name: string, elements: any) {
             source: elements[3]
         }
     ]
-    setProperties(TransactionTotals, mappings);
+    setProperties(TransactionTotals, mappings, delimiter);
     return TransactionTotals;
 }
 
-export function TD1(name: string, elements: any) {
+export function TD1(name: string, elements: any[], delimiter: any): Record<any, any> {
     const CarrierDetails = {
         code: name
     };
@@ -2685,11 +2713,11 @@ export function TD1(name: string, elements: any) {
             source: elements[9]
         },
     ]
-    setProperties(CarrierDetails, mappings);
+    setProperties(CarrierDetails, mappings, delimiter);
     return CarrierDetails;
 }
 
-export function LDT(name: string, elements: any) {
+export function LDT(name: string, elements: any[], delimiter: any): Record<any, any> {
     const LeadTime = {
         code: name
     };
@@ -2711,11 +2739,11 @@ export function LDT(name: string, elements: any) {
             source: elements[3]
         }
     ]
-    setProperties(LeadTime, mappings);
+    setProperties(LeadTime, mappings, delimiter);
     return LeadTime;
 }
 
-export function MTX(name: string, elements: any) {
+export function MTX(name: string, elements: any[], delimiter: any): Record<any, any> {
     const Text = {
         code: name
     };
@@ -2746,11 +2774,11 @@ export function MTX(name: string, elements: any) {
         }
 
     ]
-    setProperties(Text, mappings);
+    setProperties(Text, mappings, delimiter);
     return Text;
 }
 
-export function FA1(name: string, elements: any) {
+export function FA1(name: string, elements: any[], delimiter: any): Record<any, any> {
     const TypeOfFinancialAccountingData = {
         code: name
     };
@@ -2768,11 +2796,11 @@ export function FA1(name: string, elements: any) {
             source: elements[2]
         },
     ]
-    setProperties(TypeOfFinancialAccountingData, mappings);
+    setProperties(TypeOfFinancialAccountingData, mappings, delimiter);
     return TypeOfFinancialAccountingData;
 }
 
-export function IN2(name: string, elements: any) {
+export function IN2(name: string, elements: any[], delimiter: any): Record<any, any> {
     const IndividualNameStructureComponents = {
         code: name
     };
@@ -2790,11 +2818,11 @@ export function IN2(name: string, elements: any) {
             source: elements[2]
         },
     ]
-    setProperties(IndividualNameStructureComponents, mappings);
+    setProperties(IndividualNameStructureComponents, mappings, delimiter);
     return IndividualNameStructureComponents;
 }
 
-export function LM(name: string, elements: any) {
+export function LM(name: string, elements: any[], delimiter: any): Record<any, any> {
     const CodeSourceInformation = {
         code: name
     };
@@ -2808,11 +2836,11 @@ export function LM(name: string, elements: any) {
             source: elements[1]
         }
     ]
-    setProperties(CodeSourceInformation, mappings);
+    setProperties(CodeSourceInformation, mappings, delimiter);
     return CodeSourceInformation;
 }
 
-export function CB1(name: string, elements: any) {
+export function CB1(name: string, elements: any[], delimiter: any): Record<any, any> {
     const ContractAndCostAccountingStandardsData = {
         code: name
     };
@@ -2826,11 +2854,11 @@ export function CB1(name: string, elements: any) {
             source: elements[1]
         }
     ]
-    setProperties(ContractAndCostAccountingStandardsData, mappings);
+    setProperties(ContractAndCostAccountingStandardsData, mappings, delimiter);
     return ContractAndCostAccountingStandardsData;
 }
 
-export function ADV(name: string, elements: any) {
+export function ADV(name: string, elements: any[], delimiter: any): Record<any, any> {
     const AdvertisingDemographicInformation = {
         code: name
     };
@@ -2864,11 +2892,11 @@ export function ADV(name: string, elements: any) {
             source: elements[6]
         },
     ]
-    setProperties(AdvertisingDemographicInformation, mappings);
+    setProperties(AdvertisingDemographicInformation, mappings, delimiter);
     return AdvertisingDemographicInformation;
 }
 
-export function PO4(name: string, elements: any) {
+export function PO4(name: string, elements: any[], delimiter: any): Record<any, any> {
     const ItemPhysicalDetails = {
         code: name
     };
@@ -2946,11 +2974,11 @@ export function PO4(name: string, elements: any) {
             source: elements[17]
         }
     ]
-    setProperties(ItemPhysicalDetails, mappings);
+    setProperties(ItemPhysicalDetails, mappings, delimiter);
     return ItemPhysicalDetails;
 }
 
-export function SDQ(name: string, elements: any) {
+export function SDQ(name: string, elements: any[], delimiter: any): Record<any, any> {
     const DestinationQuantity = {
         code: name
     };
@@ -3048,11 +3076,11 @@ export function SDQ(name: string, elements: any) {
             source: elements[22]
         }
     ]
-    setProperties(DestinationQuantity, mappings);
+    setProperties(DestinationQuantity, mappings, delimiter);
     return DestinationQuantity;
 }
 
-export function SE(elements: any) {
+export function SE(elements: any[], delimiter: any) {
     const TransactionSetTrailer = {
         code: "SE"
     };
@@ -3066,11 +3094,11 @@ export function SE(elements: any) {
             source: elements[1]
         }
     ]
-    setProperties(TransactionSetTrailer, mappings);
+    setProperties(TransactionSetTrailer, mappings, delimiter);
     return TransactionSetTrailer;
 }
 
-export function GE(elements: any) {
+export function GE(elements: any[], delimiter: any) {
     const FunctionalGroupTrailer = {
         code: "GE"
     };
@@ -3084,11 +3112,11 @@ export function GE(elements: any) {
             source: elements[1]
         }
     ]
-    setProperties(FunctionalGroupTrailer, mappings);
+    setProperties(FunctionalGroupTrailer, mappings, delimiter);
     return FunctionalGroupTrailer;
 }
 
-export function IEA(elements: any) {
+export function IEA(elements: any[], delimiter: any) {
     const InterchangeControlTrailer = {
         code: "IEA"
     };
@@ -3102,11 +3130,11 @@ export function IEA(elements: any) {
             source: elements[1]
         }
     ]
-    setProperties(InterchangeControlTrailer, mappings);
+    setProperties(InterchangeControlTrailer, mappings, delimiter);
     return InterchangeControlTrailer;
 }
 
-export function CODE(name: string, elements: any) {
+export function CODE(name: string, elements: any[], delimiter: any): Record<any, any> {
     const SegmentName = {
         code: name
     };
@@ -3116,6 +3144,6 @@ export function CODE(name: string, elements: any) {
             source: elements[0]
         },
     ]
-    setProperties(SegmentName, mappings);
+    setProperties(SegmentName, mappings, delimiter);
     return SegmentName;
 }

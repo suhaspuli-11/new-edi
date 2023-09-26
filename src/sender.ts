@@ -83,9 +83,42 @@ SE*35*0001~
 GE*1*95~
 IEA*1*000000040~`;
 
+const x122: string = `ISA*00*          *00*          *ZZ*AMAZONDS       *01*RECEIVERID     *220428*1230*U*00401*000000013*0*P*>~
+GS*PO*AMAZONDS*RECEIVERID*20220428*123038*96*X*004010~
+ST*850*0001~
+BEG*00*SS*T7Fd9Zn55**20220428~
+CUR*BT*USD~
+REF*OQ*002-9977742-6703449~
+REF*ST*1~
+DTM*010*20220503*2030*GM~
+DTM*002*20220507*0659*GM~
+N9*ZZ*03~
+MSG*As you requested, we've sent this part of your order to ensure quicker service. The other items will ship separately.~
+N9*ZZ*06~
+MSG*For detailed information about your orders, please visit Your Account. You can also print invoices, change your e-mail address and payment settings, alter your communication preferences, and much more-24 hours a day-at http://www.amazon.com/your-account.~
+N9*ZZ*07~
+MSG*Visit http://www.amazon.com/returns to return any item-including gifts-in unopened or original condition within 30 days for a full refund(other restrictions apply). Please have your order ID ready. Thanks for shopping at Amazon.com, and please come again!~
+N1*BT*Amazon.com.kydc,Inc.*92*KYDC~
+N1*SF*WHSE*92*WHSE~
+N1*ST*Jennifer Smith~
+N3*93 Hardwood Ln~
+N4*Rochester*NY*14616-1629*US*CC*United States~
+TD5**92*UPS_GR_RES****ZZ*RES~
+N1*LW*Jennifer Smith~
+N3*93 Hardwood Ln~
+N4*Rochester*NY*14616-1629*US~
+PER*ZZ****TE*2065551214~
+PO1*1*1*EA*2.41*NT*SK*1092189***TP*Kitchen*BL*1*ZZ*Amazon.com, LLC~
+CTP**PUR*6.54~
+MSG*Chicago Cutlery Essentials 3-1/2-Inch Parer Knife~
+CTT*1*1~
+SE*28*0001~
+GE*1*96~
+IEA*1*000000013~`;
+
 async function main() {
     try {
-        await axios.post(receiverUrl, x121, {
+        await axios.post(receiverUrl, x122, {
             headers: {
                 'Content-Type':'text/plain'
             }
