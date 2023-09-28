@@ -6,11 +6,13 @@ const port = 4000;
 const app = express();
 app.use(express.text());
 app.post('/', (req, res) => {
-    const ediMessage = req.body;
+    let ediMessage = req.body;
     res.send('Message received successfully');
     // Processing the EDI message   
     const interchangeHeader = ediMessage.substring(0, 3);
-    if (interchangeHeader === 'UNB') {
+    if (interchangeHeader === 'UNB' || interchangeHeader === 'UNA') {
+        if (interchangeHeader === 'UNA')
+            ediMessage = split(ediMessage);
         console.log('***************EDIFACT message***************');
         (0, parsingService_1.parseEdifact)(ediMessage);
     }
@@ -26,3 +28,9 @@ app.post('/', (req, res) => {
 app.listen(port, () => {
     console.log(`Receiver listening on port ${port}`);
 });
+function split(ediMessage) {
+    const arr = ediMessage.split('\n');
+    const una = arr.shift();
+    // console.log(una);
+    return arr.join('\n');
+}
